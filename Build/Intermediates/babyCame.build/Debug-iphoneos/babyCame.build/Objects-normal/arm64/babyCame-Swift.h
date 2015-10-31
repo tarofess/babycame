@@ -87,6 +87,7 @@ typedef int swift_int3  __attribute__((__ext_vector_type__(3)));
 typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -107,13 +108,30 @@ SWIFT_CLASS("_TtC8babyCame11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
 @class NSCoder;
+@class UIImageView;
+
+SWIFT_CLASS("_TtC8babyCame32GameScreenShotCollectionViewCell")
+@interface GameScreenShotCollectionViewCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified gameScreenShotImageView;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+@class NSIndexPath;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC8babyCame14ViewController")
 @interface ViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UICollectionView * __null_unspecified collectionView;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * __nonnull)collectionView;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)updateCollectionViewCell:(GameScreenShotCollectionViewCell * __nonnull)cell;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

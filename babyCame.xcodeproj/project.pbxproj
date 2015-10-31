@@ -14,6 +14,8 @@
 		50E176FD1BE3CA4A009CA822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E176FB1BE3CA4A009CA822 /* LaunchScreen.storyboard */; };
 		50E177081BE3CA4A009CA822 /* babyCameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E177071BE3CA4A009CA822 /* babyCameTests.swift */; };
 		50E177131BE3CA4A009CA822 /* babyCameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E177121BE3CA4A009CA822 /* babyCameUITests.swift */; };
+		50E177241BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E177231BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift */; };
+		50E177261BE482CF009CA822 /* GameScreenShotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E177251BE482CF009CA822 /* GameScreenShotCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		50E1770E1BE3CA4A009CA822 /* babyCameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = babyCameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E177121BE3CA4A009CA822 /* babyCameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babyCameUITests.swift; sourceTree = "<group>"; };
 		50E177141BE3CA4A009CA822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E177231BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenShotCollectionViewCell.swift; sourceTree = "<group>"; };
+		50E177251BE482CF009CA822 /* GameScreenShotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameScreenShotCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,11 @@
 		50E176F11BE3CA4A009CA822 /* babyCame */ = {
 			isa = PBXGroup;
 			children = (
-				50E176F21BE3CA4A009CA822 /* AppDelegate.swift */,
-				50E176F41BE3CA4A009CA822 /* ViewController.swift */,
+				50E177201BE46E8D009CA822 /* Model */,
+				50E177211BE46E96009CA822 /* View */,
+				50E177221BE46E9A009CA822 /* Controller */,
 				50E176F61BE3CA4A009CA822 /* Main.storyboard */,
+				50E177251BE482CF009CA822 /* GameScreenShotCollectionViewCell.xib */,
 				50E176F91BE3CA4A009CA822 /* Assets.xcassets */,
 				50E176FB1BE3CA4A009CA822 /* LaunchScreen.storyboard */,
 				50E176FE1BE3CA4A009CA822 /* Info.plist */,
@@ -123,6 +129,30 @@
 				50E177141BE3CA4A009CA822 /* Info.plist */,
 			);
 			path = babyCameUITests;
+			sourceTree = "<group>";
+		};
+		50E177201BE46E8D009CA822 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		50E177211BE46E96009CA822 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50E177231BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		50E177221BE46E9A009CA822 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50E176F21BE3CA4A009CA822 /* AppDelegate.swift */,
+				50E176F41BE3CA4A009CA822 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E177261BE482CF009CA822 /* GameScreenShotCollectionViewCell.xib in Resources */,
 				50E176FD1BE3CA4A009CA822 /* LaunchScreen.storyboard in Resources */,
 				50E176FA1BE3CA4A009CA822 /* Assets.xcassets in Resources */,
 				50E176F81BE3CA4A009CA822 /* Main.storyboard in Resources */,
@@ -258,6 +289,7 @@
 			files = (
 				50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */,
 				50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */,
+				50E177241BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
