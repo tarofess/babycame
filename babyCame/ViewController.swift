@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         let nib = UINib(nibName: "GameScreenShotCollectionViewCell", bundle: nil)
         self.collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        let backButton = UIBarButtonItem(title: "戻る", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,7 +33,7 @@ class ViewController: UIViewController {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: GameScreenShotCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! GameScreenShotCollectionViewCell
         
-        updateCollectionViewCell(cell)
+        updateCollectionViewCell(cell, indexPath: indexPath)
         
         return cell
     }
@@ -38,18 +43,23 @@ class ViewController: UIViewController {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20;
+        return 5;
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        
-        let cell : GameScreenShotCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)! as! GameScreenShotCollectionViewCell
-        
-        print("didTap")
+        performSegueWithIdentifier("RunGamePreViewController", sender: indexPath)
     }
     
-    func updateCollectionViewCell(cell: GameScreenShotCollectionViewCell) {
-        cell.gameScreenShotImageView.image = UIImage(named: "sora")
+    func updateCollectionViewCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
+        cell.gameScreenShotImageView.image = UIImage(named: String(indexPath.row))
+        cell.gameNumber = indexPath.row
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = sender as! NSIndexPath
+        
+        let gamePreViewController = segue.destinationViewController as! GamePreViewController
+        gamePreViewController.gameImage = UIImage(named: String(indexPath.row))
     }
 }
 

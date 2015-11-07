@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oCw-bu-90A">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ゲームを選んでね！-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,6 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIs-37-hTn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y56-bm-DRG">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="cfF-Q7-0QX">
-                                        <rect key="frame" x="20" y="20" width="150" height="150"/>
+                                        <rect key="frame" x="20" y="84" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -48,14 +49,117 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="ゲームを選んでね！" id="aUb-Jr-t7o"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="yIs-37-hTn" id="feP-jQ-10r"/>
+                        <segue destination="mj8-we-sme" kind="show" identifier="RunGamePreViewController" id="roz-Lj-PSM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287.5" y="320.5"/>
+            <point key="canvasLocation" x="855.5" y="319.5"/>
+        </scene>
+        <!--GameTitle-->
+        <scene sceneID="kTK-UL-tkg">
+            <objects>
+                <viewController id="mj8-we-sme" customClass="GamePreViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D47-Gj-5Mu"/>
+                        <viewControllerLayoutGuide type="bottom" id="b8t-GN-Ngh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lrt-3r-wph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvn-RL-XZK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="GameTitle" id="fTW-Xp-SGw">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="x6n-80-8U6">
+                            <connections>
+                                <action selector="didTapOKNavigationItem:" destination="mj8-we-sme" id="cPC-hL-cPt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="gameImageView" destination="Yvn-RL-XZK" id="IL8-gc-vIs"/>
+                        <outlet property="gameTitleNavigationItem" destination="fTW-Xp-SGw" id="BzV-ey-E1n"/>
+                        <segue destination="hav-os-rEK" kind="presentation" identifier="RunGameViewController" id="Qc4-9d-XAX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-IS-z6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423.5" y="319.5"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="KjC-GS-5Tg">
+            <objects>
+                <viewController id="hav-os-rEK" customClass="GameViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AqB-Yp-0U4"/>
+                        <viewControllerLayoutGuide type="bottom" id="SqG-dy-vsI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xbJ-kR-k9o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="L5G-y7-X70" kind="presentation" identifier="RunMoviePreViewController" id="KPR-hd-0Ut"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYe-mx-sGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986.5" y="319.5"/>
+        </scene>
+        <!--Movie Pre View Controller-->
+        <scene sceneID="IG9-uj-sa3">
+            <objects>
+                <viewController id="L5G-y7-X70" customClass="MoviePreViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CRW-Mn-9Bt"/>
+                        <viewControllerLayoutGuide type="bottom" id="M66-Rc-nPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gD8-AY-Cdd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oja-BF-FOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2560.5" y="319.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f61-t5-pxk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oCw-bu-90A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AQ0-bc-LUa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="d7A-aM-qHo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eq8-9W-PCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="320"/>
         </scene>
     </scenes>
 </document>

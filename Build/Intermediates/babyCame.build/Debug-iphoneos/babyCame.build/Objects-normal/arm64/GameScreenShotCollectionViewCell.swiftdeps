@@ -6,23 +6,28 @@ provides-nominal:
 provides-member:
 - ["C8babyCame32GameScreenShotCollectionViewCell", ""]
 provides-dynamic-lookup:
+- "gameNumber"
 - "gameScreenShotImageView"
 depends-top-level:
 - "UICollectionViewCell"
 - "GameScreenShotCollectionViewCell"
+- "UIImageView"
 - "CGRect"
 - "NSCoder"
-- "UIImageView"
 depends-member:
+- ["PSs9AnyObject", "gameNumber"]
 - ["PSs9AnyObject", "gameScreenShotImageView"]
 - ["PSs9AnyObject", "init"]
 - ["PSs9AnyObject", ""]
+- ["PSs11CVarArgType", "gameNumber"]
 - ["PSs11CVarArgType", "gameScreenShotImageView"]
 - ["PSs11CVarArgType", "init"]
 - ["PSs11CVarArgType", ""]
+- ["PSs23CustomStringConvertible", "gameNumber"]
 - ["PSs23CustomStringConvertible", "gameScreenShotImageView"]
 - ["PSs23CustomStringConvertible", "init"]
 - ["PSs23CustomStringConvertible", ""]
+- ["PSs9Equatable", "gameNumber"]
 - ["PSs9Equatable", "gameScreenShotImageView"]
 - ["PSs9Equatable", "init"]
 - ["PSs9Equatable", ""]
@@ -30,64 +35,81 @@ depends-member:
 - ["C8babyCame32GameScreenShotCollectionViewCell", "NSCoder"]
 - ["C8babyCame32GameScreenShotCollectionViewCell", "UIImageView"]
 - ["C8babyCame32GameScreenShotCollectionViewCell", "deinit"]
+- ["C8babyCame32GameScreenShotCollectionViewCell", "gameNumber"]
 - ["C8babyCame32GameScreenShotCollectionViewCell", "gameScreenShotImageView"]
 - ["C8babyCame32GameScreenShotCollectionViewCell", "init"]
+- ["PSs8Hashable", "gameNumber"]
 - ["PSs8Hashable", "gameScreenShotImageView"]
 - ["PSs8Hashable", "init"]
 - ["PSs8Hashable", ""]
+- ["PSo8NSCoding", "gameNumber"]
 - ["PSo8NSCoding", "gameScreenShotImageView"]
 - ["PSo8NSCoding", "init"]
 - ["PSo8NSCoding", ""]
 - ["CSo8NSObject", "CGRect"]
 - ["CSo8NSObject", "NSCoder"]
 - ["CSo8NSObject", "UIImageView"]
+- ["CSo8NSObject", "gameNumber"]
 - ["CSo8NSObject", "gameScreenShotImageView"]
 - ["CSo8NSObject", "init"]
+- ["PSo16NSObjectProtocol", "gameNumber"]
 - ["PSo16NSObjectProtocol", "gameScreenShotImageView"]
 - ["PSo16NSObjectProtocol", "init"]
 - ["PSo16NSObjectProtocol", ""]
+- ["PSo29UIAccessibilityIdentification", "gameNumber"]
 - ["PSo29UIAccessibilityIdentification", "gameScreenShotImageView"]
 - ["PSo29UIAccessibilityIdentification", "init"]
 - ["PSo29UIAccessibilityIdentification", ""]
+- ["PSo12UIAppearance", "gameNumber"]
 - ["PSo12UIAppearance", "gameScreenShotImageView"]
 - ["PSo12UIAppearance", "init"]
 - ["PSo12UIAppearance", ""]
+- ["PSo21UIAppearanceContainer", "gameNumber"]
 - ["PSo21UIAppearanceContainer", "gameScreenShotImageView"]
 - ["PSo21UIAppearanceContainer", "init"]
 - ["PSo21UIAppearanceContainer", ""]
 - ["CSo24UICollectionReusableView", "CGRect"]
 - ["CSo24UICollectionReusableView", "NSCoder"]
 - ["CSo24UICollectionReusableView", "UIImageView"]
+- ["CSo24UICollectionReusableView", "gameNumber"]
 - ["CSo24UICollectionReusableView", "gameScreenShotImageView"]
 - ["CSo24UICollectionReusableView", "init"]
 - ["CSo20UICollectionViewCell", "CGRect"]
 - ["CSo20UICollectionViewCell", "NSCoder"]
 - ["CSo20UICollectionViewCell", "UIImageView"]
+- ["CSo20UICollectionViewCell", "gameNumber"]
 - ["CSo20UICollectionViewCell", "gameScreenShotImageView"]
 - ["CSo20UICollectionViewCell", "init"]
 - ["CSo20UICollectionViewCell", ""]
+- ["PSo17UICoordinateSpace", "gameNumber"]
 - ["PSo17UICoordinateSpace", "gameScreenShotImageView"]
 - ["PSo17UICoordinateSpace", "init"]
 - ["PSo17UICoordinateSpace", ""]
+- ["PSo13UIDynamicItem", "gameNumber"]
 - ["PSo13UIDynamicItem", "gameScreenShotImageView"]
 - ["PSo13UIDynamicItem", "init"]
 - ["PSo13UIDynamicItem", ""]
+- ["PSo18UIFocusEnvironment", "gameNumber"]
 - ["PSo18UIFocusEnvironment", "gameScreenShotImageView"]
 - ["PSo18UIFocusEnvironment", "init"]
 - ["PSo18UIFocusEnvironment", ""]
 - ["CSo11UIResponder", "CGRect"]
 - ["CSo11UIResponder", "NSCoder"]
 - ["CSo11UIResponder", "UIImageView"]
+- ["CSo11UIResponder", "gameNumber"]
 - ["CSo11UIResponder", "gameScreenShotImageView"]
 - ["CSo11UIResponder", "init"]
+- ["PSo18UITraitEnvironment", "gameNumber"]
 - ["PSo18UITraitEnvironment", "gameScreenShotImageView"]
 - ["PSo18UITraitEnvironment", "init"]
 - ["PSo18UITraitEnvironment", ""]
 - ["CSo6UIView", "CGRect"]
 - ["CSo6UIView", "NSCoder"]
 - ["CSo6UIView", "UIImageView"]
+- ["CSo6UIView", "gameNumber"]
 - ["CSo6UIView", "gameScreenShotImageView"]
 - ["CSo6UIView", "init"]
+- ["PSs12_Reflectable", "gameNumber"]
 - ["PSs12_Reflectable", "gameScreenShotImageView"]
 - ["PSs12_Reflectable", "init"]
 - ["PSs12_Reflectable", ""]
@@ -116,11 +138,11 @@ depends-nominal:
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
-interface-hash: "bc0c1c41259b89ee4e8857cf561c0400"
+interface-hash: "7143bcd553c5f72942917c4b9c000e61"
