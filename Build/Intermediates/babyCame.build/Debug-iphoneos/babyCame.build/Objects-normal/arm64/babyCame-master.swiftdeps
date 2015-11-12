@@ -1,10 +1,12 @@
 version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
-options: "18b14e48efe61cef691e4ca22f6e1355"
-build_time: [500181959, 26318000]
+options: "65d559f1a98e087f1b1852c11f5a4741"
+build_time: [500288642, 676946000]
 inputs:
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/MoviePreViewController.swift": [9223372036854775807, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameScreenShotCollectionViewCell.swift": [499595630, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GamePreViewController.swift": [500181958, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameCenter.swift": [500283446, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameViewController.swift": [500288642, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/ViewController.swift": [500191433, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameView.swift": [500286467, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/GamePreViewController.swift": [500283446, 0]
   "/Users/taro/myWorks/iphone/babyCame/babyCame/AppDelegate.swift": [499535690, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameViewController.swift": [500180406, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/ViewController.swift": [500180406, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/MoviePreViewController.swift": [500184676, 0]
+  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameScreenShotCollectionViewCell.swift": [500205328, 0]

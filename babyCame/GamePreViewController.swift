@@ -11,14 +11,13 @@ import UIKit
 
 class GamePreViewController: UIViewController {
     
-    @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameTitleNavigationItem: UINavigationItem!
-    var gameImage: UIImage!
+    var indexPath: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gameImageView.image = gameImage
+        showGame()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,7 +29,7 @@ class GamePreViewController: UIViewController {
     }
     
     func showConfirmAlert() {
-        let alertController = UIAlertController(title: "\\(^o^)/", message: "このゲームで遊ぶ！", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "確認", message: "このゲームで遊ぶ！", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction) -> Void in
             self.performSegueWithIdentifier("RunGameViewController", sender: self)
         })
@@ -42,8 +41,13 @@ class GamePreViewController: UIViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func showGame() {
+        let gameCenter = GameCenter(gameIdentifier: self.indexPath)
+        self.view.addSubview(gameCenter.getGameView()!)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let gameViewController = segue.destinationViewController as! GameViewController
-        
+        let gameViewController = segue.destinationViewController as! GameViewController
+        gameViewController.indexPath = self.indexPath
     }
 }
