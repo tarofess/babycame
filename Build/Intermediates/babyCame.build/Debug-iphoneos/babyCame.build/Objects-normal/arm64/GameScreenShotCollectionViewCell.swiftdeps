@@ -8,15 +8,15 @@ provides-member:
 provides-dynamic-lookup:
 - "gameScreenShotImageView"
 depends-top-level:
-- "UICollectionViewCell"
+- "UIImageView"
 - !private "~="
+- "UICollectionViewCell"
+- "GameScreenShotCollectionViewCell"
 - !private "UIScreen"
 - !private "CGSize"
-- "UIImageView"
-- "NSCoder"
 - "CGRect"
+- "NSCoder"
 - !private "BooleanLiteralType"
-- "GameScreenShotCollectionViewCell"
 depends-member:
 - !private ["PSs9AnyObject", "CGSize"]
 - !private ["PSs9AnyObject", "UIScreen"]
@@ -256,4 +256,8 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AssetsLibrary.swiftmodule"
 interface-hash: "bc0c1c41259b89ee4e8857cf561c0400"

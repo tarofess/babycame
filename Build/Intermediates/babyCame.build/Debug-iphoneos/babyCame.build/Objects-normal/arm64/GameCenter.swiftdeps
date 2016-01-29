@@ -8,13 +8,13 @@ provides-member:
 provides-dynamic-lookup:
 - "getGameView"
 depends-top-level:
-- "Int"
-- !private "~="
-- "GameCenter"
 - "NSObject"
+- "Int"
 - !private "StringLiteralType"
-- !private "UINib"
+- "GameCenter"
+- !private "~="
 - "UIView"
+- !private "UINib"
 depends-member:
 - !private ["PSs9AnyObject", "UINib"]
 - ["PSs9AnyObject", "gameIdentifier"]
@@ -256,4 +256,8 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AssetsLibrary.swiftmodule"
 interface-hash: "e0ad221536fb93004ccf56618ce388a0"

@@ -6,14 +6,14 @@ provides-nominal:
 provides-member:
 - ["C8babyCame8GameView", ""]
 provides-dynamic-lookup:
-- "didTapButton"
 - "imageView"
+- "didTapButton"
 depends-top-level:
-- "UIImageView"
 - !private "CGRectMake"
-- "AnyObject"
-- "GameView"
 - "UIView"
+- "GameView"
+- "UIImageView"
+- "AnyObject"
 - !private "CGPointMake"
 - !private "*"
 depends-member:
@@ -271,4 +271,8 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AssetsLibrary.swiftmodule"
 interface-hash: "2e7fa0b1d0a192c7b8ea8d756458513d"

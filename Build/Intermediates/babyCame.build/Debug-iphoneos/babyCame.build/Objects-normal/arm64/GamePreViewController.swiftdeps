@@ -6,28 +6,29 @@ provides-nominal:
 provides-member:
 - ["C8babyCame21GamePreViewController", ""]
 provides-dynamic-lookup:
-- "showGame"
+- "viewDidLoad"
 - "didReceiveMemoryWarning"
+- "gameTitleNavigationItem"
+- "showConfirmAlert"
+- "showGame"
 - "didTapOKNavigationItem"
 - "prepareForSegue"
-- "gameTitleNavigationItem"
-- "viewDidLoad"
-- "showConfirmAlert"
 depends-top-level:
-- "GamePreViewController"
-- !private "StringLiteralType"
-- "AnyObject"
-- !private "Void"
-- !private "UIAlertController"
-- "UINavigationItem"
-- "UIViewController"
-- "Int"
-- !private "BooleanLiteralType"
 - "UIStoryboardSegue"
-- !private "GameViewController"
+- "Int"
+- "UIViewController"
 - !private "UIAlertAction"
+- !private "StringLiteralType"
+- !private "GameViewController"
 - !private "GameCenter"
+- !private "BooleanLiteralType"
+- "UINavigationItem"
+- !private "Void"
+- "AnyObject"
+- "GamePreViewController"
+- !private "UIAlertController"
 depends-member:
+- !private ["PSo36AVCaptureFileOutputRecordingDelegate", "indexPath"]
 - !private ["PSs9AnyObject", "GameCenter"]
 - !private ["PSs9AnyObject", "UIAlertAction"]
 - !private ["PSs9AnyObject", "UIAlertController"]
@@ -393,6 +394,7 @@ depends-member:
 - ["CSo16UIViewController", ""]
 - !private ["PSs12_Reflectable", "addSubview"]
 depends-nominal:
+- !private "PSo36AVCaptureFileOutputRecordingDelegate"
 - "PSs9AnyObject"
 - "PSs11CVarArgType"
 - "PSs23CustomStringConvertible"
@@ -436,4 +438,8 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AssetsLibrary.swiftmodule"
 interface-hash: "29d73b467ef63ef26b2b1362af635107"

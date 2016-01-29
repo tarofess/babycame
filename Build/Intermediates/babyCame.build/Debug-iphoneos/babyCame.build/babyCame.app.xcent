@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>8642FHK38M.com.taro.babyCame</string>
+	<string>NMQX563NGX.com.taro.babyCame</string>
 	<key>com.apple.developer.team-identifier</key>
-	<string>8642FHK38M</string>
+	<string>NMQX563NGX</string>
 	<key>get-task-allow</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>8642FHK38M.com.taro.babyCame</string>
+		<string>NMQX563NGX.com.taro.babyCame</string>
 	</array>
 </dict>
 </plist>

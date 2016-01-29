@@ -65,7 +65,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     func updateTime() {
-        if self.timeLeft > 0 {
+        if self.timeLeft > 1 {
             self.timeLeft--
             self.navigationBar.topItem?.title = String(timeLeft) + "秒"
         } else {
@@ -75,7 +75,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     func showCompletionAlert(videoPath: NSURL) {
-        let alertController = UIAlertController(title: "撮影完了！", message: "撮影したムービーを見てみよう！", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "撮影完了", message: "撮影したムービーを見てみましょう！", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) -> Void in
             self.performSegueWithIdentifier("RunMoviePreViewController", sender: videoPath)
         })
@@ -104,6 +104,28 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
             
         }
         
+        var videoConnection: AVCaptureConnection? = nil
+        
+        for connection: AVCaptureConnection in self.fileOutput.connections as! [AVCaptureConnection] {
+            print(connection)
+            
+            for inputport in connection.inputPorts {
+                if let port = inputport as? AVCaptureInputPort {
+                    print(port)
+                    
+                    if port.mediaType == AVMediaTypeVideo {
+                        videoConnection = connection
+                    }
+                }
+                
+            }
+        }
+        
+        if ((videoConnection?.supportsVideoOrientation) != nil) {
+            videoConnection?.videoOrientation = AVCaptureVideoOrientation.LandscapeLeft
+        }
+        
+        self.captureSession.commitConfiguration()
         self.captureSession.addOutput(self.fileOutput)
         self.captureSession.startRunning()
     }

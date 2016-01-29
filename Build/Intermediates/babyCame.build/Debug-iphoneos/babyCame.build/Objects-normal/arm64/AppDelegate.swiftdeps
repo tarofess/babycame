@@ -7,22 +7,22 @@ provides-member:
 - ["C8babyCame11AppDelegate", ""]
 provides-dynamic-lookup:
 - "applicationWillEnterForeground"
+- "application"
+- "applicationDidEnterBackground"
 - "applicationWillResignActive"
 - "applicationDidBecomeActive"
-- "applicationWillTerminate"
-- "applicationDidEnterBackground"
-- "application"
 - "window"
+- "applicationWillTerminate"
 depends-top-level:
-- "AppDelegate"
 - "UIResponder"
 - "UIWindow"
 - "NSObject"
-- "AnyObject"
-- "UIApplication"
-- "UIApplicationDelegate"
-- !private "BooleanLiteralType"
 - "Bool"
+- "UIApplication"
+- !private "BooleanLiteralType"
+- "AppDelegate"
+- "UIApplicationDelegate"
+- "AnyObject"
 depends-member:
 - ["PSs9AnyObject", "application"]
 - ["PSs9AnyObject", "applicationDidBecomeActive"]
@@ -208,4 +208,8 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AssetsLibrary.swiftmodule"
 interface-hash: "eb6deb7e97b205db2b1f8c4c6c87743c"

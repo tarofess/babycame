@@ -1,12 +1,13 @@
-version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
-options: "65d559f1a98e087f1b1852c11f5a4741"
-build_time: [500288642, 676946000]
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "52136adbd991fa57aaf0148a9ab02f9a"
+build_time: [507363763, 80905000]
 inputs:
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameCenter.swift": [500283446, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameViewController.swift": [500288642, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/ViewController.swift": [500191433, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameView.swift": [500286467, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GamePreViewController.swift": [500283446, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/AppDelegate.swift": [499535690, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/MoviePreViewController.swift": [500184676, 0]
-  "/Users/taro/myWorks/iphone/babyCame/babyCame/GameScreenShotCollectionViewCell.swift": [500205328, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/ViewController.swift": [500451554, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/AVPlayerView.swift": [500463466, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/GameCenter.swift": [500458800, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/GameScreenShotCollectionViewCell.swift": [500205328, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/GameView.swift": [500286467, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/GamePreViewController.swift": [500795154, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/MoviePreViewController.swift": [501385148, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/GameViewController.swift": [507363601, 0]
+  "/Users/interpia 1/Documents/\u30A2\u30D5\u309A\u30EA\u958B\u767A/iOS/babyCame/babyCame/AppDelegate.swift": [501385422, 0]

@@ -29,7 +29,7 @@ class GamePreViewController: UIViewController {
     }
     
     func showConfirmAlert() {
-        let alertController = UIAlertController(title: "確認", message: "このゲームで遊ぶ！", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "確認", message: "このゲームで遊びますか？", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction) -> Void in
             self.performSegueWithIdentifier("RunGameViewController", sender: self)
         })
