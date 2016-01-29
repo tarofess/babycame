@@ -31,7 +31,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.timeLeft = 15
+        self.timeLeft = 5
         self.didTouchScreenOnce = false
         self.navigationBar.topItem?.title = String(timeLeft) + "秒"
         
@@ -90,7 +90,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         let devices = AVCaptureDevice.devices()
         
         for device in devices {
-            if(device.position == AVCaptureDevicePosition.Front){
+            if device.position == AVCaptureDevicePosition.Front {
                 myDevice = device as? AVCaptureDevice
             }
         }
@@ -103,28 +103,6 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         } catch {
             
         }
-        
-        var videoConnection: AVCaptureConnection? = nil
-        
-        for connection: AVCaptureConnection in self.fileOutput.connections as! [AVCaptureConnection] {
-            print(connection)
-            
-            for inputport in connection.inputPorts {
-                if let port = inputport as? AVCaptureInputPort {
-                    print(port)
-                    
-                    if port.mediaType == AVMediaTypeVideo {
-                        videoConnection = connection
-                    }
-                }
-                
-            }
-        }
-        
-        if ((videoConnection?.supportsVideoOrientation) != nil) {
-            videoConnection?.videoOrientation = AVCaptureVideoOrientation.LandscapeLeft
-        }
-        
         self.captureSession.commitConfiguration()
         self.captureSession.addOutput(self.fileOutput)
         self.captureSession.startRunning()

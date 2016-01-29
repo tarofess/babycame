@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVKit
 import AVFoundation
 import AssetsLibrary
 import MediaPlayer
@@ -40,16 +41,23 @@ class MoviePreViewController: UIViewController {
     }
     
     func playMovie() {
-        let avAsset = AVURLAsset(URL: self.videoPath, options: nil)
-        let playerItem = AVPlayerItem(asset: avAsset)
+//        let avAsset = AVURLAsset(URL: self.videoPath, options: nil)
+//        let playerItem = AVPlayerItem(asset: avAsset)
+//        
+//        videoPlayer = AVPlayer(playerItem: playerItem)
+//        
+//        let layer = playerView.layer as! AVPlayerLayer
+//        layer.videoGravity = AVLayerVideoGravityResizeAspect
+//        layer.player = videoPlayer
+//        
+//        videoPlayer.play()
         
-        videoPlayer = AVPlayer(playerItem: playerItem)
-        
-        let layer = playerView.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResizeAspect
-        layer.player = videoPlayer
-        
-        videoPlayer.play()
+        let player = AVPlayer(URL: self.videoPath!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.presentViewController(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
     }
     
     func showBackActionSheet() {
