@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
@@ -52,14 +52,24 @@ class ViewController: UIViewController {
     
     func updateCollectionViewCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
         cell.gameScreenShotImageView.image = UIImage(named: String(indexPath.row))
-        cell.gameNumber = indexPath.row
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width: CGFloat = view.frame.width / 5
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
+    }
+    
+    // MARK: - Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = sender as! NSIndexPath
         
         let gamePreViewController = segue.destinationViewController as! GamePreViewController
-        gamePreViewController.gameImage = UIImage(named: String(indexPath.row))
+        gamePreViewController.indexPath = indexPath.row
+    }
+    
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
     }
 }
 
