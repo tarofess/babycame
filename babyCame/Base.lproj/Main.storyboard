@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oCw-bu-90A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oCw-bu-90A">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--ゲームを選んでね！-->
@@ -17,27 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIs-37-hTn">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIs-37-hTn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y56-bm-DRG">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                    <inset key="sectionInset" minX="25" minY="20" maxX="25" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="cfF-Q7-0QX">
-                                        <rect key="frame" x="20" y="84" width="150" height="150"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="cfF-Q7-0QX" customClass="GameScreenShotCollectionViewCell" customModule="babyCame" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="84" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIt-lt-qNo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
+                                        <connections>
+                                            <outlet property="gameScreenShotImageView" destination="eIt-lt-qNo" id="S1k-5M-PEe"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -46,10 +50,16 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yIs-37-hTn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6ap-pw-ENK"/>
+                            <constraint firstAttribute="trailing" secondItem="yIs-37-hTn" secondAttribute="trailing" id="Cd2-ly-VEU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yIs-37-hTn" secondAttribute="bottom" id="d20-uR-e2P"/>
+                            <constraint firstItem="yIs-37-hTn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lco-Bp-09W"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ゲームを選んでね！" id="aUb-Jr-t7o"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="yIs-37-hTn" id="feP-jQ-10r"/>
@@ -58,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855.5" y="319.5"/>
+            <point key="canvasLocation" x="777.5" y="319.5"/>
         </scene>
         <!--GameTitle-->
         <scene sceneID="kTK-UL-tkg">
@@ -71,13 +81,6 @@
                     <view key="view" contentMode="scaleToFill" id="lrt-3r-wph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvn-RL-XZK">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <animations/>
-                            </imageView>
-                        </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="GameTitle" id="fTW-Xp-SGw">
@@ -89,14 +92,13 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="gameImageView" destination="Yvn-RL-XZK" id="IL8-gc-vIs"/>
                         <outlet property="gameTitleNavigationItem" destination="fTW-Xp-SGw" id="BzV-ey-E1n"/>
                         <segue destination="hav-os-rEK" kind="presentation" identifier="RunGameViewController" id="Qc4-9d-XAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-IS-z6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1423.5" y="319.5"/>
+            <point key="canvasLocation" x="1407.5" y="319.5"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="KjC-GS-5Tg">
@@ -109,17 +111,36 @@
                     <view key="view" contentMode="scaleToFill" id="xbJ-kR-k9o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-Dh-tbv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="SYG-n2-aW9"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="15秒" id="KCb-0H-dP4"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="hav-os-rEK" id="2Th-sJ-uFc"/>
+                                </connections>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mqs-Dh-tbv" secondAttribute="trailing" id="I9b-HN-r8Z"/>
+                            <constraint firstItem="Mqs-Dh-tbv" firstAttribute="leading" secondItem="xbJ-kR-k9o" secondAttribute="leading" id="zNE-e0-4Fw"/>
+                            <constraint firstItem="Mqs-Dh-tbv" firstAttribute="top" secondItem="xbJ-kR-k9o" secondAttribute="top" id="zdf-ee-NHA"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="navigationBar" destination="Mqs-Dh-tbv" id="ljQ-CN-Jh4"/>
                         <segue destination="L5G-y7-X70" kind="presentation" identifier="RunMoviePreViewController" id="KPR-hd-0Ut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYe-mx-sGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986.5" y="319.5"/>
+            <point key="canvasLocation" x="2008.5" y="319.5"/>
         </scene>
         <!--Movie Pre View Controller-->
         <scene sceneID="IG9-uj-sa3">
@@ -132,14 +153,64 @@
                     <view key="view" contentMode="scaleToFill" id="gD8-AY-Cdd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6j-f6-0Vr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="VRW-JR-F5h"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="cAc-Uq-IcE">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="9k3-Jl-9ac">
+                                            <connections>
+                                                <action selector="didTapBackButton:" destination="L5G-y7-X70" id="xai-Z1-IMg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="NQL-OM-7r9">
+                                            <connections>
+                                                <action selector="didTapActionButton:" destination="L5G-y7-X70" id="Vvp-7b-bXC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="lar-hz-o5f" kind="embed" identifier="RunPlayerViewController" id="LHZ-Un-U5M"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="f6j-f6-0Vr" secondAttribute="trailing" id="9UE-DH-8S4"/>
+                            <constraint firstItem="f6j-f6-0Vr" firstAttribute="top" secondItem="gD8-AY-Cdd" secondAttribute="top" id="Pqb-3Q-FQ4"/>
+                            <constraint firstItem="M66-Rc-nPb" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" id="XfK-t5-MGa"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="leading" secondItem="gD8-AY-Cdd" secondAttribute="leading" id="kAX-xg-ORg"/>
+                            <constraint firstItem="f6j-f6-0Vr" firstAttribute="leading" secondItem="gD8-AY-Cdd" secondAttribute="leading" id="khL-W9-VT9"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="f6j-f6-0Vr" secondAttribute="bottom" id="mOt-mc-UEb"/>
+                            <constraint firstAttribute="trailing" secondItem="SN7-K2-huF" secondAttribute="trailing" id="ulY-DX-BSv"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Tpf-q4-Niz" kind="unwind" identifier="UnwindToTop" unwindAction="unwindToTop:" id="Wag-49-G7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oja-BF-FOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tpf-q4-Niz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2560.5" y="319.5"/>
+            <point key="canvasLocation" x="2674.5" y="319.5"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="0NY-Xa-6X7">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="lar-hz-o5f" customClass="PlayerViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzT-pk-Gby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674.5" y="1114.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f61-t5-pxk">
@@ -150,7 +221,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AQ0-bc-LUa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -159,7 +229,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq8-9W-PCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="320"/>
+            <point key="canvasLocation" x="178.5" y="319.5"/>
         </scene>
     </scenes>
 </document>

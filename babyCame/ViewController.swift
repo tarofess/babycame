@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nib = UINib(nibName: "GameScreenShotCollectionViewCell", bundle: nil)
-        self.collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -31,9 +29,8 @@ class ViewController: UIViewController {
     // MARK: - CollectionView
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: GameScreenShotCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! GameScreenShotCollectionViewCell
-        
-        updateCollectionViewCell(cell, indexPath: indexPath)
+        let cell: GameScreenShotCollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! GameScreenShotCollectionViewCell
+        configureCell(cell, indexPath: indexPath)
         
         return cell
     }
@@ -43,23 +40,33 @@ class ViewController: UIViewController {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         performSegueWithIdentifier("RunGamePreViewController", sender: indexPath)
     }
     
-    func updateCollectionViewCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
+    func configureCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
         cell.gameScreenShotImageView.image = UIImage(named: String(indexPath.row))
-        cell.gameNumber = indexPath.row
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width: CGFloat = view.frame.width / 3
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
+    }
+    
+    // MARK: - Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = sender as! NSIndexPath
         
         let gamePreViewController = segue.destinationViewController as! GamePreViewController
-        gamePreViewController.gameImage = UIImage(named: String(indexPath.row))
+        gamePreViewController.indexPath = indexPath.row
+    }
+    
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
     }
 }
 

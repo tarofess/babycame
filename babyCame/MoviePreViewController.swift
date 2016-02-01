@@ -8,8 +8,14 @@
 
 import Foundation
 import UIKit
+import AVKit
+import AVFoundation
+import AssetsLibrary
+import MediaPlayer
 
 class MoviePreViewController: UIViewController {
+    
+    var videoPath: NSURL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +24,66 @@ class MoviePreViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func didTapBackButton(sender: AnyObject) {
+        showBackActionSheet()
+    }
+    
+    @IBAction func didTapActionButton(sender: AnyObject) {
+        showShareActionSheet()
+    }
+    
+    func showBackActionSheet() {
+        let actionSheet = UIAlertController(title: "ゲームを変えますか？", message: "もう一度撮影しますか？", preferredStyle: .ActionSheet)
+        let backToViewControllerAction = UIAlertAction(title: "ゲーム選択画面に戻る", style: .Default, handler: { (action: UIAlertAction) -> Void in
+            self.performSegueWithIdentifier("UnwindToTop", sender: self)
+        })
+        let backToGameViewControllerAction = UIAlertAction(title: "もう一度撮影する", style: .Default, handler: { (action: UIAlertAction) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+        
+        actionSheet.addAction(backToViewControllerAction)
+        actionSheet.addAction(backToGameViewControllerAction)
+        actionSheet.addAction(cancelAction)
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    func showShareActionSheet() {
+        let alertController = UIAlertController(title: "動画の保存", message: "カメラロールに保存しますか？", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "はい", style: .Default, handler: { (action: UIAlertAction) -> Void in
+            self.saveMovieToCameraRoll()
+        })
+        let cancelAction = UIAlertAction(title: "いいえ", style: .Cancel, handler: nil)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func saveMovieToCameraRoll() {
+        let assetsLib = ALAssetsLibrary()
+        assetsLib.writeVideoAtPathToSavedPhotosAlbum(self.videoPath, completionBlock: { (url: NSURL!, error: NSError!) -> Void in
+            self.showSavedVideoConfirmAlert()
+        })
+    }
+    
+    func showSavedVideoConfirmAlert() {
+        let alertController = UIAlertController(title: "保存完了", message: "動画をカメラロールに保存しました", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "RunPlayerViewController" {
+            let playerViewController = segue.destinationViewController as! PlayerViewController
+            playerViewController.videoPath = self.videoPath
+        }
     }
 }
