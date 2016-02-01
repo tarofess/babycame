@@ -15,17 +15,11 @@ import MediaPlayer
 
 class MoviePreViewController: UIViewController {
     
-    @IBOutlet var playerView: AVPlayerView!
-    var videoPlayer: AVPlayer!
     var videoPath: NSURL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        playMovie()
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,26 +32,6 @@ class MoviePreViewController: UIViewController {
     
     @IBAction func didTapActionButton(sender: AnyObject) {
         showShareActionSheet()
-    }
-    
-    func playMovie() {
-//        let avAsset = AVURLAsset(URL: self.videoPath, options: nil)
-//        let playerItem = AVPlayerItem(asset: avAsset)
-//        
-//        videoPlayer = AVPlayer(playerItem: playerItem)
-//        
-//        let layer = playerView.layer as! AVPlayerLayer
-//        layer.videoGravity = AVLayerVideoGravityResizeAspect
-//        layer.player = videoPlayer
-//        
-//        videoPlayer.play()
-        
-        let player = AVPlayer(URL: self.videoPath!)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.presentViewController(playerViewController, animated: true) {
-            playerViewController.player!.play()
-        }
     }
     
     func showBackActionSheet() {
@@ -104,5 +78,10 @@ class MoviePreViewController: UIViewController {
         alertController.addAction(okAction)
         
         presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let playerViewController = segue.destinationViewController as! PlayerViewController
+        playerViewController.videoPath = self.videoPath
     }
 }

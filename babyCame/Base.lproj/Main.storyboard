@@ -146,10 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3E-cB-1Tc" customClass="AVPlayerView" customModule="babyCame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6j-f6-0Vr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
@@ -167,12 +163,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <connections>
+                                    <segue destination="lar-hz-o5f" kind="embed" id="LHZ-Un-U5M"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="playerView" destination="J3E-cB-1Tc" id="phT-bo-Tuv"/>
                         <segue destination="Tpf-q4-Niz" kind="unwind" identifier="UnwindToTop" unwindAction="unwindToTop:" id="Wag-49-G7u"/>
                     </connections>
                 </viewController>
@@ -180,6 +181,16 @@
                 <exit id="Tpf-q4-Niz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2674.5" y="319.5"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="0NY-Xa-6X7">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="lar-hz-o5f" customClass="PlayerViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzT-pk-Gby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674.5" y="1114.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f61-t5-pxk">
