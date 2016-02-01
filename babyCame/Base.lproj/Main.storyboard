@@ -112,8 +112,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-Dh-tbv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-Dh-tbv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="SYG-n2-aW9"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="15秒" id="KCb-0H-dP4"/>
                                 </items>
@@ -123,6 +126,11 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mqs-Dh-tbv" secondAttribute="trailing" id="I9b-HN-r8Z"/>
+                            <constraint firstItem="Mqs-Dh-tbv" firstAttribute="leading" secondItem="xbJ-kR-k9o" secondAttribute="leading" id="zNE-e0-4Fw"/>
+                            <constraint firstItem="Mqs-Dh-tbv" firstAttribute="top" secondItem="xbJ-kR-k9o" secondAttribute="top" id="zdf-ee-NHA"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -146,8 +154,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6j-f6-0Vr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6j-f6-0Vr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="VRW-JR-F5h"/>
+                                </constraints>
                                 <items>
                                     <navigationItem id="cAc-Uq-IcE">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="9k3-Jl-9ac">
@@ -163,14 +174,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
-                                    <segue destination="lar-hz-o5f" kind="embed" id="LHZ-Un-U5M"/>
+                                    <segue destination="lar-hz-o5f" kind="embed" identifier="RunPlayerViewController" id="LHZ-Un-U5M"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="f6j-f6-0Vr" secondAttribute="trailing" id="9UE-DH-8S4"/>
+                            <constraint firstItem="f6j-f6-0Vr" firstAttribute="top" secondItem="gD8-AY-Cdd" secondAttribute="top" id="Pqb-3Q-FQ4"/>
+                            <constraint firstItem="M66-Rc-nPb" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" id="XfK-t5-MGa"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="leading" secondItem="gD8-AY-Cdd" secondAttribute="leading" id="kAX-xg-ORg"/>
+                            <constraint firstItem="f6j-f6-0Vr" firstAttribute="leading" secondItem="gD8-AY-Cdd" secondAttribute="leading" id="khL-W9-VT9"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="f6j-f6-0Vr" secondAttribute="bottom" id="mOt-mc-UEb"/>
+                            <constraint firstAttribute="trailing" secondItem="SN7-K2-huF" secondAttribute="trailing" id="ulY-DX-BSv"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

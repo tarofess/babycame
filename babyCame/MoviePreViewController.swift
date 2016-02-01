@@ -81,7 +81,9 @@ class MoviePreViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let playerViewController = segue.destinationViewController as! PlayerViewController
-        playerViewController.videoPath = self.videoPath
+        if segue.identifier == "RunPlayerViewController" {
+            let playerViewController = segue.destinationViewController as! PlayerViewController
+            playerViewController.videoPath = self.videoPath
+        }
     }
 }
