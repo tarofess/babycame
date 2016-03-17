@@ -15,8 +15,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nib = UINib(nibName: "GameScreenShotCollectionViewCell", bundle: nil)
-        self.collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        let backButton = UIBarButtonItem(title: "戻る", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,9 +30,8 @@ class ViewController: UIViewController {
     // MARK: - CollectionView
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: GameScreenShotCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! GameScreenShotCollectionViewCell
-        
-        updateCollectionViewCell(cell)
+        let cell: GameScreenShotCollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! GameScreenShotCollectionViewCell
+        configureCell(cell, indexPath: indexPath)
         
         return cell
     }
@@ -38,18 +41,33 @@ class ViewController: UIViewController {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20;
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        
-        let cell : GameScreenShotCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)! as! GameScreenShotCollectionViewCell
-        
-        print("didTap")
+        performSegueWithIdentifier("RunGamePreViewController", sender: indexPath)
     }
     
-    func updateCollectionViewCell(cell: GameScreenShotCollectionViewCell) {
-        cell.gameScreenShotImageView.image = UIImage(named: "sora")
+    func configureCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
+        cell.gameScreenShotImageView.image = UIImage(named: String(indexPath.row))
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width: CGFloat = view.frame.width / 3
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
+    }
+    
+    // MARK: - Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = sender as! NSIndexPath
+        
+        let gamePreViewController = segue.destinationViewController as! GamePreViewController
+        gamePreViewController.indexPath = indexPath.row
+    }
+    
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
     }
 }
 
