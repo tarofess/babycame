@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -41,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
@@ -50,12 +49,6 @@ class ViewController: UIViewController {
     
     func configureCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
         cell.gameScreenShotImageView.image = UIImage(named: String(indexPath.row))
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width: CGFloat = view.frame.width / 3
-        let height: CGFloat = width
-        return CGSize(width: width, height: height)
     }
     
     // MARK: - Segue

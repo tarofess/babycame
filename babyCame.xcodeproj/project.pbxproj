@@ -12,6 +12,7 @@
 		505C89451BEDB5E000F905A1 /* Game.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Game.xib */; };
 		505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89461BEDBB5200F905A1 /* GameCenter.swift */; };
 		505C89491BEDBFD800F905A1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89481BEDBFD800F905A1 /* GameView.swift */; };
+		50D3DA171C9E08B300FD33AE /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3DA161C9E08B300FD33AE /* CollectionViewModel.swift */; };
 		50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176F21BE3CA4A009CA822 /* AppDelegate.swift */; };
 		50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176F41BE3CA4A009CA822 /* ViewController.swift */; };
 		50E176F81BE3CA4A009CA822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E176F61BE3CA4A009CA822 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		505C89441BEDB5E000F905A1 /* Game.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Game.xib; sourceTree = "<group>"; };
 		505C89461BEDBB5200F905A1 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		505C89481BEDBFD800F905A1 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		50D3DA161C9E08B300FD33AE /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		50E176EF1BE3CA4A009CA822 /* babyCame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyCame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E176F21BE3CA4A009CA822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E176F41BE3CA4A009CA822 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				505C89461BEDBB5200F905A1 /* GameCenter.swift */,
+				50D3DA161C9E08B300FD33AE /* CollectionViewModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -189,7 +192,6 @@
 		EA93B24E1BF1B7CD003BE7D8 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				EA93B2551BF1B8CB003BE7D8 /* Bubble */,
 				EA93B2541BF1B8BA003BE7D8 /* Rebound */,
 				EA93B2531BF1B8AD003BE7D8 /* Particle */,
 				EA93B2521BF1B87C003BE7D8 /* Move */,
@@ -242,13 +244,6 @@
 			children = (
 			);
 			name = Rebound;
-			sourceTree = "<group>";
-		};
-		EA93B2551BF1B8CB003BE7D8 /* Bubble */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Bubble;
 			sourceTree = "<group>";
 		};
 		EAFBAC711BF33A1000816E40 /* Classes */ = {
@@ -400,6 +395,7 @@
 				50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */,
 				505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */,
 				EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */,
+				50D3DA171C9E08B300FD33AE /* CollectionViewModel.swift in Sources */,
 				505C89491BEDBFD800F905A1 /* GameView.swift in Sources */,
 				50E177241BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift in Sources */,
 				EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */,
@@ -556,6 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -574,6 +571,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
