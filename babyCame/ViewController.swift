@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let gamePreviewImageNameArray = ["Expansion", "Rotation", "Particle", "Move", "Bubble", "Sound"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
     }
     
     func configureCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
-        cell.gameScreenShotImageView.image = UIImage(named: String(indexPath.row))
+        cell.gameScreenShotImageView.image = UIImage(named: self.gamePreviewImageNameArray[indexPath.row])
     }
     
     // MARK: - Segue

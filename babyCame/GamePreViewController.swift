@@ -43,7 +43,52 @@ class GamePreViewController: UIViewController {
     
     func showGame() {
         let gameCenter = GameCenter(gameIdentifier: self.indexPath)
-        self.view.addSubview(gameCenter.getGameView()!)
+        let gameView = gameCenter.getGameView()
+        setAutoLayout(gameView!)
+        self.view.addSubview(gameView!)
+    }
+    
+    func setAutoLayout(gameView: UIView) {
+//        view.leadingAnchor.constraintEqualToAnchor(self.view.layoutMarginsGuide.leadingAnchor, constant: 0).active = true
+//        view.trailingAnchor.constraintEqualToAnchor(self.view.layoutMarginsGuide.trailingAnchor, constant: 0).active = true
+//        view.topAnchor.constraintEqualToAnchor(self.view.layoutMarginsGuide.topAnchor, constant: 0).active = true
+//        view.bottomAnchor.constraintEqualToAnchor(self.view.layoutMarginsGuide.bottomAnchor, constant: 0).active = true
+        
+        self.view.addConstraints([
+            
+            // self.veiwの上から0pxの位置に配置
+            NSLayoutConstraint(
+                item: gameView,
+                attribute: NSLayoutAttribute.Top,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: self.view,
+                attribute: NSLayoutAttribute.Top,
+                multiplier: 1.0,
+                constant: 0
+            ),
+            
+            // self.viewの横幅いっぱいにする
+            NSLayoutConstraint(
+                item: gameView,
+                attribute: NSLayoutAttribute.Width,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: self.view,
+                attribute: NSLayoutAttribute.Width,
+                multiplier: 1.0,
+                constant: 0
+            ),
+            
+            // self.viewのレイアウトに関わらず高さは64px
+            NSLayoutConstraint(
+                item: gameView,
+                attribute: NSLayoutAttribute.Height,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: nil,
+                attribute: NSLayoutAttribute.Height,
+                multiplier: 1.0,
+                constant: 64
+            )]
+        )
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

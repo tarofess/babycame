@@ -45,7 +45,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if !self.didTouchScreenOnce {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
             startRecording()
             self.didTouchScreenOnce = true
         }
@@ -66,7 +66,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     func updateTime() {
         if self.timeLeft > 1 {
-            self.timeLeft--
+            self.timeLeft -= 1
             self.navigationBar.topItem?.title = String(timeLeft) + "秒"
         } else {
             self.timer.invalidate()

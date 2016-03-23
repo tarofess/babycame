@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		505C89411BED9F9F00F905A1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89401BED9F9F00F905A1 /* GameViewController.swift */; };
 		505C89431BEDA6C500F905A1 /* MoviePreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89421BEDA6C500F905A1 /* MoviePreViewController.swift */; };
-		505C89451BEDB5E000F905A1 /* Game.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Game.xib */; };
+		505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Expansion.xib */; };
 		505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89461BEDBB5200F905A1 /* GameCenter.swift */; };
-		505C89491BEDBFD800F905A1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89481BEDBFD800F905A1 /* GameView.swift */; };
-		50D3DA171C9E08B300FD33AE /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3DA161C9E08B300FD33AE /* CollectionViewModel.swift */; };
+		505C89491BEDBFD800F905A1 /* Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89481BEDBFD800F905A1 /* Expansion.swift */; };
 		50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176F21BE3CA4A009CA822 /* AppDelegate.swift */; };
 		50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176F41BE3CA4A009CA822 /* ViewController.swift */; };
 		50E176F81BE3CA4A009CA822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E176F61BE3CA4A009CA822 /* Main.storyboard */; };
@@ -25,6 +24,16 @@
 		EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */; };
 		EA93B2581BF1CC70003BE7D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */; };
 		EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */; };
+		EAFEDC101CA25AEF00E3B7D2 /* Rotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */; };
+		EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */; };
+		EAFEDC141CA25B2D00E3B7D2 /* Particle.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */; };
+		EAFEDC161CA25B3A00E3B7D2 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC151CA25B3A00E3B7D2 /* Particle.swift */; };
+		EAFEDC181CA25B5400E3B7D2 /* Move.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC171CA25B5400E3B7D2 /* Move.xib */; };
+		EAFEDC1A1CA25B6500E3B7D2 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC191CA25B6500E3B7D2 /* Move.swift */; };
+		EAFEDC1C1CA25B7500E3B7D2 /* Bubble.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC1B1CA25B7500E3B7D2 /* Bubble.xib */; };
+		EAFEDC1E1CA25B8200E3B7D2 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC1D1CA25B8200E3B7D2 /* Bubble.swift */; };
+		EAFEDC201CA25B8E00E3B7D2 /* Sound.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC1F1CA25B8E00E3B7D2 /* Sound.xib */; };
+		EAFEDC221CA25B9A00E3B7D2 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC211CA25B9A00E3B7D2 /* Sound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +56,9 @@
 /* Begin PBXFileReference section */
 		505C89401BED9F9F00F905A1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		505C89421BEDA6C500F905A1 /* MoviePreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePreViewController.swift; sourceTree = "<group>"; };
-		505C89441BEDB5E000F905A1 /* Game.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Game.xib; sourceTree = "<group>"; };
+		505C89441BEDB5E000F905A1 /* Expansion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Expansion.xib; sourceTree = "<group>"; };
 		505C89461BEDBB5200F905A1 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
-		505C89481BEDBFD800F905A1 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		50D3DA161C9E08B300FD33AE /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		505C89481BEDBFD800F905A1 /* Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expansion.swift; sourceTree = "<group>"; };
 		50E176EF1BE3CA4A009CA822 /* babyCame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyCame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E176F21BE3CA4A009CA822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E176F41BE3CA4A009CA822 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +77,16 @@
 		EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Rotation.xib; sourceTree = "<group>"; };
+		EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Particle.xib; sourceTree = "<group>"; };
+		EAFEDC151CA25B3A00E3B7D2 /* Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		EAFEDC171CA25B5400E3B7D2 /* Move.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Move.xib; sourceTree = "<group>"; };
+		EAFEDC191CA25B6500E3B7D2 /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		EAFEDC1B1CA25B7500E3B7D2 /* Bubble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Bubble.xib; sourceTree = "<group>"; };
+		EAFEDC1D1CA25B8200E3B7D2 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		EAFEDC1F1CA25B8E00E3B7D2 /* Sound.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sound.xib; sourceTree = "<group>"; };
+		EAFEDC211CA25B9A00E3B7D2 /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				505C89461BEDBB5200F905A1 /* GameCenter.swift */,
-				50D3DA161C9E08B300FD33AE /* CollectionViewModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -192,12 +209,12 @@
 		EA93B24E1BF1B7CD003BE7D8 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				EA93B2541BF1B8BA003BE7D8 /* Rebound */,
+				EA93B24F1BF1B827003BE7D8 /* Expansion */,
+				EA93B2501BF1B85E003BE7D8 /* Rotation */,
 				EA93B2531BF1B8AD003BE7D8 /* Particle */,
 				EA93B2521BF1B87C003BE7D8 /* Move */,
+				EA93B2541BF1B8BA003BE7D8 /* Bubble */,
 				EA93B2511BF1B874003BE7D8 /* Sound */,
-				EA93B2501BF1B85E003BE7D8 /* Rotation */,
-				EA93B24F1BF1B827003BE7D8 /* Expansion */,
 			);
 			name = Games;
 			sourceTree = "<group>";
@@ -205,8 +222,8 @@
 		EA93B24F1BF1B827003BE7D8 /* Expansion */ = {
 			isa = PBXGroup;
 			children = (
-				505C89441BEDB5E000F905A1 /* Game.xib */,
-				505C89481BEDBFD800F905A1 /* GameView.swift */,
+				505C89441BEDB5E000F905A1 /* Expansion.xib */,
+				505C89481BEDBFD800F905A1 /* Expansion.swift */,
 			);
 			name = Expansion;
 			sourceTree = "<group>";
@@ -214,6 +231,8 @@
 		EA93B2501BF1B85E003BE7D8 /* Rotation */ = {
 			isa = PBXGroup;
 			children = (
+				EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */,
+				EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */,
 			);
 			name = Rotation;
 			sourceTree = "<group>";
@@ -221,6 +240,8 @@
 		EA93B2511BF1B874003BE7D8 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				EAFEDC1F1CA25B8E00E3B7D2 /* Sound.xib */,
+				EAFEDC211CA25B9A00E3B7D2 /* Sound.swift */,
 			);
 			name = Sound;
 			sourceTree = "<group>";
@@ -228,6 +249,8 @@
 		EA93B2521BF1B87C003BE7D8 /* Move */ = {
 			isa = PBXGroup;
 			children = (
+				EAFEDC171CA25B5400E3B7D2 /* Move.xib */,
+				EAFEDC191CA25B6500E3B7D2 /* Move.swift */,
 			);
 			name = Move;
 			sourceTree = "<group>";
@@ -235,15 +258,19 @@
 		EA93B2531BF1B8AD003BE7D8 /* Particle */ = {
 			isa = PBXGroup;
 			children = (
+				EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */,
+				EAFEDC151CA25B3A00E3B7D2 /* Particle.swift */,
 			);
 			name = Particle;
 			sourceTree = "<group>";
 		};
-		EA93B2541BF1B8BA003BE7D8 /* Rebound */ = {
+		EA93B2541BF1B8BA003BE7D8 /* Bubble */ = {
 			isa = PBXGroup;
 			children = (
+				EAFEDC1B1CA25B7500E3B7D2 /* Bubble.xib */,
+				EAFEDC1D1CA25B8200E3B7D2 /* Bubble.swift */,
 			);
-			name = Rebound;
+			name = Bubble;
 			sourceTree = "<group>";
 		};
 		EAFBAC711BF33A1000816E40 /* Classes */ = {
@@ -360,10 +387,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				505C89451BEDB5E000F905A1 /* Game.xib in Resources */,
+				505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */,
+				EAFEDC181CA25B5400E3B7D2 /* Move.xib in Resources */,
+				EAFEDC101CA25AEF00E3B7D2 /* Rotation.xib in Resources */,
 				50E176FD1BE3CA4A009CA822 /* LaunchScreen.storyboard in Resources */,
 				50E176FA1BE3CA4A009CA822 /* Assets.xcassets in Resources */,
 				50E176F81BE3CA4A009CA822 /* Main.storyboard in Resources */,
+				EAFEDC141CA25B2D00E3B7D2 /* Particle.xib in Resources */,
+				EAFEDC1C1CA25B7500E3B7D2 /* Bubble.xib in Resources */,
+				EAFEDC201CA25B8E00E3B7D2 /* Sound.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,14 +421,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				505C89411BED9F9F00F905A1 /* GameViewController.swift in Sources */,
+				EAFEDC161CA25B3A00E3B7D2 /* Particle.swift in Sources */,
 				505C89431BEDA6C500F905A1 /* MoviePreViewController.swift in Sources */,
+				EAFEDC1A1CA25B6500E3B7D2 /* Move.swift in Sources */,
 				50E1772A1BE4A8D2009CA822 /* GamePreViewController.swift in Sources */,
 				50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */,
+				EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */,
 				50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */,
 				505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */,
 				EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */,
-				50D3DA171C9E08B300FD33AE /* CollectionViewModel.swift in Sources */,
-				505C89491BEDBFD800F905A1 /* GameView.swift in Sources */,
+				EAFEDC221CA25B9A00E3B7D2 /* Sound.swift in Sources */,
+				505C89491BEDBFD800F905A1 /* Expansion.swift in Sources */,
+				EAFEDC1E1CA25B8200E3B7D2 /* Bubble.swift in Sources */,
 				50E177241BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift in Sources */,
 				EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */,
 			);
