@@ -31,7 +31,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.timeLeft = 5
+        self.timeLeft = 15
         self.didTouchScreenOnce = false
         self.navigationBar.topItem?.title = String(timeLeft) + "秒"
         
@@ -53,7 +53,9 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     func showGame() {
         let gameCenter = GameCenter(gameIdentifier: self.indexPath)
-        self.view.addSubview(gameCenter.getGameView()!)
+        let gameView = gameCenter.getGameView()!
+        gameView.frame = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height)
+        self.view.addSubview(gameView)
     }
     
     func startRecording() {
