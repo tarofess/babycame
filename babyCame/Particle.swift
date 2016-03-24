@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import SpriteKit
 
 class Particle: UIView {
-
-   
-
+    
+    override func awakeFromNib() {
+        let view = self as! SKView
+        let scene = ParticleScene()
+        scene.size = self.frame.size
+        view.presentScene(scene)
+    }
+    
 }
