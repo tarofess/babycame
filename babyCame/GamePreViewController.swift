@@ -44,7 +44,7 @@ class GamePreViewController: UIViewController {
     func showGame() {
         let gameCenter = GameCenter(gameIdentifier: self.indexPath)
         let gameView = gameCenter.getGameView()!
-        gameView.frame = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height)
+        gameView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
         self.view.addSubview(gameView)
     }
     
