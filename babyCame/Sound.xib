@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -13,25 +13,49 @@
                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sound" translatesAutoresizingMaskIntoConstraints="NO" id="F3N-Kw-PB0">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" drum" translatesAutoresizingMaskIntoConstraints="NO" id="dJk-0s-KrE">
-                    <rect key="frame" x="66" y="260" width="100" height="100"/>
+                <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" drum" translatesAutoresizingMaskIntoConstraints="NO" id="dJk-0s-KrE">
+                    <rect key="frame" x="66" y="284" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="HB2-W0-bl5"/>
+                        <constraint firstAttribute="width" constant="100" id="zsO-oI-EO9"/>
+                    </constraints>
                 </imageView>
-                <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" piano" translatesAutoresizingMaskIntoConstraints="NO" id="6mR-To-tCh">
+                <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" piano" translatesAutoresizingMaskIntoConstraints="NO" id="6mR-To-tCh">
                     <rect key="frame" x="212" y="355" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="9NK-jQ-4sP"/>
+                        <constraint firstAttribute="width" constant="80" id="NpW-lA-NyL"/>
+                    </constraints>
                 </imageView>
-                <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="guitar" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-tQ-ztN">
+                <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guitar" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-tQ-ztN">
                     <rect key="frame" x="86" y="429" width="60" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="24A-9A-cbW"/>
+                        <constraint firstAttribute="height" constant="120" id="rCj-UJ-yjS"/>
+                    </constraints>
                 </imageView>
-                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bass" translatesAutoresizingMaskIntoConstraints="NO" id="GV6-Hp-QMP">
-                    <rect key="frame" x="220" y="129" width="80" height="80"/>
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bass" translatesAutoresizingMaskIntoConstraints="NO" id="GV6-Hp-QMP">
+                    <rect key="frame" x="212" y="168" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Byy-Pl-Z73"/>
+                        <constraint firstAttribute="height" constant="80" id="pA3-mm-5gN"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="vgY-tQ-ztN" firstAttribute="centerX" secondItem="dJk-0s-KrE" secondAttribute="centerX" id="0gv-3m-boF"/>
                 <constraint firstItem="F3N-Kw-PB0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7eZ-hS-5Q0"/>
                 <constraint firstItem="F3N-Kw-PB0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8Tz-13-crw"/>
+                <constraint firstItem="6mR-To-tCh" firstAttribute="top" secondItem="GV6-Hp-QMP" secondAttribute="bottom" constant="107" id="8zq-3l-exL"/>
+                <constraint firstItem="6mR-To-tCh" firstAttribute="top" secondItem="dJk-0s-KrE" secondAttribute="bottom" constant="-29" id="HMo-Z1-9ZI"/>
+                <constraint firstItem="GV6-Hp-QMP" firstAttribute="centerX" secondItem="6mR-To-tCh" secondAttribute="centerX" id="Rc4-P3-h9G"/>
+                <constraint firstItem="6mR-To-tCh" firstAttribute="leading" secondItem="F3N-Kw-PB0" secondAttribute="trailing" constant="-163" id="WpP-xd-Mad"/>
+                <constraint firstItem="F3N-Kw-PB0" firstAttribute="leading" secondItem="dJk-0s-KrE" secondAttribute="trailing" constant="-166" id="eR9-Ha-ACk"/>
+                <constraint firstItem="vgY-tQ-ztN" firstAttribute="top" secondItem="dJk-0s-KrE" secondAttribute="bottom" constant="45" id="izN-4i-B8P"/>
                 <constraint firstAttribute="bottom" secondItem="F3N-Kw-PB0" secondAttribute="bottom" id="lD1-hJ-Hdm"/>
                 <constraint firstAttribute="trailing" secondItem="F3N-Kw-PB0" secondAttribute="trailing" id="rR2-yh-Tis"/>
+                <constraint firstItem="dJk-0s-KrE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="x2j-pE-3hP"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
