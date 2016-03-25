@@ -23,35 +23,69 @@ class Move: UIView, Playable {
         super.touchesBegan(touches, withEvent: event)
         
         var imageView = UIImageView()
+        var initialPosition = CGPointMake(0, 0)
         
         for touch: UITouch in touches {
             switch touch.view!.tag {
             case 1:
                 imageView = carImageView
+                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
+                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                
+                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                    imageView.center = CGPoint(x: initialPosition.x - 400, y: initialPosition.y)
+                    }, completion: {(Bool) -> Void in
+                        imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
+                })
                 playSound("car", audioPlayer: &self.audioPlayer)
             case 2:
                 imageView = bicycleImageView
+                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
+                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                
+                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                    imageView.center = CGPoint(x: initialPosition.x + 400, y: initialPosition.y)
+                    }, completion: {(Bool) -> Void in
+                        imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
+                })
                 playSound("bicycle", audioPlayer: &self.audioPlayer)
             case 3:
                 imageView = sirenImageView
+                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
+                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                
+                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                    imageView.center = CGPoint(x: initialPosition.x - 400, y: initialPosition.y)
+                    }, completion: {(Bool) -> Void in
+                        imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
+                })
                 playSound("siren", audioPlayer: &self.audioPlayer)
             case 4:
                 imageView = patrolImageView
+                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
+                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                
+                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                    imageView.center = CGPoint(x: initialPosition.x - 400, y: initialPosition.y)
+                    }, completion: {(Bool) -> Void in
+                        imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
+                })
                 playSound("patrol", audioPlayer: &self.audioPlayer)
             case 5:
                 imageView = bikeImageView
+                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
+                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                
+                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                    imageView.center = CGPoint(x: initialPosition.x + 400, y: initialPosition.y)
+                    }, completion: {(Bool) -> Void in
+                        imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
+                })
                 playSound("bike", audioPlayer: &self.audioPlayer)
             default:
                 break
             }
         }
-        imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
-        
-        UIView.animateWithDuration(NSTimeInterval(CGFloat(3.0)), animations: {() -> Void in
-                                    imageView.center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-            }, completion: {(Bool) -> Void in
-        })
     }
-
 
 }

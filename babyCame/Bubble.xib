@@ -16,6 +16,9 @@
                 <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bub" translatesAutoresizingMaskIntoConstraints="NO" id="fUO-Av-SIo">
                     <rect key="frame" x="67" y="343" width="80" height="80"/>
                 </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrX-9E-wKz">
+                    <rect key="frame" x="135" y="478" width="80" height="80"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

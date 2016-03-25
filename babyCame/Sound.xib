@@ -34,12 +34,6 @@
                 <constraint firstAttribute="trailing" secondItem="F3N-Kw-PB0" secondAttribute="trailing" id="rR2-yh-Tis"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <connections>
-                <outlet property="bassImageView" destination="vgY-tQ-ztN" id="zCK-L1-BVk"/>
-                <outlet property="drumImageView" destination="dJk-0s-KrE" id="8Gl-AC-8V7"/>
-                <outlet property="guitarImageView" destination="GV6-Hp-QMP" id="Fez-b3-9Sd"/>
-                <outlet property="pianoImageView" destination="6mR-To-tCh" id="Cm7-vC-m1q"/>
-            </connections>
         </view>
     </objects>
     <resources>
