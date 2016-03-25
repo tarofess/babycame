@@ -8,16 +8,56 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
-class Expansion: UIView {
-    @IBOutlet weak var imageView: UIImageView!
+class Expansion: UIView, Playable {
     
-    @IBAction func didTapButton(sender: AnyObject) {
-        UIView.animateWithDuration(2.0, delay: 0.0, options: .CurveEaseOut, animations: {
-            self.imageView.frame = CGRectMake(0, 0,
-                self.imageView.frame.width * 1.5,
-                self.imageView.frame.height * 1.5 )
-            self.imageView.center = CGPointMake(self.center.x, self.center.y)
-        }, completion: nil)
+    @IBOutlet weak var catImageView: UIImageView!
+    @IBOutlet weak var goatImageView: UIImageView!
+    @IBOutlet weak var dogImageView: UIImageView!
+    @IBOutlet weak var elephantImageView: UIImageView!
+    @IBOutlet weak var chikenImageView: UIImageView!
+    
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        
+        var imageView = UIImageView()
+        
+        for touch: UITouch in touches {
+            switch touch.view!.tag {
+            case 1:
+                imageView = catImageView
+                playSound("cat", audioPlayer: &self.audioPlayer)
+            case 2:
+                imageView = goatImageView
+                playSound("goat", audioPlayer: &self.audioPlayer)
+            case 3:
+                imageView = dogImageView
+                playSound("dog", audioPlayer: &self.audioPlayer)
+            case 4:
+                imageView = elephantImageView
+                playSound("elephant", audioPlayer: &self.audioPlayer)
+            case 5:
+                imageView = chikenImageView
+                playSound("chiken", audioPlayer: &self.audioPlayer)
+            default:
+                break
+            }
+        }
+        imageView.transform = CGAffineTransformMakeScale(1, 1)
+        
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+                                    imageView.transform = CGAffineTransformMakeScale(2.0, 2.0)})
+        { (Bool) -> Void in
+            UIView.animateWithDuration(1.0,
+                animations: { () -> Void in
+                    imageView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                })
+            { (Bool) -> Void in
+                imageView.transform = CGAffineTransformMakeScale(1, 1)
+            }
+        }
     }
 }

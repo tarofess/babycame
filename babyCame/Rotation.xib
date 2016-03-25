@@ -6,12 +6,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Oes-jT-sbA">
+        <view contentMode="scaleToFill" id="Oes-jT-sbA" customClass="Rotation" customModule="babyCame" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rotation" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-rd-GyA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star1" translatesAutoresizingMaskIntoConstraints="NO" id="o27-Vn-pH6">
+                    <rect key="frame" x="25" y="318" width="80" height="80"/>
+                </imageView>
+                <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star2" translatesAutoresizingMaskIntoConstraints="NO" id="TH2-6U-OUU">
+                    <rect key="frame" x="246" y="342" width="80" height="80"/>
+                </imageView>
+                <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star2" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-2Y-OPf">
+                    <rect key="frame" x="165" y="507" width="80" height="80"/>
+                </imageView>
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moon" translatesAutoresizingMaskIntoConstraints="NO" id="6Ee-wA-FhC">
+                    <rect key="frame" x="175" y="105" width="120" height="120"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -22,10 +34,19 @@
                 <constraint firstItem="aQQ-rd-GyA" firstAttribute="leading" secondItem="Oes-jT-sbA" secondAttribute="leading" id="mrq-26-f6L"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outlet property="moonImageView" destination="6Ee-wA-FhC" id="9XH-wf-0j1"/>
+                <outlet property="redStarImageView" destination="o27-Vn-pH6" id="jll-5t-Ekc"/>
+                <outlet property="yellowStarImageView" destination="TH2-6U-OUU" id="qBb-gF-xrl"/>
+                <outlet property="yellowStarImageView2" destination="mjz-2Y-OPf" id="bpG-Qq-GcC"/>
+            </connections>
             <point key="canvasLocation" x="513.5" y="426.5"/>
         </view>
     </objects>
     <resources>
-        <image name="Rotation" width="1191" height="842"/>
+        <image name="Rotation" width="595" height="421"/>
+        <image name="moon" width="346" height="346"/>
+        <image name="star1" width="1592" height="1514"/>
+        <image name="star2" width="1592" height="1514"/>
     </resources>
 </document>

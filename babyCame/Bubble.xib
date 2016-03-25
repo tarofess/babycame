@@ -6,12 +6,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Bubble" customModule="babyCame" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bubble" translatesAutoresizingMaskIntoConstraints="NO" id="Yee-wT-bSu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bub" translatesAutoresizingMaskIntoConstraints="NO" id="fUO-Av-SIo">
+                    <rect key="frame" x="67" y="343" width="80" height="80"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -22,9 +25,13 @@
                 <constraint firstItem="Yee-wT-bSu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gmL-Sk-uPB"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outlet property="bubbleImageView" destination="fUO-Av-SIo" id="crU-zT-N4i"/>
+            </connections>
         </view>
     </objects>
     <resources>
-        <image name="Bubble" width="1300" height="800"/>
+        <image name="Bubble" width="650" height="400"/>
+        <image name="bub" width="593" height="593"/>
     </resources>
 </document>

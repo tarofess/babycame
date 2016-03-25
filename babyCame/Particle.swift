@@ -12,10 +12,14 @@ import SpriteKit
 class Particle: UIView {
     
     override func awakeFromNib() {
-        let view = self as! SKView
+        let skView = SKView(frame: self.frame)
         let scene = ParticleScene()
         scene.size = self.frame.size
-        view.presentScene(scene)
+        scene.backgroundColor = UIColor.clearColor()
+        skView.presentScene(scene)
+        skView.allowsTransparency = true
+        
+        addSubview(skView)
     }
     
 }

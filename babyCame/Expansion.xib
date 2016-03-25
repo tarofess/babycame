@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -13,13 +13,21 @@
                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Expansion" translatesAutoresizingMaskIntoConstraints="NO" id="dew-8O-qtA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgq-yO-5sN">
-                    <rect key="frame" x="164" y="418" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="didTapButton:" destination="ruh-HZ-wN1" eventType="touchUpInside" id="Zmb-qe-moQ"/>
-                    </connections>
-                </button>
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="2gE-ka-xUk">
+                    <rect key="frame" x="36" y="147" width="80" height="80"/>
+                </imageView>
+                <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goat" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-3D-VAP">
+                    <rect key="frame" x="234" y="147" width="80" height="80"/>
+                </imageView>
+                <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="elephant" translatesAutoresizingMaskIntoConstraints="NO" id="Ak8-bC-V4B">
+                    <rect key="frame" x="57" y="479" width="80" height="80"/>
+                </imageView>
+                <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="lNd-UA-Lm6">
+                    <rect key="frame" x="147" y="302" width="80" height="80"/>
+                </imageView>
+                <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="3Ck-0m-6Hz">
+                    <rect key="frame" x="249" y="489" width="80" height="80"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -30,12 +38,21 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
-                <outlet property="imageView" destination="dew-8O-qtA" id="km5-UQ-BYw"/>
+                <outlet property="catImageView" destination="2gE-ka-xUk" id="94P-o9-eTZ"/>
+                <outlet property="chikenImageView" destination="3Ck-0m-6Hz" id="BJg-TP-RkD"/>
+                <outlet property="dogImageView" destination="lNd-UA-Lm6" id="cjb-Or-ao5"/>
+                <outlet property="elephantImageView" destination="Ak8-bC-V4B" id="sdi-N9-xm5"/>
+                <outlet property="goatImageView" destination="9tf-3D-VAP" id="PO8-9S-7Fr"/>
             </connections>
             <point key="canvasLocation" x="428.5" y="315.5"/>
         </view>
     </objects>
     <resources>
         <image name="Expansion" width="650" height="400"/>
+        <image name="cat" width="225" height="342"/>
+        <image name="chicken" width="800" height="600"/>
+        <image name="dog" width="700" height="600"/>
+        <image name="elephant" width="616" height="474"/>
+        <image name="goat" width="651" height="569"/>
     </resources>
 </document>
