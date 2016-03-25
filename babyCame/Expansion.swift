@@ -23,8 +23,6 @@ class Expansion: UIView, Playable {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         
-        print("tapped")
-        
         var imageView = UIImageView()
         
         for touch: UITouch in touches {
@@ -43,7 +41,7 @@ class Expansion: UIView, Playable {
                 playSound("elephant", audioPlayer: &self.audioPlayer)
             case 5:
                 imageView = chikenImageView
-                playSound("chiken", audioPlayer: &self.audioPlayer)
+                playSound("chicken", audioPlayer: &self.audioPlayer)
             default:
                 break
             }
@@ -52,7 +50,7 @@ class Expansion: UIView, Playable {
         
         UIView.animateWithDuration(1.0, animations: { () -> Void in
                                     imageView.transform = CGAffineTransformMakeScale(2.0, 2.0)
-                                    imageView.userInteractionEnabled = false })
+                                     })
         { (Bool) -> Void in
             UIView.animateWithDuration(1.0,
                 animations: { () -> Void in
@@ -60,7 +58,7 @@ class Expansion: UIView, Playable {
                 })
             { (Bool) -> Void in
                 imageView.transform = CGAffineTransformMakeScale(1, 1)
-                imageView.userInteractionEnabled = true
+                
             }
         }
     }

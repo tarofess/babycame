@@ -23,13 +23,13 @@ class Sound: UIView, Playable {
         for touch: UITouch in touches {
             switch touch.view!.tag {
             case 1:
-                playSound(guitarArray[Int(arc4random_uniform(2))], audioPlayer: &self.audioPlayer)
+                playSound(guitarArray[Int(arc4random_uniform(3))], audioPlayer: &self.audioPlayer)
             case 2:
-                playSound(drumArray[Int(arc4random_uniform(2))], audioPlayer: &self.audioPlayer)
+                playSound(drumArray[Int(arc4random_uniform(3))], audioPlayer: &self.audioPlayer)
             case 3:
-                playSound(pianoArray[Int(arc4random_uniform(2))], audioPlayer: &self.audioPlayer)
+                playSound(pianoArray[Int(arc4random_uniform(3))], audioPlayer: &self.audioPlayer)
             case 4:
-                playSound(bassArray[Int(arc4random_uniform(2))], audioPlayer: &self.audioPlayer)
+                playSound(bassArray[Int(arc4random_uniform(3))], audioPlayer: &self.audioPlayer)
             default:
                 break
             }

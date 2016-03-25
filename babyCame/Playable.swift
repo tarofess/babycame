@@ -20,7 +20,7 @@ extension Playable {
             audioPlayer = try AVAudioPlayer(contentsOfURL:coinSound)
             audioPlayer.prepareToPlay()
             audioPlayer.play()
-        }catch {
+        } catch {
             print("Error getting the audio file")
         }
     }
