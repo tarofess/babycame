@@ -61,7 +61,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     func startRecording() {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0] as String
-        let filePath : String? = "\(documentsDirectory)/baby.mp4"
+        let filePath : String? = "\(documentsDirectory)/baby.mov"
         let fileURL : NSURL = NSURL(fileURLWithPath: filePath!)
         self.fileOutput.startRecordingToOutputFileURL(fileURL, recordingDelegate: self)
     }
