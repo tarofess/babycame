@@ -12,6 +12,11 @@
 		505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Expansion.xib */; };
 		505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89461BEDBB5200F905A1 /* GameCenter.swift */; };
 		505C89491BEDBFD800F905A1 /* Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89481BEDBFD800F905A1 /* Expansion.swift */; };
+		50DF931D1CA5807300DE7CBE /* bike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931C1CA5807300DE7CBE /* bike.mp3 */; };
+		50DF93211CA5821000DE7CBE /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931E1CA5821000DE7CBE /* car.mp3 */; };
+		50DF93221CA5821000DE7CBE /* patrol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931F1CA5821000DE7CBE /* patrol.mp3 */; };
+		50DF93231CA5821000DE7CBE /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF93201CA5821000DE7CBE /* siren.mp3 */; };
+		50DF93251CA5822D00DE7CBE /* bicycle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF93241CA5822D00DE7CBE /* bicycle.mp3 */; };
 		50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176F21BE3CA4A009CA822 /* AppDelegate.swift */; };
 		50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E176F41BE3CA4A009CA822 /* ViewController.swift */; };
 		50E176F81BE3CA4A009CA822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E176F61BE3CA4A009CA822 /* Main.storyboard */; };
@@ -20,6 +25,9 @@
 		50E177131BE3CA4A009CA822 /* babyCameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E177121BE3CA4A009CA822 /* babyCameUITests.swift */; };
 		50E177241BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E177231BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift */; };
 		50E1772A1BE4A8D2009CA822 /* GamePreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E177291BE4A8D2009CA822 /* GamePreViewController.swift */; };
+		50F7F0E41CA49BC40022F0CE /* IPParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E21CA49BC40022F0CE /* IPParticle.sks */; };
+		50F7F0E51CA49BC40022F0CE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E31CA49BC40022F0CE /* spark.png */; };
+		50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */; };
 		EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */; };
 		EA82BF161CA3B95A001C7799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */; };
 		EA82BF1A1CA3BBE5001C7799 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF191CA3BBE5001C7799 /* family.png */; };
@@ -30,11 +38,6 @@
 		EA82BF281CA3C126001C7799 /* dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF231CA3C126001C7799 /* dog.mp3 */; };
 		EA82BF291CA3C126001C7799 /* elephant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF241CA3C126001C7799 /* elephant.mp3 */; };
 		EA82BF2A1CA3C126001C7799 /* goat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF251CA3C126001C7799 /* goat.mp3 */; };
-		EA82BF301CA3C199001C7799 /* bicycle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF2B1CA3C199001C7799 /* bicycle.mp3 */; };
-		EA82BF311CA3C199001C7799 /* bike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF2C1CA3C199001C7799 /* bike.mp3 */; };
-		EA82BF321CA3C199001C7799 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF2D1CA3C199001C7799 /* car.mp3 */; };
-		EA82BF331CA3C199001C7799 /* patrol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF2E1CA3C199001C7799 /* patrol.mp3 */; };
-		EA82BF341CA3C199001C7799 /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF2F1CA3C199001C7799 /* siren.mp3 */; };
 		EA82BF411CA3C1FB001C7799 /* bass1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF351CA3C1FB001C7799 /* bass1.mp3 */; };
 		EA82BF421CA3C1FB001C7799 /* bass2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF361CA3C1FB001C7799 /* bass2.mp3 */; };
 		EA82BF431CA3C1FB001C7799 /* bass3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF371CA3C1FB001C7799 /* bass3.mp3 */; };
@@ -49,6 +52,7 @@
 		EA82BF4C1CA3C1FB001C7799 /* piano3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF401CA3C1FB001C7799 /* piano3.mp3 */; };
 		EA93B2581BF1CC70003BE7D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */; };
 		EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */; };
+		EAC5F0691CA517260044B14E /* Playable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5F0681CA517250044B14E /* Playable.swift */; };
 		EAFEDC101CA25AEF00E3B7D2 /* Rotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */; };
 		EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */; };
 		EAFEDC141CA25B2D00E3B7D2 /* Particle.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */; };
@@ -84,6 +88,11 @@
 		505C89441BEDB5E000F905A1 /* Expansion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Expansion.xib; sourceTree = "<group>"; };
 		505C89461BEDBB5200F905A1 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		505C89481BEDBFD800F905A1 /* Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expansion.swift; sourceTree = "<group>"; };
+		50DF931C1CA5807300DE7CBE /* bike.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bike.mp3; sourceTree = "<group>"; };
+		50DF931E1CA5821000DE7CBE /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
+		50DF931F1CA5821000DE7CBE /* patrol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = patrol.mp3; sourceTree = "<group>"; };
+		50DF93201CA5821000DE7CBE /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
+		50DF93241CA5822D00DE7CBE /* bicycle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bicycle.mp3; sourceTree = "<group>"; };
 		50E176EF1BE3CA4A009CA822 /* babyCame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyCame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E176F21BE3CA4A009CA822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E176F41BE3CA4A009CA822 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +107,9 @@
 		50E177141BE3CA4A009CA822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E177231BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenShotCollectionViewCell.swift; sourceTree = "<group>"; };
 		50E177291BE4A8D2009CA822 /* GamePreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePreViewController.swift; sourceTree = "<group>"; };
+		50F7F0E21CA49BC40022F0CE /* IPParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = IPParticle.sks; sourceTree = "<group>"; };
+		50F7F0E31CA49BC40022F0CE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EA82BF151CA3B95A001C7799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA82BF191CA3BBE5001C7799 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
@@ -108,11 +120,6 @@
 		EA82BF231CA3C126001C7799 /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dog.mp3; sourceTree = "<group>"; };
 		EA82BF241CA3C126001C7799 /* elephant.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elephant.mp3; sourceTree = "<group>"; };
 		EA82BF251CA3C126001C7799 /* goat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goat.mp3; sourceTree = "<group>"; };
-		EA82BF2B1CA3C199001C7799 /* bicycle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bicycle.mp3; sourceTree = "<group>"; };
-		EA82BF2C1CA3C199001C7799 /* bike.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bike.mp3; sourceTree = "<group>"; };
-		EA82BF2D1CA3C199001C7799 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
-		EA82BF2E1CA3C199001C7799 /* patrol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = patrol.mp3; sourceTree = "<group>"; };
-		EA82BF2F1CA3C199001C7799 /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
 		EA82BF351CA3C1FB001C7799 /* bass1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass1.mp3; sourceTree = "<group>"; };
 		EA82BF361CA3C1FB001C7799 /* bass2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass2.mp3; sourceTree = "<group>"; };
 		EA82BF371CA3C1FB001C7799 /* bass3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass3.mp3; sourceTree = "<group>"; };
@@ -127,6 +134,7 @@
 		EA82BF401CA3C1FB001C7799 /* piano3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano3.mp3; sourceTree = "<group>"; };
 		EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		EAC5F0681CA517250044B14E /* Playable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playable.swift; sourceTree = "<group>"; };
 		EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Rotation.xib; sourceTree = "<group>"; };
 		EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Particle.xib; sourceTree = "<group>"; };
@@ -231,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				505C89461BEDBB5200F905A1 /* GameCenter.swift */,
+				EAC5F0681CA517250044B14E /* Playable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -317,11 +326,11 @@
 		EA93B2521BF1B87C003BE7D8 /* Move */ = {
 			isa = PBXGroup;
 			children = (
-				EA82BF2B1CA3C199001C7799 /* bicycle.mp3 */,
-				EA82BF2C1CA3C199001C7799 /* bike.mp3 */,
-				EA82BF2D1CA3C199001C7799 /* car.mp3 */,
-				EA82BF2E1CA3C199001C7799 /* patrol.mp3 */,
-				EA82BF2F1CA3C199001C7799 /* siren.mp3 */,
+				50DF931E1CA5821000DE7CBE /* car.mp3 */,
+				50DF93241CA5822D00DE7CBE /* bicycle.mp3 */,
+				50DF931F1CA5821000DE7CBE /* patrol.mp3 */,
+				50DF93201CA5821000DE7CBE /* siren.mp3 */,
+				50DF931C1CA5807300DE7CBE /* bike.mp3 */,
 				EAFEDC171CA25B5400E3B7D2 /* Move.xib */,
 				EAFEDC191CA25B6500E3B7D2 /* Move.swift */,
 			);
@@ -333,6 +342,9 @@
 			children = (
 				EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */,
 				EAFEDC151CA25B3A00E3B7D2 /* Particle.swift */,
+				50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */,
+				50F7F0E21CA49BC40022F0CE /* IPParticle.sks */,
+				50F7F0E31CA49BC40022F0CE /* spark.png */,
 				EA82BF1F1CA3C0A1001C7799 /* fireworks.mp3 */,
 			);
 			name = Particle;
@@ -463,39 +475,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA82BF161CA3B95A001C7799 /* LaunchScreen.storyboard in Resources */,
+				50F7F0E51CA49BC40022F0CE /* spark.png in Resources */,
 				EA82BF471CA3C1FB001C7799 /* guitar1.mp3 in Resources */,
 				EA82BF1E1CA3C010001C7799 /* bubble.mp3 in Resources */,
 				EA82BF421CA3C1FB001C7799 /* bass2.mp3 in Resources */,
 				EA82BF461CA3C1FB001C7799 /* tom.mp3 in Resources */,
 				EA82BF451CA3C1FB001C7799 /* snare.mp3 in Resources */,
 				505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */,
+				50DF93251CA5822D00DE7CBE /* bicycle.mp3 in Resources */,
 				EA82BF4A1CA3C1FB001C7799 /* piano1.mp3 in Resources */,
+				50DF93211CA5821000DE7CBE /* car.mp3 in Resources */,
 				EA82BF201CA3C0A1001C7799 /* fireworks.mp3 in Resources */,
 				EA82BF1A1CA3BBE5001C7799 /* family.png in Resources */,
 				EA82BF4C1CA3C1FB001C7799 /* piano3.mp3 in Resources */,
 				EA82BF2A1CA3C126001C7799 /* goat.mp3 in Resources */,
+				50DF93231CA5821000DE7CBE /* siren.mp3 in Resources */,
 				EA82BF491CA3C1FB001C7799 /* guitar3.mp3 in Resources */,
 				EAFEDC181CA25B5400E3B7D2 /* Move.xib in Resources */,
-				EA82BF321CA3C199001C7799 /* car.mp3 in Resources */,
 				EA82BF281CA3C126001C7799 /* dog.mp3 in Resources */,
-				EA82BF301CA3C199001C7799 /* bicycle.mp3 in Resources */,
 				EAFEDC101CA25AEF00E3B7D2 /* Rotation.xib in Resources */,
 				EA82BF481CA3C1FB001C7799 /* guitar2.mp3 in Resources */,
 				EA82BF441CA3C1FB001C7799 /* cymbal.mp3 in Resources */,
 				EA82BF4B1CA3C1FB001C7799 /* piano2.mp3 in Resources */,
 				EA82BF431CA3C1FB001C7799 /* bass3.mp3 in Resources */,
 				EA82BF261CA3C126001C7799 /* cat.mp3 in Resources */,
+				50F7F0E41CA49BC40022F0CE /* IPParticle.sks in Resources */,
 				50E176FA1BE3CA4A009CA822 /* Assets.xcassets in Resources */,
 				50E176F81BE3CA4A009CA822 /* Main.storyboard in Resources */,
-				EA82BF341CA3C199001C7799 /* siren.mp3 in Resources */,
 				EA82BF291CA3C126001C7799 /* elephant.mp3 in Resources */,
+				50DF931D1CA5807300DE7CBE /* bike.mp3 in Resources */,
 				EA82BF411CA3C1FB001C7799 /* bass1.mp3 in Resources */,
 				EA82BF271CA3C126001C7799 /* chicken.mp3 in Resources */,
 				EAFEDC141CA25B2D00E3B7D2 /* Particle.xib in Resources */,
 				EAFEDC1C1CA25B7500E3B7D2 /* Bubble.xib in Resources */,
-				EA82BF311CA3C199001C7799 /* bike.mp3 in Resources */,
+				50DF93221CA5821000DE7CBE /* patrol.mp3 in Resources */,
 				EAFEDC201CA25B8E00E3B7D2 /* Sound.xib in Resources */,
-				EA82BF331CA3C199001C7799 /* patrol.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */,
 				505C89411BED9F9F00F905A1 /* GameViewController.swift in Sources */,
 				EAFEDC161CA25B3A00E3B7D2 /* Particle.swift in Sources */,
 				505C89431BEDA6C500F905A1 /* MoviePreViewController.swift in Sources */,
@@ -528,6 +543,7 @@
 				50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */,
 				EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */,
 				50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */,
+				EAC5F0691CA517260044B14E /* Playable.swift in Sources */,
 				505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */,
 				EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */,
 				EAFEDC221CA25B9A00E3B7D2 /* Sound.swift in Sources */,

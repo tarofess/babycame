@@ -13,29 +13,76 @@
                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Expansion" translatesAutoresizingMaskIntoConstraints="NO" id="dew-8O-qtA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgq-yO-5sN">
-                    <rect key="frame" x="164" y="418" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="didTapButton:" destination="ruh-HZ-wN1" eventType="touchUpInside" id="Zmb-qe-moQ"/>
-                    </connections>
-                </button>
+                <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="2gE-ka-xUk">
+                    <rect key="frame" x="57" y="153" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="E9i-zn-VJV"/>
+                        <constraint firstAttribute="height" constant="80" id="L66-0u-YwC"/>
+                    </constraints>
+                </imageView>
+                <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elephant" translatesAutoresizingMaskIntoConstraints="NO" id="Ak8-bC-V4B">
+                    <rect key="frame" x="62" y="465" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="RDK-IF-U7k"/>
+                        <constraint firstAttribute="height" constant="80" id="bak-Pv-Poq"/>
+                    </constraints>
+                </imageView>
+                <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="lNd-UA-Lm6">
+                    <rect key="frame" x="147" y="294" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="N0D-Jo-5C1"/>
+                        <constraint firstAttribute="height" constant="80" id="nKm-cC-YK1"/>
+                    </constraints>
+                </imageView>
+                <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="3Ck-0m-6Hz">
+                    <rect key="frame" x="242" y="465" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="MTU-lP-YS2"/>
+                        <constraint firstAttribute="width" constant="80" id="Uk6-fJ-WoW"/>
+                    </constraints>
+                </imageView>
+                <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goat" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-3D-VAP">
+                    <rect key="frame" x="242" y="147" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="QBF-Y4-qqF"/>
+                        <constraint firstAttribute="width" constant="80" id="nyZ-GC-R9R"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="dew-8O-qtA" secondAttribute="bottom" id="1WZ-f9-Nw3"/>
                 <constraint firstItem="dew-8O-qtA" firstAttribute="top" secondItem="ruh-HZ-wN1" secondAttribute="top" id="2MK-jX-rHp"/>
+                <constraint firstItem="9tf-3D-VAP" firstAttribute="leading" secondItem="dew-8O-qtA" secondAttribute="trailing" constant="-133" id="71V-rP-aCe"/>
+                <constraint firstItem="lNd-UA-Lm6" firstAttribute="top" secondItem="9tf-3D-VAP" secondAttribute="bottom" constant="67" id="Ar0-Lf-aPZ"/>
+                <constraint firstItem="Ak8-bC-V4B" firstAttribute="top" secondItem="lNd-UA-Lm6" secondAttribute="bottom" constant="91" id="GOl-mh-kbi"/>
+                <constraint firstItem="3Ck-0m-6Hz" firstAttribute="top" secondItem="lNd-UA-Lm6" secondAttribute="bottom" constant="91" id="IQb-aV-WBy"/>
+                <constraint firstItem="dew-8O-qtA" firstAttribute="leading" secondItem="2gE-ka-xUk" secondAttribute="trailing" constant="-137" id="Lsk-Pm-3Lb"/>
+                <constraint firstItem="3Ck-0m-6Hz" firstAttribute="leading" secondItem="dew-8O-qtA" secondAttribute="trailing" constant="-133" id="PFw-3i-lFA"/>
+                <constraint firstItem="lNd-UA-Lm6" firstAttribute="top" secondItem="2gE-ka-xUk" secondAttribute="bottom" constant="61" id="Q3W-sS-5NC"/>
+                <constraint firstItem="dew-8O-qtA" firstAttribute="leading" secondItem="Ak8-bC-V4B" secondAttribute="trailing" constant="-142" id="b0h-PC-wUE"/>
                 <constraint firstItem="dew-8O-qtA" firstAttribute="leading" secondItem="ruh-HZ-wN1" secondAttribute="leading" id="gPS-di-4FV"/>
                 <constraint firstAttribute="trailing" secondItem="dew-8O-qtA" secondAttribute="trailing" id="gT6-Qq-krq"/>
+                <constraint firstItem="lNd-UA-Lm6" firstAttribute="centerY" secondItem="ruh-HZ-wN1" secondAttribute="centerY" id="hnw-Iw-7w6"/>
+                <constraint firstItem="lNd-UA-Lm6" firstAttribute="centerX" secondItem="ruh-HZ-wN1" secondAttribute="centerX" id="osD-4n-0m6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
-                <outlet property="imageView" destination="dew-8O-qtA" id="km5-UQ-BYw"/>
+                <outlet property="catImageView" destination="2gE-ka-xUk" id="94P-o9-eTZ"/>
+                <outlet property="chikenImageView" destination="3Ck-0m-6Hz" id="BJg-TP-RkD"/>
+                <outlet property="dogImageView" destination="lNd-UA-Lm6" id="cjb-Or-ao5"/>
+                <outlet property="elephantImageView" destination="Ak8-bC-V4B" id="sdi-N9-xm5"/>
+                <outlet property="goatImageView" destination="9tf-3D-VAP" id="PO8-9S-7Fr"/>
             </connections>
             <point key="canvasLocation" x="428.5" y="315.5"/>
         </view>
     </objects>
     <resources>
         <image name="Expansion" width="650" height="400"/>
+        <image name="cat" width="225" height="342"/>
+        <image name="chicken" width="800" height="600"/>
+        <image name="dog" width="700" height="600"/>
+        <image name="elephant" width="616" height="474"/>
+        <image name="goat" width="651" height="569"/>
     </resources>
 </document>
