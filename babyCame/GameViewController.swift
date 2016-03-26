@@ -31,7 +31,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.timeLeft = 5
+        self.timeLeft = 15
         self.didTouchScreenOnce = false
         self.navigationBar.topItem?.title = String(timeLeft) + "秒"
         
@@ -45,7 +45,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if !self.didTouchScreenOnce {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
             startRecording()
             self.didTouchScreenOnce = true
         }
@@ -53,20 +53,22 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     func showGame() {
         let gameCenter = GameCenter(gameIdentifier: self.indexPath)
-        self.view.addSubview(gameCenter.getGameView()!)
+        let gameView = gameCenter.getGameView()!
+        gameView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
+        self.view.addSubview(gameView)
     }
     
     func startRecording() {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0] as String
-        let filePath : String? = "\(documentsDirectory)/baby.mp4"
+        let filePath : String? = "\(documentsDirectory)/baby.mov"
         let fileURL : NSURL = NSURL(fileURLWithPath: filePath!)
         self.fileOutput.startRecordingToOutputFileURL(fileURL, recordingDelegate: self)
     }
     
     func updateTime() {
         if self.timeLeft > 1 {
-            self.timeLeft--
+            self.timeLeft -= 1
             self.navigationBar.topItem?.title = String(timeLeft) + "秒"
         } else {
             self.timer.invalidate()
