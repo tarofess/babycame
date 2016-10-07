@@ -7,20 +7,23 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let gamePreviewImageNameArray = ["Expansion", "Rotation", "Particle", "Move", "Bubble", "Sound"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setAd()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        let backButton = UIBarButtonItem(title: "戻る", style: .Plain, target: nil, action: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        let backButton = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
     }
 
@@ -30,39 +33,46 @@ class ViewController: UIViewController {
     
     // MARK: - CollectionView
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: GameScreenShotCollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! GameScreenShotCollectionViewCell
+    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gamePreviewImageNameArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! GameScreenShotCollectionViewCell
         configureCell(cell, indexPath: indexPath)
         
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath){
+        performSegue(withIdentifier: "RunGamePreViewController", sender: indexPath)
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        performSegueWithIdentifier("RunGamePreViewController", sender: indexPath)
-    }
-    
-    func configureCell(cell: GameScreenShotCollectionViewCell, indexPath: NSIndexPath) {
-        cell.gameScreenShotImageView.image = UIImage(named: self.gamePreviewImageNameArray[indexPath.row])
+    func configureCell(_ cell: GameScreenShotCollectionViewCell, indexPath: IndexPath) {
+        cell.gameScreenShotImageView.image = UIImage(named: gamePreviewImageNameArray[(indexPath as NSIndexPath).row])
     }
     
     // MARK: - Segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath = sender as! NSIndexPath
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = sender as! IndexPath
         
-        let gamePreViewController = segue.destinationViewController as! GamePreViewController
+        let gamePreViewController = segue.destination as! GamePreViewController
         gamePreViewController.indexPath = indexPath.row
     }
     
-    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
+    @IBAction func unwindToTop(_ segue: UIStoryboardSegue) {
     }
+    
+    // MARK:- Ad
+    
+    func setAd() {
+        bannerView.load(GADRequest())
+    }
+    
 }
 

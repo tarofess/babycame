@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5047FA4D1DA7E23000123AC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */; };
 		505C89411BED9F9F00F905A1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89401BED9F9F00F905A1 /* GameViewController.swift */; };
 		505C89431BEDA6C500F905A1 /* MoviePreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89421BEDA6C500F905A1 /* MoviePreViewController.swift */; };
 		505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Expansion.xib */; };
@@ -28,6 +29,7 @@
 		50F7F0E41CA49BC40022F0CE /* IPParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E21CA49BC40022F0CE /* IPParticle.sks */; };
 		50F7F0E51CA49BC40022F0CE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E31CA49BC40022F0CE /* spark.png */; };
 		50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */; };
+		535FBD2818BEA8699D4FDED9 /* Pods_babyCame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB056A2501C1255480F29AB1 /* Pods_babyCame.framework */; };
 		EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */; };
 		EA82BF161CA3B95A001C7799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */; };
 		EA82BF1A1CA3BBE5001C7799 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF191CA3BBE5001C7799 /* family.png */; };
@@ -83,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		505C89401BED9F9F00F905A1 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		505C89421BEDA6C500F905A1 /* MoviePreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePreViewController.swift; sourceTree = "<group>"; };
 		505C89441BEDB5E000F905A1 /* Expansion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Expansion.xib; sourceTree = "<group>"; };
@@ -110,6 +113,9 @@
 		50F7F0E21CA49BC40022F0CE /* IPParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = IPParticle.sks; sourceTree = "<group>"; };
 		50F7F0E31CA49BC40022F0CE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
+		B8F9AFD91D005928E4D6B5D2 /* Pods-babyCame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyCame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babyCame/Pods-babyCame.debug.xcconfig"; sourceTree = "<group>"; };
+		BB056A2501C1255480F29AB1 /* Pods_babyCame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_babyCame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2325563FBEAA714D5BDFE02 /* Pods-babyCame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyCame.release.xcconfig"; path = "Pods/Target Support Files/Pods-babyCame/Pods-babyCame.release.xcconfig"; sourceTree = "<group>"; };
 		EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EA82BF151CA3B95A001C7799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA82BF191CA3BBE5001C7799 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA93B2581BF1CC70003BE7D8 /* AVFoundation.framework in Frameworks */,
+				535FBD2818BEA8699D4FDED9 /* Pods_babyCame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +180,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34D9354D4BEE1B1F07F15F06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8F9AFD91D005928E4D6B5D2 /* Pods-babyCame.debug.xcconfig */,
+				E2325563FBEAA714D5BDFE02 /* Pods-babyCame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		504AC4D21BF6D2A500867F32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */,
+				BB056A2501C1255480F29AB1 /* Pods_babyCame.framework */,
 			);
 			name = Frameworks;
 			path = babyCame;
@@ -190,6 +207,7 @@
 				50E177061BE3CA4A009CA822 /* babyCameTests */,
 				50E177111BE3CA4A009CA822 /* babyCameUITests */,
 				50E176F01BE3CA4A009CA822 /* Products */,
+				34D9354D4BEE1B1F07F15F06 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +231,7 @@
 				50E176F91BE3CA4A009CA822 /* Assets.xcassets */,
 				EA82BF191CA3BBE5001C7799 /* family.png */,
 				50E176FE1BE3CA4A009CA822 /* Info.plist */,
+				5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */,
 			);
 			path = babyCame;
 			sourceTree = "<group>";
@@ -377,9 +396,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50E177171BE3CA4A009CA822 /* Build configuration list for PBXNativeTarget "babyCame" */;
 			buildPhases = (
+				8AA14E3A85FCE0FB68153A08 /* [CP] Check Pods Manifest.lock */,
 				50E176EB1BE3CA4A009CA822 /* Sources */,
 				50E176EC1BE3CA4A009CA822 /* Frameworks */,
 				50E176ED1BE3CA4A009CA822 /* Resources */,
+				1B10687FF7B5B743072F3EDE /* [CP] Embed Pods Frameworks */,
+				6A0053DEBAAA778EC89589A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -438,13 +460,18 @@
 				TargetAttributes = {
 					50E176EE1BE3CA4A009CA822 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 8642FHK38M;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					50E177021BE3CA4A009CA822 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 50E176EE1BE3CA4A009CA822;
 					};
 					50E1770D1BE3CA4A009CA822 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 50E176EE1BE3CA4A009CA822;
 					};
 				};
@@ -480,6 +507,7 @@
 				EA82BF1E1CA3C010001C7799 /* bubble.mp3 in Resources */,
 				EA82BF421CA3C1FB001C7799 /* bass2.mp3 in Resources */,
 				EA82BF461CA3C1FB001C7799 /* tom.mp3 in Resources */,
+				5047FA4D1DA7E23000123AC6 /* GoogleService-Info.plist in Resources */,
 				EA82BF451CA3C1FB001C7799 /* snare.mp3 in Resources */,
 				505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */,
 				50DF93251CA5822D00DE7CBE /* bicycle.mp3 in Resources */,
@@ -528,6 +556,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B10687FF7B5B743072F3EDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-babyCame/Pods-babyCame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A0053DEBAAA778EC89589A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-babyCame/Pods-babyCame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AA14E3A85FCE0FB68153A08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50E176EB1BE3CA4A009CA822 /* Sources */ = {
@@ -690,40 +766,52 @@
 		};
 		50E177181BE3CA4A009CA822 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F9AFD91D005928E4D6B5D2 /* Pods-babyCame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8642FHK38M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/babyCame",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = babyCame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		50E177191BE3CA4A009CA822 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2325563FBEAA714D5BDFE02 /* Pods-babyCame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8642FHK38M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/babyCame",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = babyCame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -735,6 +823,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCameTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/babyCame.app/babyCame";
 			};
 			name = Debug;
@@ -747,6 +836,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCameTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/babyCame.app/babyCame";
 			};
 			name = Release;
@@ -758,6 +848,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCameUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = babyCame;
 				USES_XCTRUNNER = YES;
 			};
@@ -770,6 +861,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCameUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = babyCame;
 				USES_XCTRUNNER = YES;
 			};

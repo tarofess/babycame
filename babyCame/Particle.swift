@@ -15,7 +15,7 @@ class Particle: UIView {
         let skView = SKView(frame: self.frame)
         let scene = ParticleScene()
         scene.size = self.frame.size
-        scene.backgroundColor = UIColor.clearColor()
+        scene.backgroundColor = UIColor.clear
         skView.presentScene(scene)
         skView.allowsTransparency = true
         

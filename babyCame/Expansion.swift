@@ -20,8 +20,8 @@ class Expansion: UIView, Playable {
     
     var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
         var imageView = UIImageView()
         
@@ -46,18 +46,18 @@ class Expansion: UIView, Playable {
                 break
             }
         }
-        imageView.transform = CGAffineTransformMakeScale(1, 1)
+        imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
         
-        UIView.animateWithDuration(1.0, animations: { () -> Void in
-                                    imageView.transform = CGAffineTransformMakeScale(2.0, 2.0)
+        UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                                    imageView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
                                      })
         { (Bool) -> Void in
-            UIView.animateWithDuration(1.0,
+            UIView.animate(withDuration: 1.0,
                 animations: { () -> Void in
-                    imageView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 })
             { (Bool) -> Void in
-                imageView.transform = CGAffineTransformMakeScale(1, 1)
+                imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
                 
             }
         }

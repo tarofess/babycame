@@ -10,14 +10,14 @@ import Foundation
 import AVFoundation
 
 protocol Playable {
-    func playSound(soundName: String!, inout audioPlayer: AVAudioPlayer)
+    func playSound(_ soundName: String!, audioPlayer: inout AVAudioPlayer)
 }
 
 extension Playable {
-    func playSound(soundName: String!, inout audioPlayer: AVAudioPlayer) {
-        let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(soundName, ofType: "mp3")!)
+    func playSound(_ soundName: String!, audioPlayer: inout AVAudioPlayer) {
+        let coinSound = URL(fileURLWithPath: Bundle.main.path(forResource: soundName, ofType: "mp3")!)
         do{
-            audioPlayer = try AVAudioPlayer(contentsOfURL:coinSound)
+            audioPlayer = try AVAudioPlayer(contentsOf:coinSound as URL)
             audioPlayer.prepareToPlay()
             audioPlayer.play()
         } catch {

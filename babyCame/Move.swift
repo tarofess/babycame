@@ -19,20 +19,20 @@ class Move: UIView, Playable {
     
     var audioPlayer: AVAudioPlayer = AVAudioPlayer()
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
         var imageView = UIImageView()
-        var initialPosition = CGPointMake(0, 0)
+        var initialPosition = CGPoint(x: 0, y: 0)
         
         for touch: UITouch in touches {
             switch touch.view!.tag {
             case 1:
                 imageView = carImageView
-                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
-                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                initialPosition = CGPoint(x: imageView.center.x, y: imageView.center.y)
+                imageView.layer.position = CGPoint(x: imageView.center.x, y: imageView.center.y)
                 
-                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                UIView.animate(withDuration: TimeInterval(CGFloat(2.0)), animations: {() -> Void in
                     imageView.center = CGPoint(x: initialPosition.x - 400, y: initialPosition.y)
                     }, completion: {(Bool) -> Void in
                         imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
@@ -40,10 +40,10 @@ class Move: UIView, Playable {
                 playSound("car", audioPlayer: &self.audioPlayer)
             case 2:
                 imageView = bicycleImageView
-                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
-                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                initialPosition = CGPoint(x: imageView.center.x, y: imageView.center.y)
+                imageView.layer.position = CGPoint(x: imageView.center.x, y: imageView.center.y)
                 
-                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                UIView.animate(withDuration: TimeInterval(CGFloat(2.0)), animations: {() -> Void in
                     imageView.center = CGPoint(x: initialPosition.x + 400, y: initialPosition.y)
                     }, completion: {(Bool) -> Void in
                         imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
@@ -51,10 +51,10 @@ class Move: UIView, Playable {
                 playSound("bicycle", audioPlayer: &self.audioPlayer)
             case 3:
                 imageView = sirenImageView
-                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
-                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                initialPosition = CGPoint(x: imageView.center.x, y: imageView.center.y)
+                imageView.layer.position = CGPoint(x: imageView.center.x, y: imageView.center.y)
                 
-                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                UIView.animate(withDuration: TimeInterval(CGFloat(2.0)), animations: {() -> Void in
                     imageView.center = CGPoint(x: initialPosition.x - 400, y: initialPosition.y)
                     }, completion: {(Bool) -> Void in
                         imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
@@ -62,10 +62,10 @@ class Move: UIView, Playable {
                 playSound("siren", audioPlayer: &self.audioPlayer)
             case 4:
                 imageView = patrolImageView
-                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
-                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                initialPosition = CGPoint(x: imageView.center.x, y: imageView.center.y)
+                imageView.layer.position = CGPoint(x: imageView.center.x, y: imageView.center.y)
                 
-                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                UIView.animate(withDuration: TimeInterval(CGFloat(2.0)), animations: {() -> Void in
                     imageView.center = CGPoint(x: initialPosition.x - 400, y: initialPosition.y)
                     }, completion: {(Bool) -> Void in
                         imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)
@@ -73,10 +73,10 @@ class Move: UIView, Playable {
                 playSound("patrol", audioPlayer: &self.audioPlayer)
             case 5:
                 imageView = bikeImageView
-                initialPosition = CGPointMake(imageView.center.x, imageView.center.y)
-                imageView.layer.position = CGPointMake(imageView.center.x, imageView.center.y)
+                initialPosition = CGPoint(x: imageView.center.x, y: imageView.center.y)
+                imageView.layer.position = CGPoint(x: imageView.center.x, y: imageView.center.y)
                 
-                UIView.animateWithDuration(NSTimeInterval(CGFloat(2.0)), animations: {() -> Void in
+                UIView.animate(withDuration: TimeInterval(CGFloat(2.0)), animations: {() -> Void in
                     imageView.center = CGPoint(x: initialPosition.x + 400, y: initialPosition.y)
                     }, completion: {(Bool) -> Void in
                         imageView.center = CGPoint(x: initialPosition.x, y: initialPosition.y)

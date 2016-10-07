@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class AVPlayerView : UIView{
+class AVPlayerView : UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -20,7 +20,10 @@ class AVPlayerView : UIView{
         super.init(frame: frame)
     }
     
-    override class func layerClass() -> AnyClass{
-        return AVPlayerLayer.self
+    override open class var layerClass: Swift.AnyClass {
+        get {
+            return AVPlayerLayer.self
+        }
     }
+    
 }

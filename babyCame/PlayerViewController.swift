@@ -11,12 +11,13 @@ import AVKit
 import AVFoundation
 
 class PlayerViewController: AVPlayerViewController {
-    var videoPath: NSURL!
+    
+    var videoPath: URL!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.player = AVPlayer(URL: self.videoPath);
+        self.player = AVPlayer(url: videoPath);
     }
 
     override func didReceiveMemoryWarning() {

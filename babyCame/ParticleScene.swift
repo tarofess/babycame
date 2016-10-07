@@ -14,12 +14,12 @@ class ParticleScene: SKScene, Playable {
     
     var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         
         for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            let path = NSBundle.mainBundle().pathForResource("IPParticle", ofType: "sks")
-            let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
+            let location = touch.location(in: self)
+            let path = Bundle.main.path(forResource: "IPParticle", ofType: "sks")
+            let particle = NSKeyedUnarchiver.unarchiveObject(withFile: path!) as! SKEmitterNode
             
             particle.position = location
             

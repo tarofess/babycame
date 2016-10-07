@@ -21,8 +21,8 @@ class Bubble: UIView, Playable {
     
     var audioPlayer: AVAudioPlayer = AVAudioPlayer()
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
         var imageView = UIImageView()
         
@@ -47,10 +47,10 @@ class Bubble: UIView, Playable {
             }
         }
         
-        UIView.animateWithDuration(NSTimeInterval(0), animations: {() -> Void in
+        UIView.animate(withDuration: TimeInterval(0), animations: {() -> Void in
             imageView.alpha = 0
             }, completion: {(Bool) -> Void in
-                UIView.animateWithDuration(NSTimeInterval(1.0), animations: {() -> Void in
+                UIView.animate(withDuration: TimeInterval(1.0), animations: {() -> Void in
                     imageView.alpha = 1.0
                     }, completion: {(Bool) -> Void in
                 })

@@ -11,15 +11,15 @@ import UIKit
 import AVFoundation
 
 class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
-    
+
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     let captureSession = AVCaptureSession()
-    let videoDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-    let audioDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio)
+    let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    let audioDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
     let fileOutput = AVCaptureMovieFileOutput()
     
-    var timer: NSTimer!
+    var timer: Timer!
     var indexPath: Int!
     var timeLeft = 15
     var didTouchScreenOnce = false
@@ -30,92 +30,86 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         setUpCamera()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.timeLeft = 15
-        self.didTouchScreenOnce = false
-        self.navigationBar.topItem?.title = String(timeLeft) + "秒"
+    override func viewWillAppear(_ animated: Bool) {
+        timeLeft = 15
+        didTouchScreenOnce = false
+        navigationBar.topItem?.title = String(timeLeft) + "秒"
         
         showGame()
-        self.view.bringSubviewToFront(navigationBar)
+        self.view.bringSubview(toFront: navigationBar)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if !self.didTouchScreenOnce {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !didTouchScreenOnce {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
             startRecording()
-            self.didTouchScreenOnce = true
+            didTouchScreenOnce = true
         }
     }
     
     func showGame() {
-        let gameCenter = GameCenter(gameIdentifier: self.indexPath)
+        let gameCenter = GameCenter(gameIdentifier: indexPath)
         let gameView = gameCenter.getGameView()!
-        gameView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
+        gameView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
         self.view.addSubview(gameView)
     }
     
     func startRecording() {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0] as String
-        let filePath : String? = "\(documentsDirectory)/baby.mov"
-        let fileURL : NSURL = NSURL(fileURLWithPath: filePath!)
-        self.fileOutput.startRecordingToOutputFileURL(fileURL, recordingDelegate: self)
+        let filePath : String? = "\(documentsDirectory)/baby\(UUID().uuidString).mov"
+        let fileURL = URL(fileURLWithPath: filePath!)
+        fileOutput.startRecording(toOutputFileURL: fileURL, recordingDelegate: self)
     }
     
     func updateTime() {
-        if self.timeLeft > 1 {
-            self.timeLeft -= 1
-            self.navigationBar.topItem?.title = String(timeLeft) + "秒"
+        if timeLeft > 1 {
+            timeLeft -= 1
+            navigationBar.topItem?.title = String(timeLeft) + "秒"
         } else {
-            self.timer.invalidate()
-            self.fileOutput.stopRecording()
+            timer.invalidate()
+            fileOutput.stopRecording()
         }
     }
     
-    func showCompletionAlert(videoPath: NSURL) {
-        let alertController = UIAlertController(title: "撮影完了", message: "撮影したムービーを見てみましょう！", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) -> Void in
-            self.performSegueWithIdentifier("RunMoviePreViewController", sender: videoPath)
+    func showCompletionAlert(_ videoPath: URL) {
+        let alertController = UIAlertController(title: "撮影完了", message: "撮影したムービーを見てみましょう！", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) -> Void in
+            self.performSegue(withIdentifier: "RunMoviePreViewController", sender: videoPath)
         })
         
         alertController.addAction(okAction)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
     func setUpCamera() {
-        var myDevice : AVCaptureDevice?
-        let devices = AVCaptureDevice.devices()
-        
-        for device in devices {
-            if device.position == AVCaptureDevicePosition.Front {
-                myDevice = device as? AVCaptureDevice
-            }
-        }
+        let devices = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: .front).devices
         
         do {
-            let videoInput = try AVCaptureDeviceInput(device: myDevice) as AVCaptureDeviceInput
-            self.captureSession.addInput(videoInput)
-            let audioInput = try AVCaptureDeviceInput(device: self.audioDevice) as AVCaptureDeviceInput
-            self.captureSession.addInput(audioInput);
+            let videoInput = try AVCaptureDeviceInput(device: devices?.first!) as AVCaptureDeviceInput
+            captureSession.addInput(videoInput)
+            let audioInput = try AVCaptureDeviceInput(device: audioDevice) as AVCaptureDeviceInput
+            captureSession.addInput(audioInput);
         } catch {
             
         }
-        self.captureSession.commitConfiguration()
-        self.captureSession.addOutput(self.fileOutput)
-        self.captureSession.startRunning()
+        captureSession.commitConfiguration()
+        captureSession.addOutput(fileOutput)
+        captureSession.startRunning()
     }
     
-    func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
+    func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         showCompletionAlert(outputFileURL)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let moviePreViewController = segue.destinationViewController as! MoviePreViewController
-        moviePreViewController.videoPath = sender as! NSURL
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let moviePreViewController = segue.destination as! MoviePreViewController
+        moviePreViewController.videoPath = sender as! URL
     }
+    
 }

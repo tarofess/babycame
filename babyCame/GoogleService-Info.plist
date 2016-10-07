@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>614372389149-3mhali0rmdn1h25caub89vq0pa90run5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.614372389149-3mhali0rmdn1h25caub89vq0pa90run5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAQAMRYL4MQhz6pjN26j9RkxW35XP386IQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>614372389149</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.taro.babyCame</string>
+	<key>PROJECT_ID</key>
+	<string>babycame-eadd4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>babycame-eadd4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:614372389149:ios:9b310ba93cde6724</string>
+	<key>DATABASE_URL</key>
+	<string>https://babycame-eadd4.firebaseio.com</string>
+</dict>
+</plist>
