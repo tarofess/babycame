@@ -1,0 +1,15 @@
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "9k3-Jl-9ac"; */
+"9k3-Jl-9ac.title" = "戻る";
+
+/* Class = "UINavigationItem"; title = "15秒"; ObjectID = "KCb-0H-dP4"; */
+"KCb-0H-dP4.title" = "15秒";
+
+/* Class = "UINavigationItem"; title = "ゲームを選んでね！"; ObjectID = "aUb-Jr-t7o"; */
+"aUb-Jr-t7o.title" = "ゲームを選んでね！";
+
+/* Class = "UINavigationItem"; title = "GameTitle"; ObjectID = "fTW-Xp-SGw"; */
+"fTW-Xp-SGw.title" = "タイトル";
+
+/* Class = "UIBarButtonItem"; title = "OK"; ObjectID = "x6n-80-8U6"; */
+"x6n-80-8U6.title" = "OK";

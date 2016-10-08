@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  babyCame
+
+  Created by taro on 2016/10/08.
+  Copyright © 2016年 taro. All rights reserved.
+*/
+
+CFBundleDisplayName = "べびかめ";
+
+"title_animal" = "動物ゲーム";
+"title_night" = "お星さまゲーム";
+"title_japanese" = "花火ゲーム";
+"title_vehicle" = "乗り物ゲーム";
+"title_bubble" = "あわあわゲーム";
+"title_music" = "音楽ゲーム";
+"navigation_leftButton" = "戻る";
+
+"comfirm_alertTitle_in_preview" = "確認";
+"comfirm_alertMessage_in_preview" = "このゲームで遊びますか？";
+"alertOK_action" = "はい";
+"alertNG_action" = "いいえ";
+
+"sec" = "秒";
+"finish_take_alertTitle" = "撮影完了";
+"finish_take_alertMessage" = "撮影したムービーを見てみましょう！";
+
+"save_alertTitle" = "動画の保存";
+"save_alertMessage" = "カメラロールに保存しますか?";
+"saveFinished_alertTitle" = "保存完了";
+"saveFinished_alertMessage" = "動画をカメラロールに保存しました";
+"failedSave_alertTitle" = "動画を保存できませんでした";
+"failedSave_alertMessage" = "カメラロールへのアクセスを許可してください";
+"backActionSheet_title" = "ゲームを変えますか？";
+"backActionSheet_message" = "もう一度撮影しますか？";
+"backActionSheet_back" = "ゲームを変える";
+"backActionSheet_take_again" = "もう一度撮影する";
+"backActionSheet_cancel" = "キャンセル";
+

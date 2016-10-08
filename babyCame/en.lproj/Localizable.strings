@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  babyCame
+
+  Created by taro on 2016/10/08.
+  Copyright © 2016年 taro. All rights reserved.
+*/
+
+CFBundleDisplayName = "BabyCame";
+
+"title_animal" = "Animal Game";
+"title_night" = "Star Game";
+"title_japanese" = "Fireworks Game";
+"title_vehicle" = "Vehicle Game";
+"title_bubble" = "Bubble Game";
+"title_music" = "Music Game";
+"navigation_leftButton" = "Back";
+
+"comfirm_alertTitle_in_preview" = "Confirmation";
+"comfirm_alertMessage_in_preview" = "Do you want to play this game?";
+"alertOK_action" = "Yes";
+"alertNG_action" = "Cancel";
+
+"sec" = "sec";
+"finish_take_alertTitle" = "Finished";
+"finish_take_alertMessage" = "Let's watch the video you took!";
+
+"save_alertTitle" = "Save";
+"save_alertMessage" = "Do you want to save this video?";
+"saveFinished_alertTitle" = "Completion!";
+"saveFinished_alertMessage" = "Saved the video successfully";
+"failedSave_alertTitle" = "Couldn't save the video";
+"failedSave_alertMessage" = "Please give camera access permission";
+"backActionSheet_title" = "Change the game?";
+"backActionSheet_message" = "Take a video again?";
+"backActionSheet_back" = "Change the game";
+"backActionSheet_take_again" = "Take a video again";
+"backActionSheet_cancel" = "Cancel";
+

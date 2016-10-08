@@ -34,14 +34,14 @@ class MoviePreViewController: UIViewController {
     }
     
     func showBackActionSheet() {
-        let actionSheet = UIAlertController(title: "ゲームを変えますか？", message: "もう一度撮影しますか？", preferredStyle: .actionSheet)
-        let backToViewControllerAction = UIAlertAction(title: "ゲーム選択画面に戻る", style: .default, handler: { (action: UIAlertAction) -> Void in
+        let actionSheet = UIAlertController(title: NSLocalizedString("backActionSheet_title", comment: ""), message: NSLocalizedString("backActionSheet_message", comment: ""), preferredStyle: .actionSheet)
+        let backToViewControllerAction = UIAlertAction(title: NSLocalizedString("backActionSheet_back", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "UnwindToTop", sender: self)
         })
-        let backToGameViewControllerAction = UIAlertAction(title: "もう一度撮影する", style: .default, handler: { (action: UIAlertAction) -> Void in
+        let backToGameViewControllerAction = UIAlertAction(title: NSLocalizedString("backActionSheet_take_again", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.dismiss(animated: true, completion: nil)
         })
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("backActionSheet_cancel", comment: ""), style: .cancel, handler: nil)
         
         actionSheet.addAction(backToViewControllerAction)
         actionSheet.addAction(backToGameViewControllerAction)
@@ -51,11 +51,11 @@ class MoviePreViewController: UIViewController {
     }
     
     func showShareActionSheet() {
-        let alertController = UIAlertController(title: "動画の保存", message: "カメラロールに保存しますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "はい", style: .default, handler: { (action: UIAlertAction) -> Void in
+        let alertController = UIAlertController(title: NSLocalizedString("save_alertTitle", comment: ""), message: NSLocalizedString("save_alertMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.saveMovieToCameraRoll()
         })
-        let cancelAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("alertNG_action", comment: ""), style: .cancel, handler: nil)
         
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
@@ -80,8 +80,8 @@ class MoviePreViewController: UIViewController {
     }
     
     func showSavedVideoConfirmAlert() {
-        let alertController = UIAlertController(title: "保存完了", message: "動画をカメラロールに保存しました", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertController = UIAlertController(title: NSLocalizedString("saveFinished_alertTitle", comment: ""), message: NSLocalizedString("saveFinished_alertMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: nil)
         
         alertController.addAction(okAction)
         
@@ -89,8 +89,8 @@ class MoviePreViewController: UIViewController {
     }
     
     func showDeniedCameraAccessAlert() {
-        let alertController = UIAlertController(title: "動画を保存できませんでした", message: "カメラロールへのアクセスを許可してください", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "はい", style: .default, handler: nil)
+        let alertController = UIAlertController(title: NSLocalizedString("failedSave_alertTitle", comment: ""), message: NSLocalizedString("failedSave_alertMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: nil)
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)

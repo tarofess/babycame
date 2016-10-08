@@ -29,10 +29,11 @@
 		50F7F0E41CA49BC40022F0CE /* IPParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E21CA49BC40022F0CE /* IPParticle.sks */; };
 		50F7F0E51CA49BC40022F0CE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E31CA49BC40022F0CE /* spark.png */; };
 		50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */; };
+		50F81AA51DA8696D0068B467 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA71DA8696D0068B467 /* Localizable.strings */; };
+		50F81AA91DA86A510068B467 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA81DA86A510068B467 /* family.png */; };
 		535FBD2818BEA8699D4FDED9 /* Pods_babyCame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB056A2501C1255480F29AB1 /* Pods_babyCame.framework */; };
 		EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */; };
 		EA82BF161CA3B95A001C7799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */; };
-		EA82BF1A1CA3BBE5001C7799 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF191CA3BBE5001C7799 /* family.png */; };
 		EA82BF1E1CA3C010001C7799 /* bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF1D1CA3C010001C7799 /* bubble.mp3 */; };
 		EA82BF201CA3C0A1001C7799 /* fireworks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF1F1CA3C0A1001C7799 /* fireworks.mp3 */; };
 		EA82BF261CA3C126001C7799 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF211CA3C126001C7799 /* cat.mp3 */; };
@@ -110,15 +111,21 @@
 		50E177141BE3CA4A009CA822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E177231BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenShotCollectionViewCell.swift; sourceTree = "<group>"; };
 		50E177291BE4A8D2009CA822 /* GamePreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePreViewController.swift; sourceTree = "<group>"; };
+		50E46D3C1DA8879F001E32B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		50E46D3D1DA8B638001E32B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		50E46D3E1DA8B638001E32B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		50E46D3F1DA8B638001E32B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50F7F0E21CA49BC40022F0CE /* IPParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = IPParticle.sks; sourceTree = "<group>"; };
 		50F7F0E31CA49BC40022F0CE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
+		50F81AA61DA8696D0068B467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50F81AA81DA86A510068B467 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
+		50F81AAA1DA86A960068B467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8F9AFD91D005928E4D6B5D2 /* Pods-babyCame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyCame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babyCame/Pods-babyCame.debug.xcconfig"; sourceTree = "<group>"; };
 		BB056A2501C1255480F29AB1 /* Pods_babyCame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_babyCame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2325563FBEAA714D5BDFE02 /* Pods-babyCame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyCame.release.xcconfig"; path = "Pods/Target Support Files/Pods-babyCame/Pods-babyCame.release.xcconfig"; sourceTree = "<group>"; };
 		EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EA82BF151CA3B95A001C7799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EA82BF191CA3BBE5001C7799 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
 		EA82BF1D1CA3C010001C7799 /* bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubble.mp3; sourceTree = "<group>"; };
 		EA82BF1F1CA3C0A1001C7799 /* fireworks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireworks.mp3; sourceTree = "<group>"; };
 		EA82BF211CA3C126001C7799 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
@@ -229,9 +236,10 @@
 				50E176F61BE3CA4A009CA822 /* Main.storyboard */,
 				EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */,
 				50E176F91BE3CA4A009CA822 /* Assets.xcassets */,
-				EA82BF191CA3BBE5001C7799 /* family.png */,
+				50F81AA81DA86A510068B467 /* family.png */,
 				50E176FE1BE3CA4A009CA822 /* Info.plist */,
 				5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */,
+				50F81AA71DA8696D0068B467 /* Localizable.strings */,
 			);
 			path = babyCame;
 			sourceTree = "<group>";
@@ -483,6 +491,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 50E176E61BE3CA4A009CA822;
 			productRefGroup = 50E176F01BE3CA4A009CA822 /* Products */;
@@ -514,7 +523,6 @@
 				EA82BF4A1CA3C1FB001C7799 /* piano1.mp3 in Resources */,
 				50DF93211CA5821000DE7CBE /* car.mp3 in Resources */,
 				EA82BF201CA3C0A1001C7799 /* fireworks.mp3 in Resources */,
-				EA82BF1A1CA3BBE5001C7799 /* family.png in Resources */,
 				EA82BF4C1CA3C1FB001C7799 /* piano3.mp3 in Resources */,
 				EA82BF2A1CA3C126001C7799 /* goat.mp3 in Resources */,
 				50DF93231CA5821000DE7CBE /* siren.mp3 in Resources */,
@@ -525,6 +533,7 @@
 				EA82BF481CA3C1FB001C7799 /* guitar2.mp3 in Resources */,
 				EA82BF441CA3C1FB001C7799 /* cymbal.mp3 in Resources */,
 				EA82BF4B1CA3C1FB001C7799 /* piano2.mp3 in Resources */,
+				50F81AA91DA86A510068B467 /* family.png in Resources */,
 				EA82BF431CA3C1FB001C7799 /* bass3.mp3 in Resources */,
 				EA82BF261CA3C126001C7799 /* cat.mp3 in Resources */,
 				50F7F0E41CA49BC40022F0CE /* IPParticle.sks in Resources */,
@@ -536,6 +545,7 @@
 				EA82BF271CA3C126001C7799 /* chicken.mp3 in Resources */,
 				EAFEDC141CA25B2D00E3B7D2 /* Particle.xib in Resources */,
 				EAFEDC1C1CA25B7500E3B7D2 /* Bubble.xib in Resources */,
+				50F81AA51DA8696D0068B467 /* Localizable.strings in Resources */,
 				50DF93221CA5821000DE7CBE /* patrol.mp3 in Resources */,
 				EAFEDC201CA25B8E00E3B7D2 /* Sound.xib in Resources */,
 			);
@@ -666,14 +676,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				50E176F71BE3CA4A009CA822 /* Base */,
+				50E46D3C1DA8879F001E32B3 /* en */,
+				50E46D3D1DA8B638001E32B3 /* ja */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		50F81AA71DA8696D0068B467 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50F81AA61DA8696D0068B467 /* Base */,
+				50F81AAA1DA86A960068B467 /* en */,
+				50E46D3F1DA8B638001E32B3 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EA82BF151CA3B95A001C7799 /* Base */,
+				50E46D3E1DA8B638001E32B3 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -685,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -730,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
