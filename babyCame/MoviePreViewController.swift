@@ -51,14 +51,32 @@ class MoviePreViewController: UIViewController {
     }
     
     func showShareActionSheet() {
-        let alertController = UIAlertController(title: NSLocalizedString("save_alertTitle", comment: ""), message: NSLocalizedString("save_alertMessage", comment: ""), preferredStyle: .alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
+        let alertController = UIAlertController(title: NSLocalizedString("share_actionSheetTitle", comment: ""), message: NSLocalizedString("share_actionSheetMessage", comment: ""), preferredStyle: .actionSheet)
+        let saveAction = UIAlertAction(title: NSLocalizedString("share_actionSheetSave", comment: ""), style: .default, handler: { (action: UIAlertAction) in
             self.saveMovieToCameraRoll()
         })
-        let cancelAction = UIAlertAction(title: NSLocalizedString("alertNG_action", comment: ""), style: .cancel, handler: nil)
+        let facebookAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action: UIAlertAction) in
+            let facebbok = FacebookSharer()
+            facebbok.post(videoPath: self.videoPath) {
+                self.showCompleteShareAlert()
+            }
+        })
+        let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { (action: UIAlertAction) in
+            let twitter = TwitterSharer(url: self.videoPath)
+            twitter.post(completion: { (success: Bool) in
+                if success {
+                    self.showCompleteShareAlert()
+                } else {
+                    self.showFailureShareAlert()
+                }
+            })
+        })
+        let cancelAction = UIAlertAction(title: NSLocalizedString("share_cancel", comment: ""), style: .cancel, handler: nil)
         
+        alertController.addAction(saveAction)
+        alertController.addAction(facebookAction)
+        alertController.addAction(twitterAction)
         alertController.addAction(cancelAction)
-        alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
     }
@@ -74,7 +92,7 @@ class MoviePreViewController: UIViewController {
             case .denied:
                 self.showDeniedCameraAccessAlert()
             default:
-                print("Restricted")
+                self.showDeniedCameraAccessAlert()
             }
         }
     }
@@ -91,6 +109,24 @@ class MoviePreViewController: UIViewController {
     func showDeniedCameraAccessAlert() {
         let alertController = UIAlertController(title: NSLocalizedString("failedSave_alertTitle", comment: ""), message: NSLocalizedString("failedSave_alertMessage", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showCompleteShareAlert() {
+        let alertController = UIAlertController(title: NSLocalizedString("share_completionTitle", comment: ""), message: NSLocalizedString("share_completionMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showFailureShareAlert() {
+        let alertController = UIAlertController(title: NSLocalizedString("share_failureTitle", comment: ""), message: NSLocalizedString("share_failureMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
