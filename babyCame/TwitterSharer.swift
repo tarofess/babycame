@@ -11,6 +11,13 @@ import Accounts
 import Social
 import AVFoundation
 
+enum Result {
+    case success
+    case failure
+    case noPermissionAccountFailure
+    case noSettingAccountFailure
+}
+
 class TwitterSharer: NSObject {
     
     var videoPathURL: URL
@@ -22,32 +29,31 @@ class TwitterSharer: NSObject {
         videoPathURL = url
     }
     
-    func authAccount(completion: @escaping (_ error: Bool)->Void) {
+    func authAccount(completion: @escaping (_ result: Result)->Void) {
         let accountStore = ACAccountStore()
         let accountType:ACAccountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         accountStore.requestAccessToAccounts(with: accountType, options: nil) { (granted, error) -> Void in
             if error != nil {
                 print("error! \(error)")
+                completion(.failure)
                 return
             }
 
             if !granted {
-                print("error! Twitterアカウントの利用が許可されていません")
+                completion(.noPermissionAccountFailure)
                 return
             }
             
             let accounts = accountStore.accounts(with: accountType) as! [ACAccount]
             if accounts.count == 0 {
-                print("error! 設定画面からアカウントを設定してください")
+                completion(.noSettingAccountFailure)
                 return
             }
-            
-            print("アカウント取得完了")
             
             self.account = accounts.first!
             
             guard let mediaData = NSData(contentsOf: self.videoPathURL) else {
-                completion(false)
+                completion(.failure)
                 return
             }
             
@@ -55,18 +61,19 @@ class TwitterSharer: NSObject {
         }
     }
     
-    func post(completion: @escaping (_ error: Bool)->Void) {
+    func post(completion: @escaping (_ result: Result)->Void) {
         authAccount(completion: completion)
     }
     
-    private func postMedia(tweet: String, mediaData: Data, fileSize: String, completion: @escaping (_ error: Bool)->Void) {
+    private func postMedia(tweet: String, mediaData: Data, fileSize: String, completion: @escaping (_ result: Result)->Void) {
         var json: [String: Any]!
+        
         // INIT リクエスト
         uploadVideoInitRequest(fileSize: fileSize, success: { (_ responseData: Data)->Void in
             do {
                 json = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as! [String: Any]
             } catch {
-                completion(false)
+                completion(.failure)
                 return
             }
             
@@ -84,31 +91,25 @@ class TwitterSharer: NSObject {
                     
                     // 動画をつけてツイート
                     statusRequest?.perform { (responseData, urlResponse, error) -> Void in
-                        if error != nil {
-                            completion(false)
+                        if error == nil {
+                            completion(.success)
                         } else {
-                            completion(true)
+                            completion(.failure)
                         }
                     }
-                }, completion: { (_ error: Bool) -> Void in
-                    if error {
-                        completion(false)
-                    }
+                }, completion: { (_ result: Result) -> Void in
+                    completion(.failure)
                 })
-            }, completion: { (_ error: Bool) -> Void in
-                if error {
-                    completion(false)
-                }
+            }, completion: { (_ result: Result) -> Void in
+                completion(.failure)
             })
-        }, completion: { (_ error: Bool) -> Void in
-            if error {
-                completion(false)
-            }
+        }, completion: { (_ result: Result) -> Void in
+            completion(.failure)
         })
     }
     
     // INIT リクエスト
-    private func uploadVideoInitRequest(fileSize: String, success: @escaping (_ responseData: Data)->Void, completion: @escaping (_ error: Bool)->Void) {
+    private func uploadVideoInitRequest(fileSize: String, success: @escaping (_ responseData: Data)->Void, completion: @escaping (_ result: Result)->Void) {
         let initParams: [String: Any] = ["command": "INIT", "media_type": "video/mp4", "total_bytes": fileSize]
         let initRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .POST, url: self.twitterUploadURL, parameters: initParams)
         initRequest!.account = account
@@ -117,14 +118,14 @@ class TwitterSharer: NSObject {
             if error == nil {
                 success(responseData!)
             } else {
-                completion(false)
+                completion(.failure)
                 return
             }
         }
     }
     
     // APPEND リクエスト
-    private func uploadVideoAppendRequest(mediaData: Data, mediaIdString: String, success: @escaping () -> Void, completion: @escaping (_ error: Bool)->Void) {
+    private func uploadVideoAppendRequest(mediaData: Data, mediaIdString: String, success: @escaping () -> Void, completion: @escaping (_ result: Result)->Void) {
         let appendParam: [NSString: Any] = ["command": "APPEND", "media_id": mediaIdString, "segment_index": "0"]
         let appendRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .POST, url: self.twitterUploadURL, parameters: appendParam)
         appendRequest?.addMultipartData(mediaData, withName: "media", type: "video/mov", filename: nil)
@@ -134,14 +135,14 @@ class TwitterSharer: NSObject {
             if urlResponse!.statusCode < 300 && urlResponse!.statusCode >= 200 {
                 success()
             } else {
-                completion(false)
+                completion(.failure)
                 return
             }
         }
     }
     
     // FINALIZE リクエスト
-    private func uploadVideoFinalizeRequest(mediaIdString: String, success: @escaping (_ responseData: Data) -> Void, completion: @escaping (_ error: Bool)->Void) {
+    private func uploadVideoFinalizeRequest(mediaIdString: String, success: @escaping (_ responseData: Data) -> Void, completion: @escaping (_ result: Result)->Void) {
         let finalizeParam: [NSString: Any] = ["command": "FINALIZE", "media_id": mediaIdString]
         let finalizeRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .POST, url: self.twitterUploadURL, parameters: finalizeParam)
         finalizeRequest?.account = account
@@ -150,7 +151,7 @@ class TwitterSharer: NSObject {
             if error == nil {
                 success(responseData!)
             } else {
-                completion(false)
+                completion(.failure)
                 return
             }
         }

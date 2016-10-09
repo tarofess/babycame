@@ -16,6 +16,7 @@ import MediaPlayer
 class MoviePreViewController: UIViewController {
     
     var videoPath: URL!
+    var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()   
@@ -62,12 +63,22 @@ class MoviePreViewController: UIViewController {
             }
         })
         let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { (action: UIAlertAction) in
+            self.showActivityIndicator()
+            
             let twitter = TwitterSharer(url: self.videoPath)
-            twitter.post(completion: { (success: Bool) in
-                if success {
+            twitter.post(completion: { (result: Result) in
+                switch result {
+                case .success:
                     self.showCompleteShareAlert()
-                } else {
-                    self.showFailureShareAlert()
+                case .failure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
+                case .noPermissionAccountFailure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_permission_account", comment: ""))
+                case .noSettingAccountFailure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_account_setting", comment: ""))
+                }
+                DispatchQueue.main.async {
+                    self.removeActivityIndicator()
                 }
             })
         })
@@ -123,13 +134,34 @@ class MoviePreViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func showFailureShareAlert() {
-        let alertController = UIAlertController(title: NSLocalizedString("share_failureTitle", comment: ""), message: NSLocalizedString("share_failureMessage", comment: ""), preferredStyle: .alert)
+    func showFailureShareAlert(errorMessage: String) {
+        let alertController = UIAlertController(title: NSLocalizedString("share_failureTitle", comment: ""), message: errorMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func showActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        activityIndicator.backgroundColor = UIColor(red: 0/2555, green: 0/255, blue: 0/255, alpha: 0.7)
+        activityIndicator.layer.cornerRadius = 8
+        activityIndicator.center = self.view.center
+        
+        activityIndicator.hidesWhenStopped = false
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        
+        activityIndicator.startAnimating()
+        
+        self.view.addSubview(activityIndicator)
+    }
+    
+    func removeActivityIndicator() {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

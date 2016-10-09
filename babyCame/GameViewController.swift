@@ -100,7 +100,6 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         }
         captureSession.commitConfiguration()
         captureSession.addOutput(fileOutput)
-        captureSession.sessionPreset = AVCaptureSessionPresetLow
         captureSession.startRunning()
     }
     

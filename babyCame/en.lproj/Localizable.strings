@@ -31,8 +31,10 @@ CFBundleDisplayName = "BabyCame";
 "share_cancel" = "Cancel";
 "share_completionTitle" = "Completion!";
 "share_completionMessage" = "completed sharing successfully";
-"share_failureTitle" = "Failure";
+"share_failureTitle" = "Error";
 "share_failureMessage" = "Failed sharing";
+"share_failure_no_permission_account" = "No account permission";
+"share_failure_no_account_setting" = "Set Twitter account from Settings";
 
 "saveFinished_alertTitle" = "Completion!";
 "saveFinished_alertMessage" = "Saved the video successfully";
