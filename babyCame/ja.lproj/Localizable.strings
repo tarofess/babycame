@@ -25,8 +25,17 @@ CFBundleDisplayName = "べびかめ";
 "finish_take_alertTitle" = "撮影完了";
 "finish_take_alertMessage" = "撮影したムービーを見てみましょう！";
 
-"save_alertTitle" = "動画の保存";
-"save_alertMessage" = "カメラロールに保存しますか?";
+"share_actionSheetTitle" = "動画を保存しますか？";
+"share_actionSheetMessage" = "シェアしますか？";
+"share_actionSheetSave" = "保存";
+"share_cancel" = "キャンセル";
+"share_completionTitle" = "完了";
+"share_completionMessage" = "シェアが完了しました";
+"share_failureTitle" = "エラー";
+"share_failureMessage" = "シェアできませんでした";
+"share_failure_no_permission_account" = "アカウントの利用が許可されていません";
+"share_failure_no_account_setting" = "設定画面からアカウントを設定してください";
+
 "saveFinished_alertTitle" = "保存完了";
 "saveFinished_alertMessage" = "動画をカメラロールに保存しました";
 "failedSave_alertTitle" = "動画を保存できませんでした";

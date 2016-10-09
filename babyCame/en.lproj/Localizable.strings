@@ -25,8 +25,17 @@ CFBundleDisplayName = "BabyCame";
 "finish_take_alertTitle" = "Finished";
 "finish_take_alertMessage" = "Let's watch the video you took!";
 
-"save_alertTitle" = "Save";
-"save_alertMessage" = "Do you want to save this video?";
+"share_actionSheetTitle" = "Do you want to save this video?";
+"share_actionSheetMessage" = "Do you want to share this video?";
+"share_actionSheetSave" = "Save";
+"share_cancel" = "Cancel";
+"share_completionTitle" = "Completion!";
+"share_completionMessage" = "completed sharing successfully";
+"share_failureTitle" = "Error";
+"share_failureMessage" = "Failed sharing";
+"share_failure_no_permission_account" = "No account permission";
+"share_failure_no_account_setting" = "Set Twitter account from Settings";
+
 "saveFinished_alertTitle" = "Completion!";
 "saveFinished_alertMessage" = "Saved the video successfully";
 "failedSave_alertTitle" = "Couldn't save the video";
