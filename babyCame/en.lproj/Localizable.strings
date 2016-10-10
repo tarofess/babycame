@@ -46,3 +46,6 @@ CFBundleDisplayName = "BabyCame";
 "backActionSheet_take_again" = "Take a video again";
 "backActionSheet_cancel" = "Cancel";
 
+"facebook_actionSheetMessage" = "Facebook(you need to save this video before share)";
+"twitter_tweetAlertTitle" = "Tweet Message";
+"twitter_tweetAlertMessage" = "Input tweet message";

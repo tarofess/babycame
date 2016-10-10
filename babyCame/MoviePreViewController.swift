@@ -113,28 +113,11 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         let saveAction = UIAlertAction(title: NSLocalizedString("share_actionSheetSave", comment: ""), style: .default, handler: { (action: UIAlertAction) in
             self.saveMovieToCameraRoll()
         })
-        let facebookAction = UIAlertAction(title: "Facebook(you need to save this video before share)", style: .default, handler: { (action: UIAlertAction) in
+        let facebookAction = UIAlertAction(title: NSLocalizedString("facebook_actionSheetMessage", comment: ""), style: .default, handler: { (action: UIAlertAction) in
             self.selectFromLibrary()
         })
         let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { (action: UIAlertAction) in
-            self.showActivityIndicator()
-            
-            let twitter = TwitterSharer(url: self.videoPath)
-            twitter.post(completion: { (result: Result) in
-                switch result {
-                case .success:
-                    self.showCompleteShareAlert()
-                case .failure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
-                case .noPermissionAccountFailure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_permission_account", comment: ""))
-                case .noSettingAccountFailure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_account_setting", comment: ""))
-                }
-                DispatchQueue.main.async {
-                    self.removeActivityIndicator()
-                }
-            })
+            self.showTweetMessageAlert()
         })
         let cancelAction = UIAlertAction(title: NSLocalizedString("share_cancel", comment: ""), style: .cancel, handler: nil)
         
@@ -177,6 +160,37 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showTweetMessageAlert() {
+        let alertController = UIAlertController(title: NSLocalizedString("twitter_tweetAlertTitle", comment: ""), message: NSLocalizedString("twitter_tweetAlertMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) in
+            let textField = alertController.textFields![0]
+            
+            self.showActivityIndicator()
+            let twitter = TwitterSharer(url: self.videoPath, tweet: textField.text!)
+            twitter.post(completion: { (result: Result) in
+                switch result {
+                case .success:
+                    self.showCompleteShareAlert()
+                case .failure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
+                case .noPermissionAccountFailure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_permission_account", comment: ""))
+                case .noSettingAccountFailure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_account_setting", comment: ""))
+                }
+                DispatchQueue.main.async {
+                    self.removeActivityIndicator()
+                }
+            })
+        })
+        let ngAction = UIAlertAction(title: NSLocalizedString("share_cancel", comment: ""), style: .default, handler: nil)
+        alertController.addAction(ngAction)
+        alertController.addAction(okAction)
+        alertController.addTextField(configurationHandler: nil)
         
         present(alertController, animated: true, completion: nil)
     }

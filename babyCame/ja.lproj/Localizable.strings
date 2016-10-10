@@ -46,3 +46,6 @@ CFBundleDisplayName = "べびかめ";
 "backActionSheet_take_again" = "もう一度撮影する";
 "backActionSheet_cancel" = "キャンセル";
 
+"facebook_actionSheetMessage" = "Facebook（動画を保存しておく必要があります）";
+"twitter_tweetAlertTitle" = "ツイート文";
+"twitter_tweetAlertMessage" = "ツイート文を入力してください";

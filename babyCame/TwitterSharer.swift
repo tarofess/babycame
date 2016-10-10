@@ -21,12 +21,14 @@ enum Result {
 class TwitterSharer: NSObject {
     
     var videoPathURL: URL
+    var tweet: String
     var account: ACAccount!
     let twitterUploadURL = URL(string: "https://upload.twitter.com/1.1/media/upload.json")
     let twitterStatusURL = URL(string: "https://api.twitter.com/1.1/statuses/update.json")
     
-    init(url: URL) {
+    init(url: URL, tweet: String) {
         videoPathURL = url
+        self.tweet = tweet
     }
     
     func authAccount(completion: @escaping (_ result: Result)->Void) {
@@ -52,12 +54,13 @@ class TwitterSharer: NSObject {
             
             self.account = accounts.first!
             
-            guard let mediaData = NSData(contentsOf: self.videoPathURL) else {
-                completion(.failure)
-                return
-            }
-            
-            self.postMedia(tweet: "test", mediaData: mediaData as Data, fileSize: String(mediaData.length), completion: completion)
+            self.compressVideo(compressCompletion: {(success, compressedData) in
+                if success {
+                    self.postMedia(tweet: self.tweet, mediaData: compressedData as! Data, fileSize: String(compressedData!.length), completion: completion)
+                } else {
+                    completion(.failure)
+                }
+            })
         }
     }
     
@@ -153,6 +156,47 @@ class TwitterSharer: NSObject {
             } else {
                 completion(.failure)
                 return
+            }
+        }
+    }
+    
+    func compressVideo(compressCompletion: @escaping (_ success: Bool, _ compressedData: NSData?)->Void) {
+        let urlAsset = AVURLAsset(url: self.videoPathURL, options: nil)
+        guard let exportSession = AVAssetExportSession(asset: urlAsset, presetName: AVAssetExportPresetMediumQuality) else {
+            compressCompletion(false, nil)
+            return
+        }
+        
+        var filePath = NSTemporaryDirectory()
+        filePath = filePath + "temp.mov"
+        do {
+            try FileManager.default.removeItem(atPath: filePath)
+        } catch {
+            
+        }
+        
+        exportSession.outputURL = URL(fileURLWithPath: filePath)
+        exportSession.outputFileType = AVFileTypeQuickTimeMovie
+        exportSession.shouldOptimizeForNetworkUse = true
+        exportSession.exportAsynchronously {
+            switch exportSession.status {
+            case .unknown:
+                compressCompletion(false, nil)
+            case .waiting:
+                compressCompletion(false, nil)
+            case .exporting:
+                compressCompletion(false, nil)
+            case .completed:
+                guard let data = NSData(contentsOf: exportSession.outputURL!) else {
+                    compressCompletion(false, nil)
+                    return
+                }
+                compressCompletion(true, data)
+            case .failed:
+                print(exportSession.error.debugDescription)
+                compressCompletion(false, nil)
+            case .cancelled:
+                compressCompletion(false, nil)
             }
         }
     }
