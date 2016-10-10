@@ -12,8 +12,9 @@ import AVKit
 import AVFoundation
 import Photos
 import MediaPlayer
+import FBSDKShareKit
 
-class MoviePreViewController: UIViewController {
+class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FBSDKSharingDelegate {
     
     var videoPath: URL!
     var activityIndicator: UIActivityIndicatorView!
@@ -33,6 +34,62 @@ class MoviePreViewController: UIViewController {
     @IBAction func didTapActionButton(_ sender: AnyObject) {
         showShareActionSheet()
     }
+    
+    // MARK: - Camera
+    
+    func saveMovieToCameraRoll() {
+        PHPhotoLibrary.requestAuthorization { (status) -> Void in
+            switch (status) {
+            case .authorized:
+                try! PHPhotoLibrary.shared().performChangesAndWait { () -> Void in
+                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoPath)
+                    self.showSavedVideoConfirmAlert()
+                }
+            case .denied:
+                self.showDeniedCameraAccessAlert()
+            default:
+                self.showDeniedCameraAccessAlert()
+            }
+        }
+    }
+    
+    func selectFromLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePickerController.mediaTypes = ["public.movie"]
+            
+            present(imagePickerController, animated: true, completion: nil)
+        } else {
+            print("カメラロール許可をしていない時の処理")
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let imageURL = info[UIImagePickerControllerReferenceURL] as? URL {
+            self.showActivityIndicator()
+            
+            let facebbok = FacebookSharer(url: imageURL, moviePreViewController: self)
+            facebbok.post(completion: { (result: FacebookResult) in
+                switch result {
+                case .success:
+                    break
+                case .failure:
+                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
+                case .noSettingAccountFailure:
+                    picker.dismiss(animated: true, completion: {
+                        self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_account_setting", comment: ""))
+                    })
+                }
+            })
+            DispatchQueue.main.async {
+                self.removeActivityIndicator()
+            }
+        }
+    }
+    
+    // MARK: - AlertController
     
     func showBackActionSheet() {
         let actionSheet = UIAlertController(title: NSLocalizedString("backActionSheet_title", comment: ""), message: NSLocalizedString("backActionSheet_message", comment: ""), preferredStyle: .actionSheet)
@@ -56,11 +113,8 @@ class MoviePreViewController: UIViewController {
         let saveAction = UIAlertAction(title: NSLocalizedString("share_actionSheetSave", comment: ""), style: .default, handler: { (action: UIAlertAction) in
             self.saveMovieToCameraRoll()
         })
-        let facebookAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action: UIAlertAction) in
-            let facebbok = FacebookSharer()
-            facebbok.post(videoPath: self.videoPath) {
-                self.showCompleteShareAlert()
-            }
+        let facebookAction = UIAlertAction(title: "Facebook(you need to save this video before share)", style: .default, handler: { (action: UIAlertAction) in
+            self.selectFromLibrary()
         })
         let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { (action: UIAlertAction) in
             self.showActivityIndicator()
@@ -90,22 +144,6 @@ class MoviePreViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    func saveMovieToCameraRoll() {
-        PHPhotoLibrary.requestAuthorization { (status) -> Void in
-            switch (status) {
-            case .authorized:
-                try! PHPhotoLibrary.shared().performChangesAndWait { () -> Void in
-                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoPath)
-                    self.showSavedVideoConfirmAlert()
-                }
-            case .denied:
-                self.showDeniedCameraAccessAlert()
-            default:
-                self.showDeniedCameraAccessAlert()
-            }
-        }
     }
     
     func showSavedVideoConfirmAlert() {
@@ -143,6 +181,8 @@ class MoviePreViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    // MARK: - ActivityIndicator
+    
     func showActivityIndicator() {
         activityIndicator = UIActivityIndicatorView()
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -161,14 +201,31 @@ class MoviePreViewController: UIViewController {
     func removeActivityIndicator() {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
-        
     }
+    
+    // MARK: - Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RunPlayerViewController" {
             let playerViewController = segue.destination as! PlayerViewController
             playerViewController.videoPath = self.videoPath
         }
+    }
+    
+    // MARK: - FBDelegate
+    
+    public func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    public func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
+        dismiss(animated: true, completion: {
+            self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
+        })
+    }
+    
+    public func sharerDidCancel(_ sharer: FBSDKSharing!) {
+        
     }
     
 }

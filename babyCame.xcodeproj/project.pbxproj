@@ -16,6 +16,10 @@
 		50D99C261DA90C4300D8A3E4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C251DA90C4300D8A3E4 /* Accounts.framework */; };
 		50D99C281DA9130600D8A3E4 /* TwitterSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D99C271DA9130600D8A3E4 /* TwitterSharer.swift */; };
 		50D99C2A1DA9133200D8A3E4 /* FacebookSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D99C291DA9133200D8A3E4 /* FacebookSharer.swift */; };
+		50D99C2C1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C2B1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework */; };
+		50D99C2E1DAA200500D8A3E4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C2D1DAA200500D8A3E4 /* FBSDKLoginKit.framework */; };
+		50D99C301DAA200F00D8A3E4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C2F1DAA200F00D8A3E4 /* FBSDKShareKit.framework */; };
+		50D99C321DAA214D00D8A3E4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C311DAA214D00D8A3E4 /* Bolts.framework */; };
 		50DF931D1CA5807300DE7CBE /* bike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931C1CA5807300DE7CBE /* bike.mp3 */; };
 		50DF93211CA5821000DE7CBE /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931E1CA5821000DE7CBE /* car.mp3 */; };
 		50DF93221CA5821000DE7CBE /* patrol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931F1CA5821000DE7CBE /* patrol.mp3 */; };
@@ -99,6 +103,10 @@
 		50D99C251DA90C4300D8A3E4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		50D99C271DA9130600D8A3E4 /* TwitterSharer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSharer.swift; sourceTree = "<group>"; };
 		50D99C291DA9133200D8A3E4 /* FacebookSharer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookSharer.swift; sourceTree = "<group>"; };
+		50D99C2B1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		50D99C2D1DAA200500D8A3E4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		50D99C2F1DAA200F00D8A3E4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		50D99C311DAA214D00D8A3E4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		50DF931C1CA5807300DE7CBE /* bike.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bike.mp3; sourceTree = "<group>"; };
 		50DF931E1CA5821000DE7CBE /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
 		50DF931F1CA5821000DE7CBE /* patrol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = patrol.mp3; sourceTree = "<group>"; };
@@ -173,10 +181,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D99C2C1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework in Frameworks */,
 				50D99C261DA90C4300D8A3E4 /* Accounts.framework in Frameworks */,
+				50D99C2E1DAA200500D8A3E4 /* FBSDKLoginKit.framework in Frameworks */,
+				50D99C301DAA200F00D8A3E4 /* FBSDKShareKit.framework in Frameworks */,
 				50E46D411DA8F9D7001E32B3 /* Social.framework in Frameworks */,
 				EA93B2581BF1CC70003BE7D8 /* AVFoundation.framework in Frameworks */,
 				535FBD2818BEA8699D4FDED9 /* Pods_babyCame.framework in Frameworks */,
+				50D99C321DAA214D00D8A3E4 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +221,10 @@
 		504AC4D21BF6D2A500867F32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50D99C311DAA214D00D8A3E4 /* Bolts.framework */,
+				50D99C2F1DAA200F00D8A3E4 /* FBSDKShareKit.framework */,
+				50D99C2D1DAA200500D8A3E4 /* FBSDKLoginKit.framework */,
+				50D99C2B1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework */,
 				50D99C251DA90C4300D8A3E4 /* Accounts.framework */,
 				50E46D401DA8F9D7001E32B3 /* Social.framework */,
 				EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */,
