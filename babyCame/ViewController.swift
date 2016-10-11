@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let backButton = UIBarButtonItem(title: "戻る", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("navigation_leftButton", comment: ""), style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
     }
 

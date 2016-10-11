@@ -20,6 +20,7 @@ class GamePreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setGameTitle()
         showGame()
         setAd()
     }
@@ -33,16 +34,35 @@ class GamePreViewController: UIViewController {
     }
     
     func showConfirmAlert() {
-        let alertController = UIAlertController(title: "確認", message: "このゲームで遊びますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "はい", style: .default, handler: { (action: UIAlertAction) -> Void in
+        let alertController = UIAlertController(title: NSLocalizedString("comfirm_alertTitle_in_preview", comment: ""), message: NSLocalizedString("comfirm_alertMessage_in_preview", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "RunGameViewController", sender: self)
         })
-        let ngAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
+        let ngAction = UIAlertAction(title: NSLocalizedString("alertNG_action", comment: ""), style: .cancel, handler: nil)
         
         alertController.addAction(okAction)
         alertController.addAction(ngAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func setGameTitle() {
+        switch indexPath {
+        case 0:
+            title = NSLocalizedString("title_animal", comment: "")
+        case 1:
+            title = NSLocalizedString("title_night", comment: "")
+        case 2:
+            title = NSLocalizedString("title_japanese", comment: "")
+        case 3:
+            title = NSLocalizedString("title_vehicle", comment: "")
+        case 4:
+            title = NSLocalizedString("title_bubble", comment: "")
+        case 5:
+            title = NSLocalizedString("title_music", comment: "")
+        default:
+            break
+        }
     }
     
     func showGame() {

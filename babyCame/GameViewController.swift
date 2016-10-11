@@ -33,7 +33,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     override func viewWillAppear(_ animated: Bool) {
         timeLeft = 15
         didTouchScreenOnce = false
-        navigationBar.topItem?.title = String(timeLeft) + "秒"
+        navigationBar.topItem?.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
         
         showGame()
         self.view.bringSubview(toFront: navigationBar)
@@ -69,7 +69,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     func updateTime() {
         if timeLeft > 1 {
             timeLeft -= 1
-            navigationBar.topItem?.title = String(timeLeft) + "秒"
+            navigationBar.topItem?.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
         } else {
             timer.invalidate()
             fileOutput.stopRecording()
@@ -77,8 +77,8 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     func showCompletionAlert(_ videoPath: URL) {
-        let alertController = UIAlertController(title: "撮影完了", message: "撮影したムービーを見てみましょう！", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) -> Void in
+        let alertController = UIAlertController(title: NSLocalizedString("finish_take_alertTitle", comment: ""), message: NSLocalizedString("finish_take_alertMessage", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "RunMoviePreViewController", sender: videoPath)
         })
         
