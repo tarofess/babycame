@@ -176,7 +176,7 @@ class TwitterSharer: NSObject {
         }
         
         exportSession.outputURL = URL(fileURLWithPath: filePath)
-        exportSession.outputFileType = AVFileTypeQuickTimeMovie
+        exportSession.outputFileType = AVFileType.mov
         exportSession.shouldOptimizeForNetworkUse = true
         exportSession.exportAsynchronously {
             switch exportSession.status {

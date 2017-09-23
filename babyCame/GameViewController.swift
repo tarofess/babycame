@@ -15,8 +15,8 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     let captureSession = AVCaptureSession()
-    let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-    let audioDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
+    let videoDevice = AVCaptureDevice.default(for: AVMediaType.video)
+    let audioDevice = AVCaptureDevice.default(for: AVMediaType.audio)
     let fileOutput = AVCaptureMovieFileOutput()
     
     var timer: Timer!
@@ -63,10 +63,10 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         let documentsDirectory = paths[0] as String
         let filePath : String? = "\(documentsDirectory)/baby\(UUID().uuidString).mov"
         let fileURL = URL(fileURLWithPath: filePath!)
-        fileOutput.startRecording(toOutputFileURL: fileURL, recordingDelegate: self)
+        fileOutput.startRecording(to: fileURL, recordingDelegate: self)
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         if timeLeft > 1 {
             timeLeft -= 1
             navigationBar.topItem?.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
@@ -88,12 +88,12 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     func setUpCamera() {
-        let devices = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: .front).devices
+        let devices = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .front).devices
         
         do {
-            let videoInput = try AVCaptureDeviceInput(device: devices?.first!) as AVCaptureDeviceInput
+            let videoInput = try AVCaptureDeviceInput(device: devices.first!) as AVCaptureDeviceInput
             captureSession.addInput(videoInput)
-            let audioInput = try AVCaptureDeviceInput(device: audioDevice) as AVCaptureDeviceInput
+            let audioInput = try AVCaptureDeviceInput(device: audioDevice!) as AVCaptureDeviceInput
             captureSession.addInput(audioInput);
         } catch {
             
@@ -103,7 +103,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         captureSession.startRunning()
     }
     
-    func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+    func fileOutput(_ captureOutput: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         showCompletionAlert(outputFileURL)
     }
     
