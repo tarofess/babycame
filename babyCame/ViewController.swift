@@ -7,19 +7,15 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     let gamePreviewImageNameArray = ["Expansion", "Rotation", "Particle", "Move", "Bubble", "Sound"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setAd()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,12 +62,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToTop(_ segue: UIStoryboardSegue) {
-    }
-    
-    // MARK:- Ad
-    
-    func setAd() {
-        bannerView.load(GADRequest())
     }
     
 }
