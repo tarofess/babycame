@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
 class GamePreViewController: UIViewController {
     
     @IBOutlet weak var gameTitleNavigationItem: UINavigationItem!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var indexPath: Int!
     
@@ -20,6 +22,8 @@ class GamePreViewController: UIViewController {
         
         setGameTitle()
         showGame()
+        bannerView.load(GADRequest())
+        self.view.bringSubview(toFront: bannerView)
     }
     
     override func didReceiveMemoryWarning() {

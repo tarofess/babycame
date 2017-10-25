@@ -26,7 +26,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     @IBAction func didTapBackButton(_ sender: AnyObject) {
         showBackActionSheet()
     }
