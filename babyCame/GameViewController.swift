@@ -33,7 +33,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     override func viewWillAppear(_ animated: Bool) {
         timeLeft = 15
         didTouchScreenOnce = false
-        navigationBar.topItem?.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
+        navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
         
         showGame()
         self.view.bringSubview(toFront: navigationBar)
@@ -69,7 +69,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     @objc func updateTime() {
         if timeLeft > 1 {
             timeLeft -= 1
-            navigationBar.topItem?.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
+            navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
         } else {
             timer.invalidate()
             fileOutput.stopRecording()
@@ -108,7 +108,8 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let moviePreViewController = segue.destination as! MoviePreViewController
+        let navController = segue.destination as! UINavigationController
+        let moviePreViewController = navController.topViewController as! MoviePreViewController
         moviePreViewController.videoPath = sender as! URL
     }
     

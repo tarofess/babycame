@@ -74,7 +74,8 @@ class GamePreViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let gameViewController = segue.destination as! GameViewController
+        let navController = segue.destination as! UINavigationController
+        let gameViewController = navController.topViewController as! GameViewController
         gameViewController.indexPath = indexPath
     }
     
