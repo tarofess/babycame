@@ -36,7 +36,7 @@ class TwitterSharer: NSObject {
         let accountType:ACAccountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         accountStore.requestAccessToAccounts(with: accountType, options: nil) { (granted, error) -> Void in
             if error != nil {
-                print("error! \(error)")
+                print("error! \(String(describing: error))")
                 completion(.failure)
                 return
             }
@@ -56,7 +56,7 @@ class TwitterSharer: NSObject {
             
             self.compressVideo(compressCompletion: {(success, compressedData) in
                 if success {
-                    self.postMedia(tweet: self.tweet, mediaData: compressedData as! Data, fileSize: String(compressedData!.length), completion: completion)
+                    self.postMedia(tweet: self.tweet, mediaData: compressedData! as Data, fileSize: String(compressedData!.length), completion: completion)
                 } else {
                     completion(.failure)
                 }
@@ -74,7 +74,7 @@ class TwitterSharer: NSObject {
         // INIT リクエスト
         uploadVideoInitRequest(fileSize: fileSize, success: { (_ responseData: Data)->Void in
             do {
-                json = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as! [String: Any]
+                json = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any]
             } catch {
                 completion(.failure)
                 return

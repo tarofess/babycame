@@ -67,7 +67,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let imageURL = info[UIImagePickerControllerReferenceURL] as? URL {
+        if let imageURL = info[UIImagePickerControllerPHAsset] as? URL {
             self.showActivityIndicator()
             
             let facebbok = FacebookSharer(url: imageURL, moviePreViewController: self)
@@ -122,8 +122,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         let cancelAction = UIAlertAction(title: NSLocalizedString("share_cancel", comment: ""), style: .cancel, handler: nil)
         
         alertController.addAction(saveAction)
-        alertController.addAction(facebookAction)
-        alertController.addAction(twitterAction)
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)

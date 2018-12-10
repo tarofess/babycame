@@ -37,7 +37,7 @@ class Rotation: UIView {
             }
         }
         imageView.transform = CGAffineTransform(rotationAngle: 0)
-        let angle:CGFloat = CGFloat(M_PI)
+        let angle:CGFloat = .pi
         
         UIView.animate(withDuration: 1.0, animations: { () -> Void in
                                     imageView.transform = CGAffineTransform(rotationAngle: angle)
@@ -47,7 +47,7 @@ class Rotation: UIView {
     
     func rotate(_ targetView: UIView, duration: Double = 1.0) {
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
-            targetView.transform = targetView.transform.rotated(by: CGFloat(M_PI))
+            targetView.transform = targetView.transform.rotated(by: .pi)
         }) { finished in
             self.rotate(targetView, duration: duration)
         }

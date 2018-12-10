@@ -110,7 +110,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navController = segue.destination as! UINavigationController
         let moviePreViewController = navController.topViewController as! MoviePreViewController
-        moviePreViewController.videoPath = sender as! URL
+        moviePreViewController.videoPath = sender as? URL
     }
     
 }
