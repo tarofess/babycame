@@ -14,7 +14,7 @@ import Photos
 import MediaPlayer
 import FBSDKShareKit
 
-class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FBSDKSharingDelegate {
+class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var videoPath: URL!
     var activityIndicator: UIActivityIndicatorView!
@@ -32,7 +32,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func didTapActionButton(_ sender: AnyObject) {
-        showShareActionSheet()
+        showSaveAlert()
     }
     
     // MARK: - Camera
@@ -66,29 +66,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let imageURL = info[UIImagePickerControllerPHAsset] as? URL {
-            self.showActivityIndicator()
-            
-            let facebbok = FacebookSharer(url: imageURL, moviePreViewController: self)
-            facebbok.post(completion: { (result: FacebookResult) in
-                switch result {
-                case .success:
-                    break
-                case .failure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
-                case .noSettingAccountFailure:
-                    picker.dismiss(animated: true, completion: {
-                        self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_account_setting", comment: ""))
-                    })
-                }
-            })
-            DispatchQueue.main.async {
-                self.removeActivityIndicator()
-            }
-        }
-    }
-    
     // MARK: - AlertController
     
     func showBackActionSheet() {
@@ -108,21 +85,15 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         present(actionSheet, animated: true, completion: nil)
     }
     
-    func showShareActionSheet() {
-        let alertController = UIAlertController(title: NSLocalizedString("share_actionSheetTitle", comment: ""), message: NSLocalizedString("share_actionSheetMessage", comment: ""), preferredStyle: .actionSheet)
-        let saveAction = UIAlertAction(title: NSLocalizedString("share_actionSheetSave", comment: ""), style: .default, handler: { (action: UIAlertAction) in
+    func showSaveAlert() {
+        let alertController = UIAlertController(title: NSLocalizedString("save_alertTitle", comment: ""), message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("save_alertOK", comment: ""), style: .default, handler: { (action: UIAlertAction) in
             self.saveMovieToCameraRoll()
         })
-        let facebookAction = UIAlertAction(title: NSLocalizedString("facebook_actionSheetMessage", comment: ""), style: .default, handler: { (action: UIAlertAction) in
-            self.selectFromLibrary()
-        })
-        let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { (action: UIAlertAction) in
-            self.showTweetMessageAlert()
-        })
-        let cancelAction = UIAlertAction(title: NSLocalizedString("share_cancel", comment: ""), style: .cancel, handler: nil)
+        let ngAction = UIAlertAction(title: NSLocalizedString("save_alertNG", comment: ""), style: .cancel, handler: nil)
         
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        alertController.addAction(ngAction)
         
         present(alertController, animated: true, completion: nil)
     }
@@ -144,77 +115,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         present(alertController, animated: true, completion: nil)
     }
     
-    func showCompleteShareAlert() {
-        let alertController = UIAlertController(title: NSLocalizedString("share_completionTitle", comment: ""), message: NSLocalizedString("share_completionMessage", comment: ""), preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func showFailureShareAlert(errorMessage: String) {
-        let alertController = UIAlertController(title: NSLocalizedString("share_failureTitle", comment: ""), message: errorMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func showTweetMessageAlert() {
-        let alertController = UIAlertController(title: NSLocalizedString("twitter_tweetAlertTitle", comment: ""), message: NSLocalizedString("twitter_tweetAlertMessage", comment: ""), preferredStyle: .alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) in
-            let textField = alertController.textFields![0]
-            
-            self.showActivityIndicator()
-            let twitter = TwitterSharer(url: self.videoPath, tweet: textField.text!)
-            twitter.post(completion: { (result: Result) in
-                switch result {
-                case .success:
-                    self.showCompleteShareAlert()
-                case .failure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
-                case .noPermissionAccountFailure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_permission_account", comment: ""))
-                case .noSettingAccountFailure:
-                    self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failure_no_account_setting", comment: ""))
-                }
-                DispatchQueue.main.async {
-                    self.removeActivityIndicator()
-                }
-            })
-        })
-        let ngAction = UIAlertAction(title: NSLocalizedString("share_cancel", comment: ""), style: .default, handler: nil)
-        alertController.addAction(ngAction)
-        alertController.addAction(okAction)
-        alertController.addTextField(configurationHandler: nil)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: - ActivityIndicator
-    
-    func showActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView()
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        activityIndicator.backgroundColor = UIColor(red: 0/2555, green: 0/255, blue: 0/255, alpha: 0.7)
-        activityIndicator.layer.cornerRadius = 8
-        activityIndicator.center = self.view.center
-        
-        activityIndicator.hidesWhenStopped = false
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
-        
-        activityIndicator.startAnimating()
-        
-        self.view.addSubview(activityIndicator)
-    }
-    
-    func removeActivityIndicator() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
-    }
-    
     // MARK: - Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -222,22 +122,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
             let playerViewController = segue.destination as! PlayerViewController
             playerViewController.videoPath = self.videoPath
         }
-    }
-    
-    // MARK: - FBDelegate
-    
-    public func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable : Any]!) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    public func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
-        dismiss(animated: true, completion: {
-            self.showFailureShareAlert(errorMessage: NSLocalizedString("share_failureMessage", comment: ""))
-        })
-    }
-    
-    public func sharerDidCancel(_ sharer: FBSDKSharing!) {
-        
     }
     
 }

@@ -25,17 +25,9 @@ CFBundleDisplayName = "BabyCame";
 "finish_take_alertTitle" = "Finished";
 "finish_take_alertMessage" = "Let's watch the video you took!";
 
-"share_actionSheetTitle" = "Do you want to save this video?";
-"share_actionSheetMessage" = "Do you want to share this video?";
-"share_actionSheetSave" = "Save";
-"share_cancel" = "Cancel";
-"share_completionTitle" = "Completion!";
-"share_completionMessage" = "completed sharing successfully";
-"share_failureTitle" = "Error";
-"share_failureMessage" = "Failed sharing";
-"share_failure_no_permission_account" = "No account permission";
-"share_failure_no_account_setting" = "Set Twitter account from Settings";
-
+"save_alertTitle" = "Do you want to save this video?";
+"save_alertOK" = "OK";
+"save_alertNG" = "Cancel";
 "saveFinished_alertTitle" = "Completion!";
 "saveFinished_alertMessage" = "Saved the video successfully";
 "failedSave_alertTitle" = "Couldn't save the video";
@@ -45,7 +37,3 @@ CFBundleDisplayName = "BabyCame";
 "backActionSheet_back" = "Change the game";
 "backActionSheet_take_again" = "Take a video again";
 "backActionSheet_cancel" = "Cancel";
-
-"facebook_actionSheetMessage" = "Facebook(you need to save this video before share)";
-"twitter_tweetAlertTitle" = "Tweet Message";
-"twitter_tweetAlertMessage" = "Input tweet message";
