@@ -27,6 +27,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
         setCamera()
     }
     
@@ -102,14 +103,9 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         } catch {
             
         }
+        
         captureSession.commitConfiguration()
         captureSession.addOutput(fileOutput)
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.bounds
-        previewLayer.connection?.videoOrientation = .landscapeLeft
-        view.layer.addSublayer(previewLayer)
-        
         captureSession.startRunning()
     }
     

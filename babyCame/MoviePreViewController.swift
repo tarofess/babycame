@@ -25,12 +25,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let avAsset = AVURLAsset(url: videoPath, options: nil)
-        let playerItem = AVPlayerItem(asset: avAsset)
-        videoPlayer = AVPlayer(playerItem: playerItem)
-        let layer = playerView.layer as! AVPlayerLayer
-        layer.player = videoPlayer
-        
+        setPlayer()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -50,6 +45,14 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     // MARK: - Camera
+    
+    func setPlayer() {
+        let avAsset = AVURLAsset(url: videoPath, options: nil)
+        let playerItem = AVPlayerItem(asset: avAsset)
+        videoPlayer = AVPlayer(playerItem: playerItem)
+        let layer = playerView.layer as! AVPlayerLayer
+        layer.player = videoPlayer
+    }
     
     func saveMovieToCameraRoll() {
         PHPhotoLibrary.requestAuthorization { (status) -> Void in
@@ -88,7 +91,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
             self.performSegue(withIdentifier: "UnwindToTop", sender: self)
         })
         let backToGameViewControllerAction = UIAlertAction(title: NSLocalizedString("backActionSheet_take_again", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         })
         let cancelAction = UIAlertAction(title: NSLocalizedString("backActionSheet_cancel", comment: ""), style: .cancel, handler: nil)
         

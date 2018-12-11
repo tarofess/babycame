@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776.79999999999995" y="318.89055472263868"/>
+            <point key="canvasLocation" x="777" y="318"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="kTK-UL-tkg">
@@ -134,12 +134,12 @@
                     <connections>
                         <outlet property="bannerView" destination="JJe-vc-6tC" id="MBX-pR-Ajr"/>
                         <outlet property="gameTitleNavigationItem" destination="fTW-Xp-SGw" id="BzV-ey-E1n"/>
-                        <segue destination="1xf-BS-T3o" kind="presentation" identifier="RunGameViewController" id="Qc4-9d-XAX"/>
+                        <segue destination="hav-os-rEK" kind="show" identifier="RunGameViewController" id="X8K-tD-L6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-IS-z6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407.2" y="318.89055472263868"/>
+            <point key="canvasLocation" x="1425" y="318"/>
         </scene>
         <!--15秒-->
         <scene sceneID="KjC-GS-5Tg">
@@ -181,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYe-mx-sGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2706" y="318"/>
+            <point key="canvasLocation" x="2075" y="318"/>
         </scene>
         <!--Movie Pre View Controller-->
         <scene sceneID="IG9-uj-sa3">
@@ -202,8 +202,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SN7-K2-huF" secondAttribute="trailing" id="CVA-q6-Ltc"/>
-                            <constraint firstItem="M66-Rc-nPb" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" id="Sib-m6-CHg"/>
                             <constraint firstItem="SN7-K2-huF" firstAttribute="leading" secondItem="gD8-AY-Cdd" secondAttribute="leading" id="kAX-xg-ORg"/>
+                            <constraint firstItem="M66-Rc-nPb" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" id="tha-zi-e7k"/>
                             <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="CRW-Mn-9Bt" secondAttribute="bottom" id="vGA-IV-zga"/>
                         </constraints>
                     </view>
@@ -227,7 +227,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oja-BF-FOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Tpf-q4-Niz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3374" y="318"/>
+            <point key="canvasLocation" x="2735.9820089955024" y="317.60000000000002"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f61-t5-pxk">
@@ -246,24 +246,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq8-9W-PCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="129" y="319"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="iVq-nC-ksi">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1xf-BS-T3o" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FLM-K9-6l0">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hav-os-rEK" kind="relationship" relationship="rootViewController" id="l36-wg-FRa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SaK-2W-3Nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2040" y="318.44077961019491"/>
         </scene>
     </scenes>
 </document>
