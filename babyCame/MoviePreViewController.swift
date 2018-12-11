@@ -17,6 +17,7 @@ import FBSDKShareKit
 class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var playerView: AVPlayerView!
+    @IBOutlet weak var playerButton: UIButton!
     
     var videoPlayer:AVPlayer!
     var videoPath: URL!
@@ -24,8 +25,15 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setPlayer()
+        NotificationCenter.default.addObserver(self, selector: #selector(removeLocalVideo), name: Notification.Name(rawValue: "removeLocalVideo"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        removeLocalVideo()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -42,6 +50,18 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func didTapActionButton(_ sender: AnyObject) {
         showSaveAlert()
+    }
+    
+    @IBAction func didTapPlayerButton(_ sender: Any) {
+        if (playerButton.tag == 0) {
+            videoPlayer.play()
+            playerButton.setImage(UIImage(named: "pause"), for: .normal)
+            playerButton.tag = 1
+        } else {
+            videoPlayer.pause()
+            playerButton.setImage(UIImage(named: "start"), for: .normal)
+            playerButton.tag = 0
+        }
     }
     
     // MARK: - Camera
@@ -80,6 +100,15 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
             present(imagePickerController, animated: true, completion: nil)
         } else {
             print("カメラロール許可をしていない時の処理")
+        }
+    }
+    
+    @objc func removeLocalVideo() {
+        do {
+            let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/" + videoPath.lastPathComponent
+            try FileManager.default.removeItem(atPath: filePath)
+        } catch {
+            print("remove error")
         }
     }
     
