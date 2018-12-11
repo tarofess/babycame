@@ -21,9 +21,8 @@ class GamePreViewController: UIViewController {
         super.viewDidLoad()
         
         setGameTitle()
+        setAd()
         showGame()
-        bannerView.load(GADRequest())
-        self.view.bringSubview(toFront: bannerView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +63,11 @@ class GamePreViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func setAd() {
+        bannerView.load(GADRequest())
+        self.view.bringSubview(toFront: bannerView)
     }
     
     func showGame() {

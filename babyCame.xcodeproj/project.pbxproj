@@ -36,7 +36,6 @@
 		50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */; };
 		50F81AA51DA8696D0068B467 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA71DA8696D0068B467 /* Localizable.strings */; };
 		50F81AA91DA86A510068B467 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA81DA86A510068B467 /* family.png */; };
-		EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */; };
 		EA4A5EB81FA08380004E33AC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EB71FA08373004E33AC /* AdSupport.framework */; };
 		EA4A5EBA1FA08391004E33AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EB91FA0838A004E33AC /* AudioToolbox.framework */; };
 		EA4A5EBC1FA083A1004E33AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EBB1FA0839C004E33AC /* CoreGraphics.framework */; };
@@ -142,7 +141,6 @@
 		50F81AA61DA8696D0068B467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50F81AA81DA86A510068B467 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
 		50F81AAA1DA86A960068B467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EA4A5EB71FA08373004E33AC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		EA4A5EB91FA0838A004E33AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EA4A5EBB1FA0839C004E33AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -342,7 +340,6 @@
 				50E177291BE4A8D2009CA822 /* GamePreViewController.swift */,
 				505C89401BED9F9F00F905A1 /* GameViewController.swift */,
 				505C89421BEDA6C500F905A1 /* MoviePreViewController.swift */,
-				EA2502241C5EF49B0047E1EC /* PlayerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -639,7 +636,6 @@
 				505C89491BEDBFD800F905A1 /* Expansion.swift in Sources */,
 				EAFEDC1E1CA25B8200E3B7D2 /* Bubble.swift in Sources */,
 				50E177241BE474E7009CA822 /* GameScreenShotCollectionViewCell.swift in Sources */,
-				EA2502251C5EF49B0047E1EC /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,17 +16,31 @@ import FBSDKShareKit
 
 class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var playerView: AVPlayerView!
+    
+    var videoPlayer:AVPlayer!
     var videoPath: URL!
     var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()   
+        super.viewDidLoad()
+        
+        let avAsset = AVURLAsset(url: videoPath, options: nil)
+        let playerItem = AVPlayerItem(asset: avAsset)
+        videoPlayer = AVPlayer(playerItem: playerItem)
+        let layer = playerView.layer as! AVPlayerLayer
+        layer.player = videoPlayer
+        
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func didTapBackButton(_ sender: AnyObject) {
         showBackActionSheet()
     }
@@ -113,15 +127,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: - Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RunPlayerViewController" {
-            let playerViewController = segue.destination as! PlayerViewController
-            playerViewController.videoPath = self.videoPath
-        }
     }
     
 }

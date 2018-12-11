@@ -21,20 +21,18 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     var timer: Timer!
     var indexPath: Int!
-    var timeLeft = 15
+    var timeLeft: Int!
     var didTouchScreenOnce = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpCamera()
+        setCamera()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        timeLeft = 15
         didTouchScreenOnce = false
-        navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
-        
+        setTimeLeft()
         showGame()
         self.view.bringSubview(toFront: navigationBar)
     }
@@ -49,6 +47,11 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
             startRecording()
             didTouchScreenOnce = true
         }
+    }
+    
+    func setTimeLeft() {
+        timeLeft = 1
+        navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
     }
     
     func showGame() {
@@ -72,6 +75,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
             navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
         } else {
             timer.invalidate()
+            navigationItem.title = String(0) + NSLocalizedString("sec", comment: "")
             fileOutput.stopRecording()
         }
     }
@@ -87,7 +91,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         present(alertController, animated: true, completion: nil)
     }
     
-    func setUpCamera() {
+    func setCamera() {
         let devices = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .front).devices
         
         do {
@@ -100,6 +104,12 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         }
         captureSession.commitConfiguration()
         captureSession.addOutput(fileOutput)
+        
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.bounds
+        previewLayer.connection?.videoOrientation = .landscapeLeft
+        view.layer.addSublayer(previewLayer)
+        
         captureSession.startRunning()
     }
     
@@ -108,8 +118,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navController = segue.destination as! UINavigationController
-        let moviePreViewController = navController.topViewController as! MoviePreViewController
+        let moviePreViewController = segue.destination as! MoviePreViewController
         moviePreViewController.videoPath = sender as? URL
     }
     
