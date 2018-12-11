@@ -51,7 +51,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     func setTimeLeft() {
-        timeLeft = 3
+        timeLeft = Preferences.timeLeft ?? 15
         navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
     }
     

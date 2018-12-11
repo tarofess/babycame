@@ -79,7 +79,13 @@
                             <constraint firstItem="yIs-37-hTn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lco-Bp-09W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ゲームを選んでね！" id="aUb-Jr-t7o"/>
+                    <navigationItem key="navigationItem" title="ゲームを選んでね！" id="aUb-Jr-t7o">
+                        <barButtonItem key="rightBarButtonItem" title="設定" id="3uM-UO-MT4">
+                            <connections>
+                                <segue destination="cIa-kA-dCp" kind="show" identifier="RunSettingViewController" id="sh2-tv-hTC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="yB9-oX-O6H" id="FSq-L9-Jff"/>
                         <outlet property="collectionView" destination="yIs-37-hTn" id="feP-jQ-10r"/>
@@ -89,6 +95,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="777" y="318"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="BFT-gQ-ZBj">
+            <objects>
+                <viewController id="cIa-kA-dCp" customClass="SettingViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ULi-e4-6MN"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Wz-BF-FMM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FT1-hf-2jM">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-CU-MaC">
+                                <rect key="frame" x="174" y="107" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cIa-kA-dCp" id="Sxo-5V-dug"/>
+                                    <outlet property="delegate" destination="cIa-kA-dCp" id="1X1-SY-crz"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撮影する時間を設定してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRX-r9-lU0">
+                                <rect key="frame" x="203.5" y="78" width="260" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-Aa-bxD" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/4727298226"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TZD-CU-MaC" firstAttribute="top" secondItem="BRX-r9-lU0" secondAttribute="bottom" constant="7.5" id="5Ur-ma-J0c"/>
+                            <constraint firstItem="TZD-CU-MaC" firstAttribute="centerX" secondItem="FT1-hf-2jM" secondAttribute="centerX" id="78H-TF-3Lw"/>
+                            <constraint firstItem="BRX-r9-lU0" firstAttribute="centerX" secondItem="FT1-hf-2jM" secondAttribute="centerX" id="8Ws-0j-aAk"/>
+                            <constraint firstItem="TZD-CU-MaC" firstAttribute="centerY" secondItem="FT1-hf-2jM" secondAttribute="centerY" id="BqO-T1-oYv"/>
+                            <constraint firstItem="BRX-r9-lU0" firstAttribute="top" secondItem="ULi-e4-6MN" secondAttribute="bottom" constant="46" id="YvC-oX-KKm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerView" destination="mqk-Aa-bxD" id="a7h-Vz-3os"/>
+                        <outlet property="pickerView" destination="TZD-CU-MaC" id="rBv-a1-hBv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Tk-UE-QqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.76161919040487" y="1104.8"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="kTK-UL-tkg">

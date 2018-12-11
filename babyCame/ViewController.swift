@@ -59,10 +59,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     // MARK: - Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = sender as! IndexPath
-        
-        let gamePreViewController = segue.destination as! GamePreViewController
-        gamePreViewController.indexPath = indexPath.row
+        if (segue.identifier == "RunGamePreViewController") {
+            let indexPath = sender as! IndexPath
+            let gamePreViewController = segue.destination as! GamePreViewController
+            gamePreViewController.indexPath = indexPath.row
+        }
     }
     
     @IBAction func unwindToTop(_ segue: UIStoryboardSegue) {

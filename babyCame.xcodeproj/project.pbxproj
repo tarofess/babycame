@@ -36,6 +36,8 @@
 		50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */; };
 		50F81AA51DA8696D0068B467 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA71DA8696D0068B467 /* Localizable.strings */; };
 		50F81AA91DA86A510068B467 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA81DA86A510068B467 /* family.png */; };
+		EA084BBF21BFAAA7003A4B0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA084BBE21BFAAA7003A4B0B /* SettingViewController.swift */; };
+		EA084BC121BFAF1E003A4B0B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA084BC021BFAF1E003A4B0B /* Preferences.swift */; };
 		EA4A5EB81FA08380004E33AC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EB71FA08373004E33AC /* AdSupport.framework */; };
 		EA4A5EBA1FA08391004E33AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EB91FA0838A004E33AC /* AudioToolbox.framework */; };
 		EA4A5EBC1FA083A1004E33AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EBB1FA0839C004E33AC /* CoreGraphics.framework */; };
@@ -141,6 +143,8 @@
 		50F81AA61DA8696D0068B467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50F81AA81DA86A510068B467 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
 		50F81AAA1DA86A960068B467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA084BBE21BFAAA7003A4B0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EA084BC021BFAF1E003A4B0B /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		EA4A5EB71FA08373004E33AC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		EA4A5EB91FA0838A004E33AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EA4A5EBB1FA0839C004E33AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -319,6 +323,7 @@
 			children = (
 				505C89461BEDBB5200F905A1 /* GameCenter.swift */,
 				EAC5F0681CA517250044B14E /* Playable.swift */,
+				EA084BC021BFAF1E003A4B0B /* Preferences.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				50E177291BE4A8D2009CA822 /* GamePreViewController.swift */,
 				505C89401BED9F9F00F905A1 /* GameViewController.swift */,
 				505C89421BEDA6C500F905A1 /* MoviePreViewController.swift */,
+				EA084BBE21BFAAA7003A4B0B /* SettingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -625,8 +631,10 @@
 				EAFEDC161CA25B3A00E3B7D2 /* Particle.swift in Sources */,
 				505C89431BEDA6C500F905A1 /* MoviePreViewController.swift in Sources */,
 				EAFEDC1A1CA25B6500E3B7D2 /* Move.swift in Sources */,
+				EA084BBF21BFAAA7003A4B0B /* SettingViewController.swift in Sources */,
 				50E1772A1BE4A8D2009CA822 /* GamePreViewController.swift in Sources */,
 				50E176F51BE3CA4A009CA822 /* ViewController.swift in Sources */,
+				EA084BC121BFAF1E003A4B0B /* Preferences.swift in Sources */,
 				EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */,
 				50E176F31BE3CA4A009CA822 /* AppDelegate.swift in Sources */,
 				EAC5F0691CA517260044B14E /* Playable.swift in Sources */,
