@@ -13,10 +13,6 @@
 		505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Expansion.xib */; };
 		505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89461BEDBB5200F905A1 /* GameCenter.swift */; };
 		505C89491BEDBFD800F905A1 /* Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89481BEDBFD800F905A1 /* Expansion.swift */; };
-		50D99C261DA90C4300D8A3E4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C251DA90C4300D8A3E4 /* Accounts.framework */; };
-		50D99C2C1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C2B1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework */; };
-		50D99C2E1DAA200500D8A3E4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C2D1DAA200500D8A3E4 /* FBSDKLoginKit.framework */; };
-		50D99C301DAA200F00D8A3E4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C2F1DAA200F00D8A3E4 /* FBSDKShareKit.framework */; };
 		50D99C321DAA214D00D8A3E4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C311DAA214D00D8A3E4 /* Bolts.framework */; };
 		50DF931D1CA5807300DE7CBE /* bike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931C1CA5807300DE7CBE /* bike.mp3 */; };
 		50DF93211CA5821000DE7CBE /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931E1CA5821000DE7CBE /* car.mp3 */; };
@@ -35,7 +31,6 @@
 		50F7F0E51CA49BC40022F0CE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F7F0E31CA49BC40022F0CE /* spark.png */; };
 		50F7F0E71CA4A0EF0022F0CE /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */; };
 		50F81AA51DA8696D0068B467 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA71DA8696D0068B467 /* Localizable.strings */; };
-		50F81AA91DA86A510068B467 /* family.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F81AA81DA86A510068B467 /* family.png */; };
 		EA084BBF21BFAAA7003A4B0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA084BBE21BFAAA7003A4B0B /* SettingViewController.swift */; };
 		EA084BC121BFAF1E003A4B0B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA084BC021BFAF1E003A4B0B /* Preferences.swift */; };
 		EA4A5EB81FA08380004E33AC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EB71FA08373004E33AC /* AdSupport.framework */; };
@@ -71,6 +66,7 @@
 		EA82BF4C1CA3C1FB001C7799 /* piano3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF401CA3C1FB001C7799 /* piano3.mp3 */; };
 		EA93B2581BF1CC70003BE7D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */; };
 		EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */; };
+		EABB328E21C0D0520006F31C /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABB328D21C0D0520006F31C /* SwiftyCam.framework */; };
 		EAC5F0691CA517260044B14E /* Playable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5F0681CA517250044B14E /* Playable.swift */; };
 		EAFEDC101CA25AEF00E3B7D2 /* Rotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */; };
 		EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */; };
@@ -141,7 +137,6 @@
 		50F7F0E31CA49BC40022F0CE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		50F81AA61DA8696D0068B467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		50F81AA81DA86A510068B467 /* family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = family.png; sourceTree = "<group>"; };
 		50F81AAA1DA86A960068B467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA084BBE21BFAAA7003A4B0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		EA084BC021BFAF1E003A4B0B /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -180,6 +175,7 @@
 		EA82BF401CA3C1FB001C7799 /* piano3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano3.mp3; sourceTree = "<group>"; };
 		EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		EABB328D21C0D0520006F31C /* SwiftyCam.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyCam.framework; path = Carthage/Build/iOS/SwiftyCam.framework; sourceTree = SOURCE_ROOT; };
 		EAC5F0681CA517250044B14E /* Playable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playable.swift; sourceTree = "<group>"; };
 		EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Rotation.xib; sourceTree = "<group>"; };
 		EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
@@ -198,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABB328E21C0D0520006F31C /* SwiftyCam.framework in Frameworks */,
 				EA4A5ED01FA084FE004E33AC /* GoogleMobileAds.framework in Frameworks */,
 				EA4A5ECC1FA0840D004E33AC /* SystemConfiguration.framework in Frameworks */,
 				EA4A5ECA1FA08402004E33AC /* StoreKit.framework in Frameworks */,
@@ -209,10 +206,6 @@
 				EA4A5EBC1FA083A1004E33AC /* CoreGraphics.framework in Frameworks */,
 				EA4A5EBA1FA08391004E33AC /* AudioToolbox.framework in Frameworks */,
 				EA4A5EB81FA08380004E33AC /* AdSupport.framework in Frameworks */,
-				50D99C2C1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework in Frameworks */,
-				50D99C261DA90C4300D8A3E4 /* Accounts.framework in Frameworks */,
-				50D99C2E1DAA200500D8A3E4 /* FBSDKLoginKit.framework in Frameworks */,
-				50D99C301DAA200F00D8A3E4 /* FBSDKShareKit.framework in Frameworks */,
 				EA93B2581BF1CC70003BE7D8 /* AVFoundation.framework in Frameworks */,
 				50D99C321DAA214D00D8A3E4 /* Bolts.framework in Frameworks */,
 			);
@@ -238,6 +231,7 @@
 		504AC4D21BF6D2A500867F32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EABB328D21C0D0520006F31C /* SwiftyCam.framework */,
 				EA4A5ECD1FA0842B004E33AC /* GoogleMobileAds.framework */,
 				EA4A5ECB1FA0840A004E33AC /* SystemConfiguration.framework */,
 				EA4A5EC91FA083FE004E33AC /* StoreKit.framework */,
@@ -291,7 +285,6 @@
 				50E176F61BE3CA4A009CA822 /* Main.storyboard */,
 				EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */,
 				50E176F91BE3CA4A009CA822 /* Assets.xcassets */,
-				50F81AA81DA86A510068B467 /* family.png */,
 				EA4A5ECF1FA084FE004E33AC /* GoogleMobileAds.framework */,
 				50E176FE1BE3CA4A009CA822 /* Info.plist */,
 				5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */,
@@ -464,6 +457,7 @@
 				50E176EB1BE3CA4A009CA822 /* Sources */,
 				50E176EC1BE3CA4A009CA822 /* Frameworks */,
 				50E176ED1BE3CA4A009CA822 /* Resources */,
+				EABB328C21C0CFD10006F31C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -587,7 +581,6 @@
 				EA82BF481CA3C1FB001C7799 /* guitar2.mp3 in Resources */,
 				EA82BF441CA3C1FB001C7799 /* cymbal.mp3 in Resources */,
 				EA82BF4B1CA3C1FB001C7799 /* piano2.mp3 in Resources */,
-				50F81AA91DA86A510068B467 /* family.png in Resources */,
 				EA82BF431CA3C1FB001C7799 /* bass3.mp3 in Resources */,
 				EA82BF261CA3C126001C7799 /* cat.mp3 in Resources */,
 				50F7F0E41CA49BC40022F0CE /* IPParticle.sks in Resources */,
@@ -620,6 +613,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EABB328C21C0CFD10006F31C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyCam.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50E176EB1BE3CA4A009CA822 /* Sources */ = {
@@ -828,6 +842,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/babyCame",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = babyCame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -854,6 +869,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/babyCame",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = babyCame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

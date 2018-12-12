@@ -16,7 +16,6 @@ import MediaPlayer
 class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var playerView: AVPlayerView!
-    @IBOutlet weak var playerButton: UIButton!
     
     var videoPlayer:AVPlayer!
     var videoPath: URL!
@@ -25,18 +24,20 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNotifications()
         setPlayer()
-        NotificationCenter.default.addObserver(self, selector: #selector(removeLocalVideo), name: Notification.Name(rawValue: "removeLocalVideo"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        videoPlayer.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
         removeLocalVideo()
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeLeft
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,16 +52,9 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         showSaveAlert()
     }
     
-    @IBAction func didTapPlayerButton(_ sender: Any) {
-        if (playerButton.tag == 0) {
-            videoPlayer.play()
-            playerButton.setImage(UIImage(named: "pause"), for: .normal)
-            playerButton.tag = 1
-        } else {
-            videoPlayer.pause()
-            playerButton.setImage(UIImage(named: "start"), for: .normal)
-            playerButton.tag = 0
-        }
+    func setNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(removeLocalVideo), name: Notification.Name(rawValue: "removeLocalVideo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: videoPlayer?.currentItem)
     }
     
     // MARK: - Camera
@@ -108,6 +102,13 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
             try FileManager.default.removeItem(atPath: filePath)
         } catch {
             print("remove error")
+        }
+    }
+    
+    @objc func playerItemDidReachEnd(notification: NSNotification) {
+        if let playerItem: AVPlayerItem = notification.object as? AVPlayerItem {
+            playerItem.seek(to: kCMTimeZero, completionHandler: nil)
+            videoPlayer.play()
         }
     }
     

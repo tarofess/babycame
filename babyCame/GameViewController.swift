@@ -9,15 +9,11 @@
 import Foundation
 import UIKit
 import AVFoundation
+import SwiftyCam
 
-class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
+class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
-    
-    let captureSession = AVCaptureSession()
-    let videoDevice = AVCaptureDevice.default(for: AVMediaType.video)
-    let audioDevice = AVCaptureDevice.default(for: AVMediaType.audio)
-    let fileOutput = AVCaptureMovieFileOutput()
     
     var timer: Timer!
     var indexPath: Int!
@@ -28,7 +24,8 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
-        setCamera()
+        cameraDelegate = self
+        self.defaultCamera = .front
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +42,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !didTouchScreenOnce {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
-            startRecording()
+            startVideoRecording()
             didTouchScreenOnce = true
         }
     }
@@ -62,14 +59,6 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         self.view.addSubview(gameView)
     }
     
-    func startRecording() {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0] as String
-        let filePath : String? = "\(documentsDirectory)/baby\(UUID().uuidString).mov"
-        let fileURL = URL(fileURLWithPath: filePath!)
-        fileOutput.startRecording(to: fileURL, recordingDelegate: self)
-    }
-    
     @objc func updateTime() {
         if timeLeft > 1 {
             timeLeft -= 1
@@ -77,7 +66,7 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         } else {
             timer.invalidate()
             navigationItem.title = String(0) + NSLocalizedString("sec", comment: "")
-            fileOutput.stopRecording()
+            stopVideoRecording()
         }
     }
     
@@ -92,25 +81,8 @@ class GameViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         present(alertController, animated: true, completion: nil)
     }
     
-    func setCamera() {
-        let devices = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .front).devices
-        
-        do {
-            let videoInput = try AVCaptureDeviceInput(device: devices.first!) as AVCaptureDeviceInput
-            captureSession.addInput(videoInput)
-            let audioInput = try AVCaptureDeviceInput(device: audioDevice!) as AVCaptureDeviceInput
-            captureSession.addInput(audioInput);
-        } catch {
-            
-        }
-        
-        captureSession.commitConfiguration()
-        captureSession.addOutput(fileOutput)
-        captureSession.startRunning()
-    }
-    
-    func fileOutput(_ captureOutput: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
-        showCompletionAlert(outputFileURL)
+    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
+        showCompletionAlert(url)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

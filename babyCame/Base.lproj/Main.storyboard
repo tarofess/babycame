@@ -239,30 +239,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF" customClass="AVPlayerView" customModule="babyCame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="32" width="667" height="285"/>
+                                <rect key="frame" x="0.0" y="48" width="667" height="311"/>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzi-du-NcB">
-                                <rect key="frame" x="313.5" y="326" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="DFs-xP-nUw"/>
-                                    <constraint firstAttribute="width" constant="40" id="Y9B-9a-yih"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="start"/>
-                                <connections>
-                                    <action selector="didTapPlayerButton:" destination="L5G-y7-X70" eventType="touchUpInside" id="2Ce-aF-mI4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8FQ-Po-ouH" firstAttribute="trailing" secondItem="SN7-K2-huF" secondAttribute="trailing" id="CVA-q6-Ltc"/>
-                            <constraint firstItem="Lzi-du-NcB" firstAttribute="centerX" secondItem="8FQ-Po-ouH" secondAttribute="centerX" id="XPH-a7-ImI"/>
-                            <constraint firstItem="Lzi-du-NcB" firstAttribute="centerX" secondItem="8FQ-Po-ouH" secondAttribute="centerX" id="ey3-uJ-K80"/>
                             <constraint firstItem="SN7-K2-huF" firstAttribute="leading" secondItem="8FQ-Po-ouH" secondAttribute="leading" id="kAX-xg-ORg"/>
-                            <constraint firstItem="8FQ-Po-ouH" firstAttribute="bottom" secondItem="Lzi-du-NcB" secondAttribute="bottom" constant="9" id="rGG-wn-dzj"/>
-                            <constraint firstItem="8FQ-Po-ouH" firstAttribute="bottom" secondItem="SN7-K2-huF" secondAttribute="bottom" constant="58" id="tha-zi-e7k"/>
-                            <constraint firstItem="Lzi-du-NcB" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" constant="9" id="ubq-bT-jQF"/>
-                            <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="8FQ-Po-ouH" secondAttribute="top" id="vGA-IV-zga"/>
+                            <constraint firstItem="8FQ-Po-ouH" firstAttribute="bottom" secondItem="SN7-K2-huF" secondAttribute="bottom" constant="16" id="tha-zi-e7k"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="8FQ-Po-ouH" secondAttribute="top" constant="16" id="vGA-IV-zga"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8FQ-Po-ouH"/>
                     </view>
@@ -279,7 +264,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="playerButton" destination="Lzi-du-NcB" id="kvq-S7-kvJ"/>
                         <outlet property="playerView" destination="SN7-K2-huF" id="2TT-3H-mOo"/>
                         <segue destination="Tpf-q4-Niz" kind="unwind" identifier="UnwindToTop" unwindAction="unwindToTop:" id="Wag-49-G7u"/>
                     </connections>
@@ -308,7 +292,4 @@
             <point key="canvasLocation" x="129" y="319"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="start" width="100" height="100"/>
-    </resources>
 </document>
