@@ -12,7 +12,6 @@ import AVKit
 import AVFoundation
 import Photos
 import MediaPlayer
-import FBSDKShareKit
 
 class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
