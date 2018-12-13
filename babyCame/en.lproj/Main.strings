@@ -1,6 +1,6 @@
 
-/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "9k3-Jl-9ac"; */
-"9k3-Jl-9ac.title" = "back";
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "50K-gL-sSJ"; */
+"50K-gL-sSJ.title" = "Back";
 
 /* Class = "UINavigationItem"; title = "15秒"; ObjectID = "KCb-0H-dP4"; */
 "KCb-0H-dP4.title" = "15sec";
@@ -13,3 +13,9 @@
 
 /* Class = "UIBarButtonItem"; title = "OK"; ObjectID = "x6n-80-8U6"; */
 "x6n-80-8U6.title" = "OK";
+
+/* Class = "ViewController"; title = "Setting"; ObjectID = "3uM-UO-MT4"; */
+"3uM-UO-MT4.title" = "Setting";
+
+/* Class = "SettingViewController"; text = "Setting"; ObjectID = "BRX-r9-lU0"; */
+"BRX-r9-lU0.text" = "Set the time to shoot";
