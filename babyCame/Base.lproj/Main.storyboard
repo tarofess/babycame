@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="777" y="318"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Delegate-->
         <scene sceneID="BFT-gQ-ZBj">
             <objects>
                 <viewController id="cIa-kA-dCp" customClass="SettingViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,6 +122,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/4727298226"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="cIa-kA-dCp" id="dFB-hs-9ns"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="2075" y="318"/>
         </scene>
-        <!--Movie Pre View Controller-->
+        <!--Delegate-->
         <scene sceneID="IG9-uj-sa3">
             <objects>
                 <viewController id="L5G-y7-X70" customClass="MoviePreViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,15 +242,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF" customClass="AVPlayerView" customModule="babyCame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="48" width="667" height="311"/>
+                                <rect key="frame" x="0.0" y="32" width="667" height="283"/>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ih6-ow-VO1" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TAB-h1-LjS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/4727298226"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="L5G-y7-X70" id="KpW-8X-fOV"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8FQ-Po-ouH" firstAttribute="trailing" secondItem="SN7-K2-huF" secondAttribute="trailing" id="CVA-q6-Ltc"/>
+                            <constraint firstItem="ih6-ow-VO1" firstAttribute="trailing" secondItem="8FQ-Po-ouH" secondAttribute="trailing" id="IzR-Eq-Rcr"/>
+                            <constraint firstItem="ih6-ow-VO1" firstAttribute="bottom" secondItem="8FQ-Po-ouH" secondAttribute="bottom" id="REg-L1-hil"/>
+                            <constraint firstItem="ih6-ow-VO1" firstAttribute="leading" secondItem="8FQ-Po-ouH" secondAttribute="leading" id="hLX-ng-rFd"/>
                             <constraint firstItem="SN7-K2-huF" firstAttribute="leading" secondItem="8FQ-Po-ouH" secondAttribute="leading" id="kAX-xg-ORg"/>
-                            <constraint firstItem="8FQ-Po-ouH" firstAttribute="bottom" secondItem="SN7-K2-huF" secondAttribute="bottom" constant="16" id="tha-zi-e7k"/>
-                            <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="8FQ-Po-ouH" secondAttribute="top" constant="16" id="vGA-IV-zga"/>
+                            <constraint firstItem="ih6-ow-VO1" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" id="sdY-7b-eAr"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="8FQ-Po-ouH" secondAttribute="top" id="vGA-IV-zga"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8FQ-Po-ouH"/>
                     </view>
@@ -264,6 +283,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="ih6-ow-VO1" id="EOC-jh-qyV"/>
                         <outlet property="playerView" destination="SN7-K2-huF" id="2TT-3H-mOo"/>
                         <segue destination="Tpf-q4-Niz" kind="unwind" identifier="UnwindToTop" unwindAction="unwindToTop:" id="Wag-49-G7u"/>
                     </connections>

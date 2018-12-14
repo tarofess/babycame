@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import GoogleMobileAds
 
-class GamePreViewController: UIViewController {
+class GamePreViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var gameTitleNavigationItem: UINavigationItem!
     @IBOutlet weak var bannerView: GADBannerView!

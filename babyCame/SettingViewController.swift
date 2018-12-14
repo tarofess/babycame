@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var bannerView: GADBannerView!
