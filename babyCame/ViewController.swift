@@ -9,17 +9,17 @@
 import UIKit
 import GoogleMobileAds
 
-class ViewController: UIViewController, GADBannerViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, GADBannerViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    let gamePreviewImageNameArray = ["Expansion", "Rotation", "Particle", "Move", "Bubble", "Sound"]
+    private let gamePreviewImageNameArray = ["Expansion", "Rotation", "Particle", "Move", "Bubble", "Sound"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.load(GADRequest())
+        setAd()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,9 +31,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    private func setAd() {
+        bannerView.load(GADRequest())
+    }
+    
     // MARK: - CollectionView
     
-    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
@@ -41,14 +45,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         return gamePreviewImageNameArray.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! GameScreenShotCollectionViewCell
         configureCell(cell, indexPath: indexPath)
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath){
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         performSegue(withIdentifier: "RunGamePreViewController", sender: indexPath)
     }
     

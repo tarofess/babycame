@@ -17,9 +17,9 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var playerView: AVPlayerView!
     
-    var videoPlayer:AVPlayer!
+    private var videoPlayer:AVPlayer!
+    private var activityIndicator: UIActivityIndicatorView!
     var videoPath: URL!
-    var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,14 +52,14 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         showSaveAlert()
     }
     
-    func setNotifications() {
+    private func setNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(removeLocalVideo), name: Notification.Name(rawValue: "removeLocalVideo"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: videoPlayer?.currentItem)
     }
     
     // MARK: - Camera
     
-    func setPlayer() {
+    private func setPlayer() {
         let avAsset = AVURLAsset(url: videoPath, options: nil)
         let playerItem = AVPlayerItem(asset: avAsset)
         videoPlayer = AVPlayer(playerItem: playerItem)
@@ -67,7 +67,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         layer.player = videoPlayer
     }
     
-    func saveMovieToCameraRoll() {
+    private func saveMovieToCameraRoll() {
         PHPhotoLibrary.requestAuthorization { (status) -> Void in
             switch (status) {
             case .authorized:
@@ -83,7 +83,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    func selectFromLibrary() {
+    private func selectFromLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
@@ -114,7 +114,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     
     // MARK: - AlertController
     
-    func showBackActionSheet() {
+    private func showBackActionSheet() {
         let actionSheet = UIAlertController(title: NSLocalizedString("backActionSheet_title", comment: ""), message: NSLocalizedString("backActionSheet_message", comment: ""), preferredStyle: .actionSheet)
         let backToViewControllerAction = UIAlertAction(title: NSLocalizedString("backActionSheet_back", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "UnwindToTop", sender: self)
@@ -131,7 +131,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         present(actionSheet, animated: true, completion: nil)
     }
     
-    func showSaveAlert() {
+    private func showSaveAlert() {
         let alertController = UIAlertController(title: NSLocalizedString("save_alertTitle", comment: ""), message: nil, preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("save_alertOK", comment: ""), style: .default, handler: { (action: UIAlertAction) in
             self.saveMovieToCameraRoll()
@@ -144,7 +144,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         present(alertController, animated: true, completion: nil)
     }
     
-    func showSavedVideoConfirmAlert() {
+    private func showSavedVideoConfirmAlert() {
         let alertController = UIAlertController(title: NSLocalizedString("saveFinished_alertTitle", comment: ""), message: NSLocalizedString("saveFinished_alertMessage", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: nil)
         
@@ -153,7 +153,7 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         present(alertController, animated: true, completion: nil)
     }
     
-    func showDeniedCameraAccessAlert() {
+    private func showDeniedCameraAccessAlert() {
         let alertController = UIAlertController(title: NSLocalizedString("failedSave_alertTitle", comment: ""), message: NSLocalizedString("failedSave_alertMessage", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: nil)
         alertController.addAction(okAction)

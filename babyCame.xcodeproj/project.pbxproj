@@ -68,6 +68,7 @@
 		EA93B25A1BF1E346003BE7D8 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */; };
 		EABB328E21C0D0520006F31C /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABB328D21C0D0520006F31C /* SwiftyCam.framework */; };
 		EAC5F0691CA517260044B14E /* Playable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5F0681CA517250044B14E /* Playable.swift */; };
+		EAD4FE4421C336120011B3D9 /* Info.plist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAD4FE4621C336120011B3D9 /* Info.plist.strings */; };
 		EAFEDC101CA25AEF00E3B7D2 /* Rotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */; };
 		EAFEDC121CA25B1700E3B7D2 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */; };
 		EAFEDC141CA25B2D00E3B7D2 /* Particle.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */; };
@@ -104,10 +105,6 @@
 		505C89441BEDB5E000F905A1 /* Expansion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Expansion.xib; sourceTree = "<group>"; };
 		505C89461BEDBB5200F905A1 /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		505C89481BEDBFD800F905A1 /* Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expansion.swift; sourceTree = "<group>"; };
-		50D99C251DA90C4300D8A3E4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		50D99C2B1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		50D99C2D1DAA200500D8A3E4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		50D99C2F1DAA200F00D8A3E4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		50D99C311DAA214D00D8A3E4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		50DF931C1CA5807300DE7CBE /* bike.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bike.mp3; sourceTree = "<group>"; };
 		50DF931E1CA5821000DE7CBE /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
@@ -132,7 +129,6 @@
 		50E46D3D1DA8B638001E32B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		50E46D3E1DA8B638001E32B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		50E46D3F1DA8B638001E32B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		50E46D401DA8F9D7001E32B3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		50F7F0E21CA49BC40022F0CE /* IPParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = IPParticle.sks; sourceTree = "<group>"; };
 		50F7F0E31CA49BC40022F0CE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		50F7F0E61CA4A0EF0022F0CE /* ParticleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
@@ -177,6 +173,8 @@
 		EA93B2591BF1E346003BE7D8 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		EABB328D21C0D0520006F31C /* SwiftyCam.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyCam.framework; path = Carthage/Build/iOS/SwiftyCam.framework; sourceTree = SOURCE_ROOT; };
 		EAC5F0681CA517250044B14E /* Playable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playable.swift; sourceTree = "<group>"; };
+		EAD4FE4521C336120011B3D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Info.plist.strings; sourceTree = "<group>"; };
+		EAD4FE4721C336170011B3D9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Info.plist.strings; sourceTree = "<group>"; };
 		EAFEDC0F1CA25AEF00E3B7D2 /* Rotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Rotation.xib; sourceTree = "<group>"; };
 		EAFEDC111CA25B1700E3B7D2 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		EAFEDC131CA25B2D00E3B7D2 /* Particle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Particle.xib; sourceTree = "<group>"; };
@@ -245,11 +243,6 @@
 				EA4A5EB91FA0838A004E33AC /* AudioToolbox.framework */,
 				EA4A5EB71FA08373004E33AC /* AdSupport.framework */,
 				50D99C311DAA214D00D8A3E4 /* Bolts.framework */,
-				50D99C2F1DAA200F00D8A3E4 /* FBSDKShareKit.framework */,
-				50D99C2D1DAA200500D8A3E4 /* FBSDKLoginKit.framework */,
-				50D99C2B1DAA1FFA00D8A3E4 /* FBSDKCoreKit.framework */,
-				50D99C251DA90C4300D8A3E4 /* Accounts.framework */,
-				50E46D401DA8F9D7001E32B3 /* Social.framework */,
 				EA93B2571BF1CC70003BE7D8 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -288,6 +281,7 @@
 				EA4A5ECF1FA084FE004E33AC /* GoogleMobileAds.framework */,
 				50E176FE1BE3CA4A009CA822 /* Info.plist */,
 				5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */,
+				EAD4FE4621C336120011B3D9 /* Info.plist.strings */,
 				50F81AA71DA8696D0068B467 /* Localizable.strings */,
 			);
 			path = babyCame;
@@ -574,6 +568,7 @@
 				EA82BF4C1CA3C1FB001C7799 /* piano3.mp3 in Resources */,
 				EA82BF2A1CA3C126001C7799 /* goat.mp3 in Resources */,
 				50DF93231CA5821000DE7CBE /* siren.mp3 in Resources */,
+				EAD4FE4421C336120011B3D9 /* Info.plist.strings in Resources */,
 				EA82BF491CA3C1FB001C7799 /* guitar3.mp3 in Resources */,
 				EAFEDC181CA25B5400E3B7D2 /* Move.xib in Resources */,
 				EA82BF281CA3C126001C7799 /* dog.mp3 in Resources */,
@@ -722,6 +717,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		EAD4FE4621C336120011B3D9 /* Info.plist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAD4FE4521C336120011B3D9 /* en */,
+				EAD4FE4721C336170011B3D9 /* ja */,
+			);
+			name = Info.plist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -852,7 +856,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -878,7 +882,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

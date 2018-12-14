@@ -15,9 +15,9 @@ protocol Playable {
 
 extension Playable {
     func playSound(_ soundName: String!, audioPlayer: inout AVAudioPlayer) {
-        let coinSound = URL(fileURLWithPath: Bundle.main.path(forResource: soundName, ofType: "mp3")!)
+        let sound = URL(fileURLWithPath: Bundle.main.path(forResource: soundName, ofType: "mp3")!)
         do{
-            audioPlayer = try AVAudioPlayer(contentsOf:coinSound as URL)
+            audioPlayer = try AVAudioPlayer(contentsOf:sound as URL)
             audioPlayer.prepareToPlay()
             audioPlayer.play()
         } catch {

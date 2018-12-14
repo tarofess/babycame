@@ -14,7 +14,7 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var bannerView: GADBannerView!
     
-    var pickerData = [String]()
+    private var pickerData = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,12 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         pickerView.selectRow(14, inComponent: 0, animated: false)
     }
     
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
         self.view.bringSubview(toFront: bannerView)
     }
     
-    func setPickerData() {
+    private func setPickerData() {
         for i in 1...60 {
             pickerData.append(i.description)
         }

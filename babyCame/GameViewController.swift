@@ -15,17 +15,16 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     
-    var timer: Timer!
+    private var timer: Timer!
+    private var timeLeft: Int!
+    private var didTouchScreenOnce = false
     var indexPath: Int!
-    var timeLeft: Int!
-    var didTouchScreenOnce = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setCameraSetting()
         self.navigationItem.hidesBackButton = true
-        cameraDelegate = self
-        self.defaultCamera = .front
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +38,11 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
         super.didReceiveMemoryWarning()
     }
     
+    private func setCameraSetting() {
+        cameraDelegate = self
+        self.defaultCamera = .front
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !didTouchScreenOnce {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
@@ -47,12 +51,12 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
         }
     }
     
-    func setTimeLeft() {
+    private func setTimeLeft() {
         timeLeft = Preferences.timeLeft ?? 15
         navigationItem.title = String(timeLeft) + NSLocalizedString("sec", comment: "")
     }
     
-    func showGame() {
+    private func showGame() {
         let gameCenter = GameCenter(gameIdentifier: indexPath)
         let gameView = gameCenter.getGameView()!
         gameView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
@@ -70,7 +74,7 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
         }
     }
     
-    func showCompletionAlert(_ videoPath: URL) {
+    private func showCompletionAlert(_ videoPath: URL) {
         let alertController = UIAlertController(title: NSLocalizedString("finish_take_alertTitle", comment: ""), message: NSLocalizedString("finish_take_alertMessage", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "RunMoviePreViewController", sender: videoPath)

@@ -33,7 +33,7 @@ class GamePreViewController: UIViewController {
         showConfirmAlert()
     }
     
-    func showConfirmAlert() {
+    private func showConfirmAlert() {
         let alertController = UIAlertController(title: NSLocalizedString("comfirm_alertTitle_in_preview", comment: ""), message: NSLocalizedString("comfirm_alertMessage_in_preview", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("alertOK_action", comment: ""), style: .default, handler: { (action: UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "RunGameViewController", sender: self)
@@ -46,7 +46,7 @@ class GamePreViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func setGameTitle() {
+    private func setGameTitle() {
         switch indexPath {
         case 0:
             title = NSLocalizedString("title_animal", comment: "")
@@ -65,12 +65,12 @@ class GamePreViewController: UIViewController {
         }
     }
     
-    func setAd() {
+    private func setAd() {
         bannerView.load(GADRequest())
         self.view.bringSubview(toFront: bannerView)
     }
     
-    func showGame() {
+    private func showGame() {
         let gameCenter = GameCenter(gameIdentifier: indexPath)
         let gameView = gameCenter.getGameView()!
         gameView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)

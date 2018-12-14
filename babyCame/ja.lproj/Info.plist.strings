@@ -1,0 +1,12 @@
+/* 
+  Info.plist.strings
+  babyCame
+
+  Created by t-matsusaki on 2018/12/14.
+  Copyright © 2018年 taro. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "べびかめ";
+"CameraUsageDescription" = "赤ちゃんの顔を撮影します";
+"MicrophoneUsageDescription" = "音声を録音します";
+"NSPhotoLibraryUsageDescription" = "動画を保存します";
