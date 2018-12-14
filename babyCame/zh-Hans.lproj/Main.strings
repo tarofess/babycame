@@ -1,0 +1,21 @@
+
+/* Class = "UIBarButtonItem"; title = "戻る"; ObjectID = "50K-gL-sSJ"; */
+"50K-gL-sSJ.title" = "回报";
+
+/* Class = "UINavigationItem"; title = "15秒"; ObjectID = "KCb-0H-dP4"; */
+"KCb-0H-dP4.title" = "15秒";
+
+/* Class = "UINavigationItem"; title = "ゲームを選んでね！"; ObjectID = "aUb-Jr-t7o"; */
+"aUb-Jr-t7o.title" = "选择一个游戏！";
+
+/* Class = "UINavigationItem"; title = "GameTitle"; ObjectID = "fTW-Xp-SGw"; */
+"fTW-Xp-SGw.title" = "标题";
+
+/* Class = "UIBarButtonItem"; title = "OK"; ObjectID = "x6n-80-8U6"; */
+"x6n-80-8U6.title" = "OK";
+
+/* Class = "ViewController"; title = "設定"; ObjectID = "3uM-UO-MT4"; */
+"3uM-UO-MT4.title" = "设置";
+
+/* Class = "SettingViewController"; text = "撮影する時間を設定してください"; ObjectID = "BRX-r9-lU0"; */
+"BRX-r9-lU0.text" = "请设定拍摄时间";

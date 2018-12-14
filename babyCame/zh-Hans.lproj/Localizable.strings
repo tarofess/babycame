@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  babyCame
+
+  Created by taro on 2016/10/08.
+  Copyright © 2016年 taro. All rights reserved.
+*/
+
+"title_animal" = "动物游戏";
+"title_night" = "明星游戏";
+"title_japanese" = "烟花游戏";
+"title_vehicle" = "车辆游戏";
+"title_bubble" = "泡沫游戏";
+"title_music" = "音乐游戏";
+"navigation_leftButton" = "回报";
+
+"comfirm_alertTitle_in_preview" = "确认";
+"comfirm_alertMessage_in_preview" = "你玩这个游戏吗？";
+"alertOK_action" = "是的";
+"alertNG_action" = "没有";
+
+"sec" = "秒";
+"finish_take_alertTitle" = "拍摄完成";
+"finish_take_alertMessage" = "我们来看看你拍的电影吧！";
+
+"save_alertTitle" = "你想保存电影吗？";
+"save_alertOK" = "是的";
+"save_alertNG" = "没有";
+"saveFinished_alertTitle" = "保存完成";
+"saveFinished_alertMessage" = "视频保存到相机胶卷";
+"failedSave_alertTitle" = "无法保存视频";
+"failedSave_alertMessage" = "请允许访问相机胶卷";
+"backActionSheet_title" = "你想改变游戏吗？";
+"backActionSheet_message" = "你想再拍一次吗？";
+"backActionSheet_back" = "改变游戏";
+"backActionSheet_take_again" = "再次拍摄";
+"backActionSheet_cancel" = "取消";
