@@ -18,16 +18,13 @@ class ParticleScene: SKScene, Playable {
         
         for touch: AnyObject in touches {
             let location = touch.location(in: self)
-            let path = Bundle.main.path(forResource: "IPParticle", ofType: "sks")
-            let particle = NSKeyedUnarchiver.unarchiveObject(withFile: path!) as! SKEmitterNode
-            
-            particle.position = location
-            
-            particle.numParticlesToEmit = 100 // 何個、粒を出すか。
-            particle.particleBirthRate = 200 // 一秒間に何個、粒を出すか。
-            particle.particleSpeed = 80 // 粒の速度
-
-            self.addChild(particle)
+            if let particle = SKEmitterNode(fileNamed: "IPParticle") {
+                particle.position = location
+                particle.numParticlesToEmit = 100 // 何個、粒を出すか。
+                particle.particleBirthRate = 200 // 一秒間に何個、粒を出すか。
+                particle.particleSpeed = 80 // 粒の速度
+                self.addChild(particle)
+            }
         }
         playSound("fireworks", audioPlayer: &self.audioPlayer)
     }
