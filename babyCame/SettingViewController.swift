@@ -31,7 +31,6 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     private func setAd() {
         bannerView.load(GADRequest())
-        self.view.bringSubview(toFront: bannerView)
     }
     
     private func setPickerData() {
