@@ -21,8 +21,13 @@ class GamePreViewController: UIViewController, GADBannerViewDelegate {
         super.viewDidLoad()
         
         setGameTitle()
-        setAd()
         showGame()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        setAd()
     }
     
     override func didReceiveMemoryWarning() {

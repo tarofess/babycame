@@ -125,6 +125,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="cIa-kA-dCp" id="dFB-hs-9ns"/>
+                                    <outlet property="rootViewController" destination="cIa-kA-dCp" id="n8v-w9-Dhe"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -256,6 +257,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="L5G-y7-X70" id="KpW-8X-fOV"/>
+                                    <outlet property="rootViewController" destination="L5G-y7-X70" id="gdn-GY-QwD"/>
                                 </connections>
                             </view>
                         </subviews>
