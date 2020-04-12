@@ -16,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Preferences.timeLeft = 15
     }
     
     override func viewWillDisappear(_ animated: Bool) {

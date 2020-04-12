@@ -35,5 +35,5 @@ CFBundleDisplayName = "BabyCame";
 "backActionSheet_title" = "Change the game?";
 "backActionSheet_message" = "Take a video again?";
 "backActionSheet_back" = "Change the game";
-"backActionSheet_take_again" = "Take a video again";
+"backActionSheet_take_again" = "Take a video again in this game";
 "backActionSheet_cancel" = "Cancel";

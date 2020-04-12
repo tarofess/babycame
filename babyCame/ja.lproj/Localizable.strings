@@ -35,5 +35,5 @@ CFBundleDisplayName = "べびかめ";
 "backActionSheet_title" = "ゲームを変えますか？";
 "backActionSheet_message" = "もう一度撮影しますか？";
 "backActionSheet_back" = "ゲームを変える";
-"backActionSheet_take_again" = "もう一度撮影する";
+"backActionSheet_take_again" = "このゲームでもう一度撮影する";
 "backActionSheet_cancel" = "キャンセル";

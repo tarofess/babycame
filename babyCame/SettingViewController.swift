@@ -23,7 +23,7 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        pickerView.selectRow(14, inComponent: 0, animated: false)
+        pickerView.selectRow(Preferences.timeLeft! - 1, inComponent: 0, animated: false)
     }
     
     private func setPickerData() {
