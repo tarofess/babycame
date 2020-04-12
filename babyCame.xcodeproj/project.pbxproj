@@ -13,7 +13,6 @@
 		505C89451BEDB5E000F905A1 /* Expansion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505C89441BEDB5E000F905A1 /* Expansion.xib */; };
 		505C89471BEDBB5200F905A1 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89461BEDBB5200F905A1 /* GameCenter.swift */; };
 		505C89491BEDBFD800F905A1 /* Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C89481BEDBFD800F905A1 /* Expansion.swift */; };
-		50796E4621C1440B0088633B /* SwiftyCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABB328D21C0D0520006F31C /* SwiftyCam.framework */; };
 		50D99C321DAA214D00D8A3E4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D99C311DAA214D00D8A3E4 /* Bolts.framework */; };
 		50DF931D1CA5807300DE7CBE /* bike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931C1CA5807300DE7CBE /* bike.mp3 */; };
 		50DF93211CA5821000DE7CBE /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DF931E1CA5821000DE7CBE /* car.mp3 */; };
@@ -198,7 +197,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50796E4621C1440B0088633B /* SwiftyCam.framework in Frameworks */,
 				EA4A5ECC1FA0840D004E33AC /* SystemConfiguration.framework in Frameworks */,
 				EA4A5ECA1FA08402004E33AC /* StoreKit.framework in Frameworks */,
 				EA4A5EC81FA083F6004E33AC /* MessageUI.framework in Frameworks */,
@@ -532,10 +530,9 @@
 			};
 			buildConfigurationList = 50E176EA1BE3CA4A009CA822 /* Build configuration list for PBXProject "babyCame" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				ja,
@@ -625,7 +622,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyCam.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -633,7 +629,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

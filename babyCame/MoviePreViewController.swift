@@ -71,8 +71,10 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
         PHPhotoLibrary.requestAuthorization { (status) -> Void in
             switch (status) {
             case .authorized:
-                try! PHPhotoLibrary.shared().performChangesAndWait { () -> Void in
-                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoPath)
+                DispatchQueue.main.async {
+                    try! PHPhotoLibrary.shared().performChangesAndWait { () -> Void in
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoPath)
+                    }
                     self.showSavedVideoConfirmAlert()
                 }
             case .denied:

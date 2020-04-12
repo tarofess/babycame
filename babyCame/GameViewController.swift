@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 import AVFoundation
-import SwiftyCam
+import Photos
 
-class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
-
-    @IBOutlet weak var navigationBar: UINavigationBar!
+class GameViewController : UIViewController, AVCaptureFileOutputRecordingDelegate {
     
+    let fileOutput = AVCaptureMovieFileOutput()
+    let captureSession = AVCaptureSession()
     private var timer: Timer!
     private var timeLeft: Int!
     private var didTouchScreenOnce = false
@@ -23,31 +23,65 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setCameraSetting()
         self.navigationItem.hidesBackButton = true
+        
+        showGame()
+        setupCamera()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         didTouchScreenOnce = false
         setTimeLeft()
-        showGame()
-        self.view.bringSubview(toFront: navigationBar)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func setCameraSetting() {
-        cameraDelegate = self
-        self.defaultCamera = .front
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !didTouchScreenOnce {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.updateTime), userInfo: nil, repeats: true)
-            startVideoRecording()
             didTouchScreenOnce = true
+            
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let documentsDirectory = paths[0] as String
+            let filePath : String? = "\(documentsDirectory)/temp.mp4"
+            let fileURL : NSURL = NSURL(fileURLWithPath: filePath!)
+            fileOutput.startRecording(to: fileURL as URL, recordingDelegate: self)
+        }
+    }
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: outputFileURL)
+        }) { completed, error in
+            if completed {
+                DispatchQueue.main.async {
+                    self.showCompletionAlert(outputFileURL)
+                }
+            }
+        }
+    }
+    
+    private func setupCamera() {
+        let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front)
+        if let device = captureDevice {
+            if device.position == .front {
+                do {
+                    let deviceInput = try AVCaptureDeviceInput(device: device)
+                    captureSession.addInput(deviceInput)
+                    captureSession.addOutput(fileOutput)
+                    let videoDataOuputConnection = fileOutput.connection(with: .video)
+                    fileOutput.setRecordsVideoOrientationAndMirroringChangesAsMetadataTrack(true, for: videoDataOuputConnection!)
+                    videoDataOuputConnection!.videoOrientation = .landscapeLeft
+                          
+                    captureSession.startRunning()
+                } catch {
+                    /*error*/
+                }
+            }
         }
     }
     
@@ -70,7 +104,8 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
         } else {
             timer.invalidate()
             navigationItem.title = String(0) + NSLocalizedString("sec", comment: "")
-            stopVideoRecording()
+            
+            fileOutput.stopRecording()
         }
     }
     
@@ -83,10 +118,6 @@ class GameViewController: SwiftyCamViewController, SwiftyCamViewControllerDelega
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
-        showCompletionAlert(url)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

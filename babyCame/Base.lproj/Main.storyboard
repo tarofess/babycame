@@ -148,31 +148,11 @@
                     <view key="view" contentMode="scaleToFill" id="xbJ-kR-k9o">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-Dh-tbv">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="SYG-n2-aW9"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="15秒" id="KCb-0H-dP4"/>
-                                </items>
-                                <connections>
-                                    <outlet property="delegate" destination="hav-os-rEK" id="2Th-sJ-uFc"/>
-                                </connections>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Kc8-ch-lHJ" firstAttribute="trailing" secondItem="Mqs-Dh-tbv" secondAttribute="trailing" id="I9b-HN-r8Z"/>
-                            <constraint firstItem="Mqs-Dh-tbv" firstAttribute="leading" secondItem="Kc8-ch-lHJ" secondAttribute="leading" id="zNE-e0-4Fw"/>
-                            <constraint firstItem="Mqs-Dh-tbv" firstAttribute="top" secondItem="xbJ-kR-k9o" secondAttribute="top" id="zdf-ee-NHA"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kc8-ch-lHJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="15秒" id="50V-E3-Wd1"/>
                     <connections>
-                        <outlet property="navigationBar" destination="Mqs-Dh-tbv" id="ljQ-CN-Jh4"/>
                         <segue destination="L5G-y7-X70" kind="show" identifier="RunMoviePreViewController" id="QDQ-sW-kqK"/>
                     </connections>
                 </viewController>

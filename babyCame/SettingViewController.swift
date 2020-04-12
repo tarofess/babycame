@@ -11,7 +11,6 @@ import UIKit
 class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     private var pickerData = [String]()
 
