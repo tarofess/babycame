@@ -54,14 +54,8 @@ class GameViewController : UIViewController, AVCaptureFileOutputRecordingDelegat
     }
     
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
-        PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: outputFileURL)
-        }) { completed, error in
-            if completed {
-                DispatchQueue.main.async {
-                    self.showCompletionAlert(outputFileURL)
-                }
-            }
+        DispatchQueue.main.async {
+            self.showCompletionAlert(outputFileURL)
         }
     }
     
