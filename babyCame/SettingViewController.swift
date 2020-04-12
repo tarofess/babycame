@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, GADBannerViewDelegate {
+class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -19,7 +18,6 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setAd()
         setPickerData()
     }
     
@@ -27,10 +25,6 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         super.viewWillAppear(true)
         
         pickerView.selectRow(14, inComponent: 0, animated: false)
-    }
-    
-    private func setAd() {
-        bannerView.load(GADRequest())
     }
     
     private func setPickerData() {

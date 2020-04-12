@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oCw-bu-90A">
-    <device id="retina4_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oCw-bu-90A">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Delegate-->
+        <!--ゲームを選んでね！-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,29 +49,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Dla-lM-dpt"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB9-oX-O6H" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6MJ-lL-Cuh"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/7498988985"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eMx-2N-Z9g"/>
-                                    <outlet property="rootViewController" destination="BYZ-38-t0r" id="Ues-SK-4f9"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yIs-37-hTn" firstAttribute="leading" secondItem="STm-0I-RV8" secondAttribute="leading" id="6ap-pw-ENK"/>
                             <constraint firstItem="STm-0I-RV8" firstAttribute="trailing" secondItem="yIs-37-hTn" secondAttribute="trailing" id="Cd2-ly-VEU"/>
-                            <constraint firstItem="yB9-oX-O6H" firstAttribute="leading" secondItem="STm-0I-RV8" secondAttribute="leading" id="FKt-jw-rng"/>
-                            <constraint firstItem="STm-0I-RV8" firstAttribute="trailing" secondItem="yB9-oX-O6H" secondAttribute="trailing" id="T4X-Oh-p13"/>
                             <constraint firstItem="STm-0I-RV8" firstAttribute="bottom" secondItem="yIs-37-hTn" secondAttribute="bottom" id="d20-uR-e2P"/>
-                            <constraint firstItem="STm-0I-RV8" firstAttribute="bottom" secondItem="yB9-oX-O6H" secondAttribute="bottom" id="kZt-65-0oQ"/>
                             <constraint firstItem="yIs-37-hTn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lco-Bp-09W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="STm-0I-RV8"/>
@@ -86,7 +67,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bannerView" destination="yB9-oX-O6H" id="FSq-L9-Jff"/>
                         <outlet property="collectionView" destination="yIs-37-hTn" id="feP-jQ-10r"/>
                         <segue destination="mj8-we-sme" kind="show" identifier="RunGamePreViewController" id="roz-Lj-PSM"/>
                     </connections>
@@ -95,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="777" y="318"/>
         </scene>
-        <!--Delegate-->
+        <!--Setting View Controller-->
         <scene sceneID="BFT-gQ-ZBj">
             <objects>
                 <viewController id="cIa-kA-dCp" customClass="SettingViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,18 +96,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-Aa-bxD" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/6485290212"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="cIa-kA-dCp" id="dFB-hs-9ns"/>
-                                    <outlet property="rootViewController" destination="cIa-kA-dCp" id="n8v-w9-Dhe"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,7 +108,6 @@
                         <viewLayoutGuide key="safeArea" id="pCk-wV-ibz"/>
                     </view>
                     <connections>
-                        <outlet property="bannerView" destination="mqk-Aa-bxD" id="a7h-Vz-3os"/>
                         <outlet property="pickerView" destination="TZD-CU-MaC" id="rBv-a1-hBv"/>
                     </connections>
                 </viewController>
@@ -148,35 +115,14 @@
             </objects>
             <point key="canvasLocation" x="776.76161919040487" y="1104.8"/>
         </scene>
-        <!--Delegate-->
+        <!--GameTitle-->
         <scene sceneID="kTK-UL-tkg">
             <objects>
                 <viewController id="mj8-we-sme" customClass="GamePreViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lrt-3r-wph">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJe-vc-6tC" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="zRg-yE-2md"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/5583272089"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="mj8-we-sme" id="5ZU-bi-WGQ"/>
-                                    <outlet property="rootViewController" destination="mj8-we-sme" id="Bzm-pd-sqc"/>
-                                </connections>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="tgo-OP-ysV" firstAttribute="trailing" secondItem="JJe-vc-6tC" secondAttribute="trailing" id="3fq-kc-9Sg"/>
-                            <constraint firstItem="tgo-OP-ysV" firstAttribute="bottom" secondItem="JJe-vc-6tC" secondAttribute="bottom" id="3uf-Zd-DkQ"/>
-                            <constraint firstItem="JJe-vc-6tC" firstAttribute="leading" secondItem="tgo-OP-ysV" secondAttribute="leading" id="TnI-fB-fTd"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tgo-OP-ysV"/>
                     </view>
                     <navigationItem key="navigationItem" title="GameTitle" id="fTW-Xp-SGw">
@@ -187,7 +133,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bannerView" destination="JJe-vc-6tC" id="MBX-pR-Ajr"/>
                         <outlet property="gameTitleNavigationItem" destination="fTW-Xp-SGw" id="BzV-ey-E1n"/>
                         <segue destination="hav-os-rEK" kind="show" identifier="RunGameViewController" id="X8K-tD-L6v"/>
                     </connections>
@@ -235,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="2075" y="318"/>
         </scene>
-        <!--Delegate-->
+        <!--Movie Pre View Controller-->
         <scene sceneID="IG9-uj-sa3">
             <objects>
                 <viewController id="L5G-y7-X70" customClass="MoviePreViewController" customModule="babyCame" customModuleProvider="target" sceneMemberID="viewController">
@@ -244,31 +189,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-K2-huF" customClass="AVPlayerView" customModule="babyCame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="32" width="667" height="283"/>
+                                <rect key="frame" x="0.0" y="32" width="667" height="343"/>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ih6-ow-VO1" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="TAB-h1-LjS"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-7727323242900759/7662640510"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="L5G-y7-X70" id="KpW-8X-fOV"/>
-                                    <outlet property="rootViewController" destination="L5G-y7-X70" id="gdn-GY-QwD"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8FQ-Po-ouH" firstAttribute="trailing" secondItem="SN7-K2-huF" secondAttribute="trailing" id="CVA-q6-Ltc"/>
-                            <constraint firstItem="ih6-ow-VO1" firstAttribute="trailing" secondItem="8FQ-Po-ouH" secondAttribute="trailing" id="IzR-Eq-Rcr"/>
-                            <constraint firstItem="ih6-ow-VO1" firstAttribute="bottom" secondItem="8FQ-Po-ouH" secondAttribute="bottom" id="REg-L1-hil"/>
-                            <constraint firstItem="ih6-ow-VO1" firstAttribute="leading" secondItem="8FQ-Po-ouH" secondAttribute="leading" id="hLX-ng-rFd"/>
+                            <constraint firstItem="SN7-K2-huF" firstAttribute="bottom" secondItem="8FQ-Po-ouH" secondAttribute="bottom" id="ZLm-8F-Vrm"/>
                             <constraint firstItem="SN7-K2-huF" firstAttribute="leading" secondItem="8FQ-Po-ouH" secondAttribute="leading" id="kAX-xg-ORg"/>
-                            <constraint firstItem="ih6-ow-VO1" firstAttribute="top" secondItem="SN7-K2-huF" secondAttribute="bottom" id="sdY-7b-eAr"/>
                             <constraint firstItem="SN7-K2-huF" firstAttribute="top" secondItem="8FQ-Po-ouH" secondAttribute="top" id="vGA-IV-zga"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8FQ-Po-ouH"/>
@@ -286,7 +214,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bannerView" destination="ih6-ow-VO1" id="EOC-jh-qyV"/>
                         <outlet property="playerView" destination="SN7-K2-huF" id="2TT-3H-mOo"/>
                         <segue destination="Tpf-q4-Niz" kind="unwind" identifier="UnwindToTop" unwindAction="unwindToTop:" id="Wag-49-G7u"/>
                     </connections>

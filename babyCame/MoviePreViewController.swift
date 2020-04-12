@@ -12,12 +12,10 @@ import AVKit
 import AVFoundation
 import Photos
 import MediaPlayer
-import GoogleMobileAds
 
-class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GADBannerViewDelegate {
+class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var playerView: AVPlayerView!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     private var videoPlayer:AVPlayer!
     private var activityIndicator: UIActivityIndicatorView!
@@ -26,7 +24,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setAd()
         setNotifications()
         setPlayer()
     }
@@ -53,10 +50,6 @@ class MoviePreViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func didTapActionButton(_ sender: AnyObject) {
         showSaveAlert()
-    }
-    
-    private func setAd() {
-        bannerView.load(GADRequest())
     }
     
     private func setNotifications() {

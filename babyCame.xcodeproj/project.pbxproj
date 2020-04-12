@@ -44,7 +44,6 @@
 		EA4A5EC81FA083F6004E33AC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EC71FA083F2004E33AC /* MessageUI.framework */; };
 		EA4A5ECA1FA08402004E33AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5EC91FA083FE004E33AC /* StoreKit.framework */; };
 		EA4A5ECC1FA0840D004E33AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5ECB1FA0840A004E33AC /* SystemConfiguration.framework */; };
-		EA4A5ED01FA084FE004E33AC /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4A5ECF1FA084FE004E33AC /* GoogleMobileAds.framework */; };
 		EA82BF161CA3B95A001C7799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */; };
 		EA82BF1E1CA3C010001C7799 /* bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF1D1CA3C010001C7799 /* bubble.mp3 */; };
 		EA82BF201CA3C0A1001C7799 /* fireworks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA82BF1F1CA3C0A1001C7799 /* fireworks.mp3 */; };
@@ -148,7 +147,6 @@
 		EA4A5EC91FA083FE004E33AC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA4A5ECB1FA0840A004E33AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EA4A5ECD1FA0842B004E33AC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../Downloads/GoogleMobileAdsSdkiOS-7.24.1/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		EA4A5ECF1FA084FE004E33AC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EA82BF151CA3B95A001C7799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA82BF1D1CA3C010001C7799 /* bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubble.mp3; sourceTree = "<group>"; };
 		EA82BF1F1CA3C0A1001C7799 /* fireworks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireworks.mp3; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50796E4621C1440B0088633B /* SwiftyCam.framework in Frameworks */,
-				EA4A5ED01FA084FE004E33AC /* GoogleMobileAds.framework in Frameworks */,
 				EA4A5ECC1FA0840D004E33AC /* SystemConfiguration.framework in Frameworks */,
 				EA4A5ECA1FA08402004E33AC /* StoreKit.framework in Frameworks */,
 				EA4A5EC81FA083F6004E33AC /* MessageUI.framework in Frameworks */,
@@ -286,7 +283,6 @@
 				50E176F61BE3CA4A009CA822 /* Main.storyboard */,
 				EA82BF141CA3B95A001C7799 /* LaunchScreen.storyboard */,
 				50E176F91BE3CA4A009CA822 /* Assets.xcassets */,
-				EA4A5ECF1FA084FE004E33AC /* GoogleMobileAds.framework */,
 				50E176FE1BE3CA4A009CA822 /* Info.plist */,
 				5047FA4C1DA7E23000123AC6 /* GoogleService-Info.plist */,
 				EAD4FE4621C336120011B3D9 /* Info.plist.strings */,
@@ -539,6 +535,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ja,
@@ -859,6 +856,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5.1;
 				DEVELOPMENT_TEAM = 8642FHK38M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -867,8 +865,9 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = babyCame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -886,6 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5.1;
 				DEVELOPMENT_TEAM = 8642FHK38M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -894,8 +894,9 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = babyCame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taro.babyCame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

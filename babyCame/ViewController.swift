@@ -7,19 +7,15 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, GADBannerViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     private let gamePreviewImageNameArray = ["Expansion", "Rotation", "Particle", "Move", "Bubble", "Sound"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setAd()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -29,10 +25,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    private func setAd() {
-        bannerView.load(GADRequest())
     }
     
     // MARK: - CollectionView
